@@ -1,6 +1,6 @@
 {
  "actions": [],
- "allow_rename": 1,
+ "allow_guest_to_view": 1,
  "autoname": "format:CHT-{YYYYMM}{####}",
  "creation": "2022-09-08 20:12:43.737699",
  "doctype": "DocType",
@@ -124,7 +124,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-09-08 22:06:06.800270",
+ "modified": "2022-09-09 00:33:29.263200",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Group",
