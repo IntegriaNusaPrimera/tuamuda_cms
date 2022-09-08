@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include tuamuda_cms *.css
+recursive-include tuamuda_cms *.csv
+recursive-include tuamuda_cms *.html
+recursive-include tuamuda_cms *.ico
+recursive-include tuamuda_cms *.js
+recursive-include tuamuda_cms *.json
+recursive-include tuamuda_cms *.md
+recursive-include tuamuda_cms *.png
+recursive-include tuamuda_cms *.py
+recursive-include tuamuda_cms *.svg
+recursive-include tuamuda_cms *.txt
+recursive-exclude tuamuda_cms *.pyc
