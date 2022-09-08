@@ -8,6 +8,7 @@ app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "dev@integria.co.id"
 app_license = "MIT"
+app_logo_url = '/assets/logo.png'
 
 # Includes in <head>
 # ------------------
@@ -179,3 +180,39 @@ user_data_fields = [
 #	"tuamuda_cms.auth.validate"
 # ]
 
+# Customize looks
+# ---------------
+brand_html = '<div><img src="/assets/logo.png">&nbsp;&nbsp; tuamuda ID</div>'
+
+website_context = {
+    "favicon": "/assets/logo.png",
+	"logo_image_url": "/assets/logo.png",
+    "splash_image": "/assets/logo.png"
+}
+
+
+fixtures = [
+	# {"dt": "Member Profile"},
+	# {"dt": "Business Profile"},
+	# {"dt": "Member Business"},
+	# {"dt": "Angkatan"},
+	# {"dt": "Expertise"},
+	# {"dt": "Category"},
+	# {"dt": "Website Settings"},
+	# {"dt": "Website Page"},
+	# {"dt": "Website Form"},
+    # {"dt": "Website Sidebar"},
+	# {"dt": "Website Theme"},
+	# {"dt": "Website Script"},
+	# {"dt": "Portal Settings"},
+	# {"dt": "Notification"},
+	# {"dt": "Notification Settings"},
+	# {"dt": "Email Template"},
+	# {"dt": "System Settings"},
+	# {"dt": "Workflow"},
+	# {"dt": "Workflow State"},
+	# {"dt": "Workflow Action"},
+	# {"dt": "Print Settings"},
+	# {"dt": "Print Format"},
+	# {"dt": "Print Style"}
+]
