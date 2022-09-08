@@ -2,7 +2,7 @@
  "cards_label": "Content",
  "category": "Modules",
  "charts": [],
- "creation": "2022-09-09 00:12:05.305039",
+ "creation": "2022-09-09 00:14:13.306299",
  "developer_mode_only": 0,
  "disable_user_customization": 1,
  "docstatus": 0,
@@ -13,7 +13,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "label": "Chat Group",
+ "label": "Chat Groups",
  "links": [
   {
    "hidden": 0,
@@ -50,10 +50,10 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-09 00:12:05.305039",
+ "modified": "2022-09-09 00:14:13.306299",
  "modified_by": "Administrator",
  "module": "Chat Group",
- "name": "Chat Group",
+ "name": "Chat Groups",
  "owner": "Administrator",
  "pin_to_bottom": 0,
  "pin_to_top": 0,

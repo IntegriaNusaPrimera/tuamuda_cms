@@ -1,8 +1,12 @@
 {
- "cards_label": "Content",
+ "cards_label": "Contents",
  "category": "Modules",
- "charts": [],
- "creation": "2022-09-09 00:12:05.305039",
+ "charts": [
+  {
+   "chart_name": "Podcast Chart"
+  }
+ ],
+ "creation": "2022-09-09 00:14:41.371397",
  "developer_mode_only": 0,
  "disable_user_customization": 1,
  "docstatus": 0,
@@ -13,7 +17,7 @@
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
- "label": "Chat Group",
+ "label": "Podcasts",
  "links": [
   {
    "hidden": 0,
@@ -26,8 +30,8 @@
   {
    "hidden": 0,
    "is_query_report": 0,
-   "label": "Chat Group",
-   "link_to": "Chat Group",
+   "label": "Podcast",
+   "link_to": "Podcast",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
@@ -44,26 +48,26 @@
    "hidden": 0,
    "is_query_report": 0,
    "label": "Category",
-   "link_to": "Category Chat",
+   "link_to": "Category Podcast",
    "link_type": "DocType",
    "onboard": 0,
    "type": "Link"
   }
  ],
- "modified": "2022-09-09 00:12:05.305039",
+ "modified": "2022-09-09 00:16:04.714942",
  "modified_by": "Administrator",
- "module": "Chat Group",
- "name": "Chat Group",
+ "module": "Podcast",
+ "name": "Podcasts",
  "owner": "Administrator",
  "pin_to_bottom": 0,
  "pin_to_top": 0,
  "shortcuts": [
   {
    "doc_view": "New",
-   "label": "New Chat Group",
-   "link_to": "Chat Group",
+   "label": "New Podcast",
+   "link_to": "Podcast",
    "type": "DocType"
   }
  ],
- "shortcuts_label": "Shortcut"
+ "shortcuts_label": "Shortcuts"
 }
