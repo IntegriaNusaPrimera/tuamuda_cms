@@ -1,0 +1,27 @@
+{
+ "cards": [
+  {
+   "card": "Total"
+  },
+  {
+   "card": "Published"
+  }
+ ],
+ "charts": [
+  {
+   "width": "Half"
+  }
+ ],
+ "creation": "2022-09-08 22:35:01.761100",
+ "dashboard_name": "Rooms",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-09-08 22:52:30.427660",
+ "modified_by": "Administrator",
+ "module": "Rooms",
+ "name": "Rooms",
+ "owner": "Administrator"
+}

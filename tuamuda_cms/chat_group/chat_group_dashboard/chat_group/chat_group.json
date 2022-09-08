@@ -1,0 +1,31 @@
+{
+ "cards": [
+  {
+   "card": "Total-2"
+  },
+  {
+   "card": "Published-2"
+  }
+ ],
+ "charts": [
+  {
+   "width": "Half"
+  },
+  {
+   "chart": "Chat Group Chart",
+   "width": "Half"
+  }
+ ],
+ "creation": "2022-09-08 22:37:20.342512",
+ "dashboard_name": "Chat Group",
+ "docstatus": 0,
+ "doctype": "Dashboard",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "modified": "2022-09-08 22:54:18.845845",
+ "modified_by": "Administrator",
+ "module": "Chat Group",
+ "name": "Chat Group",
+ "owner": "Administrator"
+}

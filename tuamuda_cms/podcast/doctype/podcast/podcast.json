@@ -1,0 +1,153 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:POD-{YYYYMM}{####}",
+ "creation": "2022-09-08 20:12:20.387908",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "judul",
+  "subjudul",
+  "url",
+  "column_break_7",
+  "category",
+  "published",
+  "image",
+  "section_break_3",
+  "deskripsi",
+  "section_break_11",
+  "rating",
+  "column_break_13",
+  "like",
+  "like_count",
+  "column_break_15",
+  "favorit",
+  "favorit_count",
+  "route"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "judul",
+   "fieldtype": "Data",
+   "label": "Judul"
+  },
+  {
+   "fieldname": "subjudul",
+   "fieldtype": "Data",
+   "label": "Subjudul"
+  },
+  {
+   "fieldname": "deskripsi",
+   "fieldtype": "Text",
+   "label": "Deskripsi"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "url",
+   "fieldtype": "Data",
+   "label": "URL",
+   "options": "URL"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Multi Category Podcast"
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "default": "0",
+   "fieldname": "like",
+   "fieldtype": "Check",
+   "label": "Like"
+  },
+  {
+   "default": "0",
+   "fieldname": "favorit",
+   "fieldtype": "Check",
+   "label": "Favorit"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "fieldname": "like_count",
+   "fieldtype": "Int",
+   "label": "Like Count"
+  },
+  {
+   "fieldname": "favorit_count",
+   "fieldtype": "Int",
+   "label": "Favorit Count"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_3",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "has_web_view": 1,
+ "image_field": "image",
+ "index_web_pages_for_search": 1,
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2022-09-08 22:01:14.877499",
+ "modified_by": "Administrator",
+ "module": "Podcast",
+ "name": "Podcast",
+ "name_case": "UPPER CASE",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "route",
+ "search_fields": "judul",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "judul"
+}
