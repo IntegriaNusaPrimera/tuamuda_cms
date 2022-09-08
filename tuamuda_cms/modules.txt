@@ -3,5 +3,4 @@ Podcast
 Chat Group
 Consult
 Events
-Room
 Rooms
