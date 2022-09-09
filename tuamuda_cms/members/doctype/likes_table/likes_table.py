@@ -4,5 +4,5 @@
 # import frappe
 from frappe.model.document import Document
 
-class MultiCategoryEvent(Document):
+class LikesTable(Document):
 	pass

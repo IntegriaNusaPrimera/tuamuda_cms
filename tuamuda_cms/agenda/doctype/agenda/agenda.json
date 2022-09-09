@@ -1,0 +1,327 @@
+{
+ "actions": [],
+ "allow_guest_to_view": 1,
+ "allow_import": 1,
+ "autoname": "format:AGD-{YYYYMM}{####}",
+ "creation": "2022-09-09 11:25:43.976751",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "judul",
+  "subjudul",
+  "agenda_type",
+  "column_break_7",
+  "category",
+  "published",
+  "image",
+  "section_break_10",
+  "deskripsi",
+  "section_break_12",
+  "starts_on",
+  "status",
+  "all_day",
+  "repeat_this_event",
+  "column_break_14",
+  "ends_on",
+  "section_break_13",
+  "repeat_on",
+  "repeat_till",
+  "column_break_16",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+  "sunday",
+  "section_break_8",
+  "participants",
+  "event_participants",
+  "section_break_31",
+  "rating",
+  "column_break_33",
+  "like",
+  "like_count",
+  "column_break_36",
+  "favorit",
+  "favorit_count",
+  "route"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "repeat_this_event",
+   "fieldtype": "Check",
+   "label": "Repeat this Event"
+  },
+  {
+   "fieldname": "starts_on",
+   "fieldtype": "Datetime",
+   "label": "Starts on",
+   "reqd": 1
+  },
+  {
+   "fieldname": "ends_on",
+   "fieldtype": "Datetime",
+   "label": "Ends on"
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nClosed"
+  },
+  {
+   "default": "0",
+   "fieldname": "all_day",
+   "fieldtype": "Check",
+   "label": "All Day"
+  },
+  {
+   "depends_on": "repeat_this_event",
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "repeat_this_event",
+   "fieldname": "repeat_on",
+   "fieldtype": "Select",
+   "in_global_search": 1,
+   "label": "Repeat On",
+   "options": "\nDaily\nWeekly\nMonthly\nYearly"
+  },
+  {
+   "depends_on": "repeat_this_event",
+   "description": "Leave blank to repeat always",
+   "fieldname": "repeat_till",
+   "fieldtype": "Date",
+   "label": "Repeat Till"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "monday",
+   "fieldtype": "Check",
+   "label": "Monday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "tuesday",
+   "fieldtype": "Check",
+   "label": "Tuesday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "wednesday",
+   "fieldtype": "Check",
+   "label": "Wednesday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "thursday",
+   "fieldtype": "Check",
+   "label": "Thursday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "friday",
+   "fieldtype": "Check",
+   "label": "Friday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "saturday",
+   "fieldtype": "Check",
+   "label": "Saturday"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.repeat_this_event && doc.repeat_on===\"Weekly\"",
+   "fieldname": "sunday",
+   "fieldtype": "Check",
+   "label": "Sunday"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "participants",
+   "fieldtype": "Section Break",
+   "label": "Participants",
+   "oldfieldtype": "Section Break"
+  },
+  {
+   "fieldname": "event_participants",
+   "fieldtype": "Table",
+   "label": "Event Participants",
+   "options": "Event Participants"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "label": "Image"
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "judul",
+   "fieldtype": "Data",
+   "label": "Judul",
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "label": "Published"
+  },
+  {
+   "fieldname": "deskripsi",
+   "fieldtype": "Text Editor",
+   "label": "Deskripsi"
+  },
+  {
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "subjudul",
+   "fieldtype": "Data",
+   "label": "Subjudul"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Multi Category Agenda"
+  },
+  {
+   "fieldname": "agenda_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Agenda Type",
+   "oldfieldname": "event_type",
+   "oldfieldtype": "Select",
+   "options": "Member\nPublic\nCancelled",
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "column_break_14",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_31",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "rating",
+   "fieldtype": "Rating",
+   "label": "Rating"
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "like",
+   "fieldtype": "Check",
+   "label": "Like"
+  },
+  {
+   "fieldname": "like_count",
+   "fieldtype": "Int",
+   "label": "Like Count"
+  },
+  {
+   "fieldname": "column_break_36",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "favorit",
+   "fieldtype": "Check",
+   "label": "Favorit"
+  },
+  {
+   "fieldname": "favorit_count",
+   "fieldtype": "Int",
+   "label": "Favorit Count"
+  }
+ ],
+ "has_web_view": 1,
+ "icon": "fa fa-calendar",
+ "is_published_field": "published",
+ "links": [],
+ "modified": "2022-09-09 13:34:56.210288",
+ "modified_by": "Administrator",
+ "module": "Agenda",
+ "name": "Agenda",
+ "name_case": "UPPER CASE",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "All",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "read_only": 1,
+ "route": "route",
+ "search_fields": "judul",
+ "sender_field": "sender",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "subject_field": "subject",
+ "title_field": "judul",
+ "track_changes": 1,
+ "track_seen": 1,
+ "track_views": 1
+}

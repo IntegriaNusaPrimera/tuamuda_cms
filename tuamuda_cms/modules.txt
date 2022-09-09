@@ -2,5 +2,6 @@ Tuamuda CMS
 Podcast
 Chat Group
 Consult
-Events
 Rooms
+Agenda
+Members

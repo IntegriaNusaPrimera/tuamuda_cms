@@ -65,7 +65,7 @@
   },
   {
    "fieldname": "deskripsi",
-   "fieldtype": "Text",
+   "fieldtype": "Text Editor",
    "label": "Deskripsi"
   },
   {
@@ -126,7 +126,7 @@
  "is_published_field": "published",
  "links": [],
  "max_attachments": 1,
- "modified": "2022-09-09 00:36:00.948842",
+ "modified": "2022-09-09 13:31:31.840213",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Room",

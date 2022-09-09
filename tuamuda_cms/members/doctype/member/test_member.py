@@ -4,5 +4,5 @@
 # import frappe
 import unittest
 
-class TestCategoryEvent(unittest.TestCase):
+class TestMember(unittest.TestCase):
 	pass

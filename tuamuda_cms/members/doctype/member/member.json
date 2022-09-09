@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nama",
+ "creation": "2022-09-09 13:47:32.794750",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "nama",
+  "alamat",
+  "propinsi",
+  "column_break_4",
+  "tanggal_lahir",
+  "tempat_lahir",
+  "category",
+  "active",
+  "likes_section",
+  "like",
+  "favorit",
+  "section_break_11",
+  "contact_link",
+  "column_break_15",
+  "user_link",
+  "route"
+ ],
+ "fields": [
+  {
+   "fieldname": "nama",
+   "fieldtype": "Data",
+   "label": "Nama",
+   "unique": 1
+  },
+  {
+   "fieldname": "tanggal_lahir",
+   "fieldtype": "Date",
+   "label": "Tanggal Lahir"
+  },
+  {
+   "fieldname": "tempat_lahir",
+   "fieldtype": "Data",
+   "label": "Tempat Lahir"
+  },
+  {
+   "fieldname": "alamat",
+   "fieldtype": "Small Text",
+   "label": "Alamat"
+  },
+  {
+   "fieldname": "propinsi",
+   "fieldtype": "Select",
+   "label": "Propinsi",
+   "options": "\nNanggroe Aceh Darussalam\nSumatera Utara\nSumatera Barat\nRiau\nKepulauan Riau\nJambi\nSumatera Selatan\nBangka Belitung\nBengkulu\nLampung\nDKI Jakarta\nJawa Barat\nBanten\nJawa Tengah\nDI Yogyakarta\nJawa Timur\nBali\nNusa Tenggara Barat\nNusa Tenggara Timur\nKalimantan Barat\nKalimantan Tengah\nKalimantan Selatan\nKalimantan Timur\nKalimantan Utara\nSulawesi Utara\nSulawesi Barat\nSulawesi Tengah\nSulawesi Tenggara\nSulawesi Selatan\nGorontalo\nMaluku\nMaluku Utara\nPapua Barat\nPapua"
+  },
+  {
+   "fieldname": "likes_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "like",
+   "fieldtype": "Table",
+   "label": "Like",
+   "options": "Likes Table"
+  },
+  {
+   "fieldname": "favorit",
+   "fieldtype": "Table",
+   "label": "Favorit",
+   "options": "Favorit Table"
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "active",
+   "fieldtype": "Check",
+   "label": "Active"
+  },
+  {
+   "fieldname": "route",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Route",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_11",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contact_link",
+   "fieldtype": "Link",
+   "label": "Contact link",
+   "options": "Contact"
+  },
+  {
+   "fieldname": "user_link",
+   "fieldtype": "Link",
+   "label": "User link",
+   "options": "User"
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Multi Category Member"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "has_web_view": 1,
+ "index_web_pages_for_search": 1,
+ "is_published_field": "active",
+ "links": [],
+ "modified": "2022-09-09 14:22:15.929428",
+ "modified_by": "Administrator",
+ "module": "Members",
+ "name": "Member",
+ "name_case": "Title Case",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "route": "route",
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
