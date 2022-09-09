@@ -15,7 +15,7 @@ app_logo_url = '/assets/logo.png'
 
 # include js, css files in header of desk.html
 # app_include_css = "/assets/tuamuda_cms/css/tuamuda_cms.css"
-# app_include_js = "/assets/tuamuda_cms/js/tuamuda_cms.js"
+app_include_js = "/assets/tuamuda_cms/js/app_script.js"
 
 # include js, css files in header of web template
 # web_include_css = "/assets/tuamuda_cms/css/tuamuda_cms.css"
