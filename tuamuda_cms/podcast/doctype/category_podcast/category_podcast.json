@@ -17,10 +17,9 @@
    "unique": 1
   }
  ],
- "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-09 14:01:20.063351",
+ "modified": "2022-09-12 11:26:53.278840",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Category Podcast",
@@ -41,7 +40,6 @@
   }
  ],
  "quick_entry": 1,
- "read_only": 1,
  "search_fields": "category",
  "sort_field": "modified",
  "sort_order": "DESC",

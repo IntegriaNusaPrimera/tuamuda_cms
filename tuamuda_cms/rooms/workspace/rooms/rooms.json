@@ -1,12 +1,7 @@
 {
  "cards_label": "Contents",
  "category": "Modules",
- "charts": [
-  {
-   "chart_name": "Room Chart",
-   "label": "Room Chart"
-  }
- ],
+ "charts": [],
  "creation": "2022-09-08 22:08:51.167210",
  "developer_mode_only": 0,
  "disable_user_customization": 1,
@@ -55,7 +50,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-09 00:16:13.290206",
+ "modified": "2022-09-12 11:19:14.710788",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Rooms",
