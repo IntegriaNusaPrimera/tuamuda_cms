@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:ROM-{YYYYMM}{####}",
+ "autoname": "format:ROM-{YYYY}{MM}{####}",
  "creation": "2022-09-08 21:03:14.570473",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -10,6 +10,7 @@
   "judul",
   "subjudul",
   "url",
+  "route",
   "column_break_7",
   "category",
   "published",
@@ -24,7 +25,7 @@
   "column_break_15",
   "favorit",
   "favorit_count",
-  "route"
+  "amended_from"
  ],
  "fields": [
   {
@@ -113,20 +114,28 @@
    "label": "Favorit Count"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
+   "label": "Route"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Room",
+   "print_hide": 1,
    "read_only": 1
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
- "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
  "max_attachments": 1,
- "modified": "2022-09-09 13:31:31.840213",
+ "modified": "2022-09-12 21:43:05.614069",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Room",
@@ -146,7 +155,8 @@
    "write": 1
   }
  ],
- "route": "route",
+ "quick_entry": 1,
+ "route": "rooms",
  "search_fields": "judul",
  "sort_field": "modified",
  "sort_order": "DESC",

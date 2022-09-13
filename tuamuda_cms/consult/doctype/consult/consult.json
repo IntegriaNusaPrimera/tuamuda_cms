@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:CSL-{YYYYMM}{####}",
+ "autoname": "format:CSL-{YYYY}{MM}{####}",
  "creation": "2022-09-08 20:23:02.206509",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -10,6 +10,7 @@
   "nama",
   "peran",
   "column_break_4",
+  "route",
   "kategori",
   "published",
   "image",
@@ -28,7 +29,7 @@
   "column_break_19",
   "favorit",
   "favorit_count",
-  "route"
+  "amended_from"
  ],
  "fields": [
   {
@@ -95,11 +96,10 @@
    "label": "Like"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "like_count",
@@ -140,14 +140,23 @@
    "fieldname": "hari_tersedia",
    "fieldtype": "Check",
    "label": "Hari Tersedia"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Consult",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
- "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-09-09 00:32:45.594483",
+ "modified": "2022-09-12 21:44:40.351932",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consult",
@@ -167,7 +176,8 @@
    "write": 1
   }
  ],
- "route": "route",
+ "quick_entry": 1,
+ "route": "consults",
  "search_fields": "nama, peran",
  "sort_field": "modified",
  "sort_order": "DESC",

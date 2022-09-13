@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:CHT-{YYYYMM}{####}",
+ "autoname": "format:CHT-{YYYY}{MM}{####}",
  "creation": "2022-09-08 20:12:43.737699",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -10,6 +10,7 @@
   "judul",
   "subjudul",
   "url",
+  "route",
   "column_break_2",
   "category",
   "published",
@@ -24,7 +25,7 @@
   "column_break_15",
   "favorit",
   "favorit_count",
-  "route"
+  "amended_from"
  ],
  "fields": [
   {
@@ -69,8 +70,9 @@
   },
   {
    "fieldname": "category",
-   "fieldtype": "Data",
-   "label": "Category"
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Multi Category Chat"
   },
   {
    "fieldname": "section_break_11",
@@ -94,11 +96,10 @@
    "label": "Favorit"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "column_break_12",
@@ -117,14 +118,23 @@
    "fieldname": "favorit_count",
    "fieldtype": "Int",
    "label": "Favorit Count"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Chat Group",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
- "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-09-09 00:33:29.263200",
+ "modified": "2022-09-12 21:41:42.838279",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Group",
@@ -144,7 +154,8 @@
    "write": 1
   }
  ],
- "route": "route",
+ "quick_entry": 1,
+ "route": "chatgroups",
  "search_fields": "judul",
  "sort_field": "modified",
  "sort_order": "DESC",

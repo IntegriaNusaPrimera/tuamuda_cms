@@ -2,7 +2,7 @@
  "actions": [],
  "allow_guest_to_view": 1,
  "allow_import": 1,
- "autoname": "format:AGD-{YYYYMM}{####}",
+ "autoname": "format:AGD-{YYYY}{MM}{####}",
  "creation": "2022-09-09 11:25:43.976751",
  "doctype": "DocType",
  "document_type": "Document",
@@ -11,6 +11,7 @@
   "judul",
   "subjudul",
   "agenda_type",
+  "route",
   "column_break_7",
   "category",
   "published",
@@ -46,7 +47,7 @@
   "column_break_36",
   "favorit",
   "favorit_count",
-  "route"
+  "amended_from"
  ],
  "fields": [
   {
@@ -171,11 +172,10 @@
    "options": "Event Participants"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "column_break_7",
@@ -276,13 +276,23 @@
    "fieldname": "favorit_count",
    "fieldtype": "Int",
    "label": "Favorit Count"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Agenda",
+   "print_hide": 1,
+   "read_only": 1
   }
  ],
  "has_web_view": 1,
  "icon": "fa fa-calendar",
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-09-09 13:34:56.210288",
+ "modified": "2022-09-12 21:42:10.148995",
  "modified_by": "Administrator",
  "module": "Agenda",
  "name": "Agenda",
@@ -313,15 +323,12 @@
    "write": 1
   }
  ],
- "read_only": 1,
- "route": "route",
+ "quick_entry": 1,
+ "route": "agendas",
  "search_fields": "judul",
  "sender_field": "sender",
  "sort_field": "modified",
  "sort_order": "DESC",
  "subject_field": "subject",
- "title_field": "judul",
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "title_field": "judul"
 }
