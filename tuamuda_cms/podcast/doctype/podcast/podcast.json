@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:POD-{YYYY}{MM}{####}",
+ "autoname": "format:POD-{YYYYMM}{####}",
  "creation": "2022-09-08 20:12:20.387908",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -14,10 +14,6 @@
   "category",
   "published",
   "image",
-  "meta_section",
-  "route",
-  "column_break_10",
-  "amended_from",
   "section_break_3",
   "deskripsi",
   "section_break_11",
@@ -27,7 +23,8 @@
   "like_count",
   "column_break_15",
   "favorit",
-  "favorit_count"
+  "favorit_count",
+  "route"
  ],
  "fields": [
   {
@@ -111,7 +108,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
    "fieldname": "section_break_3",
    "fieldtype": "Section Break"
   },
@@ -122,31 +118,14 @@
   {
    "fieldname": "column_break_15",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Podcast",
-   "print_hide": 1,
-   "read_only": 1
-  },
-  {
-   "fieldname": "meta_section",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "column_break_10",
-   "fieldtype": "Column Break"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
+ "index_web_pages_for_search": 1,
  "is_published_field": "published",
- "is_submittable": 1,
  "links": [],
- "modified": "2022-09-12 21:52:07.248453",
+ "modified": "2022-09-09 00:33:46.766933",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcast",
@@ -166,8 +145,7 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
- "route": "podcast",
+ "route": "route",
  "search_fields": "judul",
  "sort_field": "modified",
  "sort_order": "DESC",

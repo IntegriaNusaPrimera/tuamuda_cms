@@ -13,7 +13,6 @@
   {
    "fieldname": "category",
    "fieldtype": "Link",
-   "in_list_view": 1,
    "label": "Category",
    "options": "Category Podcast",
    "unique": 1
@@ -22,7 +21,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2022-09-12 15:58:19.246547",
+ "modified": "2022-09-08 21:39:19.128629",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Multi Category Podcast",
