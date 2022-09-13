@@ -5,4 +5,3 @@ Consult
 Rooms
 Agenda
 Members
-Articles

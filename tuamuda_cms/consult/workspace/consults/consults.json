@@ -1,7 +1,11 @@
 {
  "cards_label": "Contents",
  "category": "Modules",
- "charts": [],
+ "charts": [
+  {
+   "chart_name": "Consult Chart"
+  }
+ ],
  "creation": "2022-09-09 00:15:07.702263",
  "developer_mode_only": 0,
  "disable_user_customization": 1,
@@ -50,7 +54,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-12 11:14:39.503330",
+ "modified": "2022-09-09 00:15:57.143895",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consults",

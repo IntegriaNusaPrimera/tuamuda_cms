@@ -17,9 +17,10 @@
    "unique": 1
   }
  ],
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-12 11:27:18.798389",
+ "modified": "2022-09-09 14:01:19.584286",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Category Consult",
@@ -40,6 +41,7 @@
   }
  ],
  "quick_entry": 1,
+ "read_only": 1,
  "search_fields": "category",
  "sort_field": "modified",
  "sort_order": "DESC",

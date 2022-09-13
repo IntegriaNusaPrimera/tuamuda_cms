@@ -17,9 +17,10 @@
    "unique": 1
   }
  ],
+ "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-12 11:27:58.224982",
+ "modified": "2022-09-09 14:01:18.538334",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Category Member",
