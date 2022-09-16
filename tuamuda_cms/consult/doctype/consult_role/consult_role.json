@@ -1,38 +1,36 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "field:category",
- "creation": "2022-09-09 14:00:29.815540",
+ "autoname": "field:peran",
+ "creation": "2022-09-15 16:14:59.200409",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "category",
+  "peran",
   "keterangan"
  ],
  "fields": [
   {
-   "fieldname": "category",
+   "fieldname": "peran",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Category",
+   "label": "Peran",
    "reqd": 1,
    "unique": 1
   },
   {
    "fieldname": "keterangan",
-   "fieldtype": "Small Text",
+   "fieldtype": "Data",
    "label": "Keterangan"
   }
  ],
- "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-15 16:10:37.997272",
+ "modified": "2022-09-15 16:15:19.523858",
  "modified_by": "Administrator",
- "module": "Members",
- "name": "Category Member",
- "name_case": "Title Case",
+ "module": "Consult",
+ "name": "Consult Role",
  "owner": "Administrator",
  "permissions": [
   {
@@ -49,8 +47,6 @@
   }
  ],
  "quick_entry": 1,
- "search_fields": "category",
  "sort_field": "modified",
- "sort_order": "DESC",
- "title_field": "category"
+ "sort_order": "DESC"
 }

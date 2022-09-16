@@ -1,6 +1,6 @@
 {
  "cards_label": "Contents",
- "category": "Modules",
+ "category": "Domains",
  "charts": [],
  "creation": "2022-09-09 14:12:19.404249",
  "developer_mode_only": 0,
@@ -9,7 +9,7 @@
  "doctype": "Workspace",
  "extends_another_page": 0,
  "hide_custom": 0,
- "icon": "folder-open",
+ "icon": "users",
  "idx": 0,
  "is_default": 0,
  "is_standard": 1,
@@ -50,17 +50,18 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-09 14:12:57.170313",
+ "modified": "2022-09-13 22:15:33.791174",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Members",
  "owner": "Administrator",
- "pin_to_bottom": 1,
- "pin_to_top": 0,
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
  "shortcuts": [
   {
    "doc_view": "New",
-   "label": "New Member",
+   "icon": "add",
+   "label": "Member",
    "link_to": "Member",
    "type": "DocType"
   }

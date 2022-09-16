@@ -7,20 +7,29 @@
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "category"
+  "category",
+  "keterangan"
  ],
  "fields": [
   {
    "fieldname": "category",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Category",
+   "reqd": 1,
    "unique": 1
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "keterangan",
+   "fieldtype": "Small Text",
+   "in_list_view": 1,
+   "label": "Keterangan"
   }
  ],
- "in_create": 1,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2022-09-09 14:01:19.301627",
+ "modified": "2022-09-15 12:14:17.000879",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Category Room",

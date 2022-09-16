@@ -2,6 +2,20 @@
 
 {% block page_content %}
 <h1>{{ title }}</h1>
+<!-- <h1>Judul: {{ judul }}</h1> -->
+<h3 class="text-muted">Subjudul: {{ subjudul }}</h3>
+<div>
+    <img src="{{ image }}" alt="">
+    <p>Kategori:
+    {% for cat in category %}
+        {{ cat.category }}{{ "," if not loop.last }}
+    {% endfor %}
+    </p>
+    <p>Link: <a href="{{ url }}">{{ judul }}</a></p>
+    Rating: {{ doc.rating }} <i class="fa fa-star"></i> <br>
+    Likes: {{ doc.like }} <br>
+    Favorit: {% if favorit %} {{ doc.favorit }} {% else %} No {% endif %}
+</div>
 {% endblock %}
 
 <!-- this is a sample default web page template -->

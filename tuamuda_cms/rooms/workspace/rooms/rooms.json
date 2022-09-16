@@ -1,12 +1,7 @@
 {
  "cards_label": "Contents",
  "category": "Modules",
- "charts": [
-  {
-   "chart_name": "Room Chart",
-   "label": "Room Chart"
-  }
- ],
+ "charts": [],
  "creation": "2022-09-08 22:08:51.167210",
  "developer_mode_only": 0,
  "disable_user_customization": 1,
@@ -55,7 +50,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-09 00:16:13.290206",
+ "modified": "2022-09-13 23:00:08.299455",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Rooms",
@@ -65,8 +60,25 @@
  "shortcuts": [
   {
    "doc_view": "New",
-   "label": "New Room",
+   "icon": "add",
+   "label": "Room",
    "link_to": "Room",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Calendar",
+   "icon": "calendar",
+   "label": "Calendar",
+   "link_to": "Room",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
+   "link_to": "Room",
+   "stats_filter": "{}",
    "type": "DocType"
   }
  ],

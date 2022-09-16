@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:ROM-{YYYYMM}{####}",
+ "autoname": "format:ROM-{YYYY}{MM}{####}",
  "creation": "2022-09-08 21:03:14.570473",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -12,25 +12,29 @@
   "url",
   "column_break_7",
   "category",
-  "published",
   "image",
+  "route",
+  "section_break_7",
+  "start",
+  "column_break_8",
+  "end",
+  "published",
   "section_break_3",
   "deskripsi",
   "section_break_11",
   "rating",
   "column_break_13",
-  "like",
   "like_count",
   "column_break_15",
-  "favorit",
-  "favorit_count",
-  "route"
+  "favorit_count"
  ],
  "fields": [
   {
    "fieldname": "judul",
    "fieldtype": "Data",
-   "label": "Judul"
+   "in_list_view": 1,
+   "label": "Judul",
+   "reqd": 1
   },
   {
    "fieldname": "subjudul",
@@ -40,8 +44,10 @@
   {
    "fieldname": "url",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "URL",
-   "options": "URL"
+   "options": "URL",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_7",
@@ -51,7 +57,8 @@
    "fieldname": "category",
    "fieldtype": "Table MultiSelect",
    "label": "Category",
-   "options": "Multi Category Room"
+   "options": "Multi Category Room",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -87,12 +94,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "like",
-   "fieldtype": "Check",
-   "label": "Like"
-  },
-  {
    "fieldname": "like_count",
    "fieldtype": "Int",
    "label": "Like Count"
@@ -102,22 +103,33 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "favorit",
-   "fieldtype": "Check",
-   "label": "Favorit"
-  },
-  {
    "fieldname": "favorit_count",
    "fieldtype": "Int",
    "label": "Favorit Count"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Date",
+   "label": "Start"
+  },
+  {
+   "fieldname": "end",
+   "fieldtype": "Date",
+   "label": "End"
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
   }
  ],
  "has_web_view": 1,
@@ -126,7 +138,7 @@
  "is_published_field": "published",
  "links": [],
  "max_attachments": 1,
- "modified": "2022-09-09 13:31:31.840213",
+ "modified": "2022-09-15 12:07:36.255881",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Room",

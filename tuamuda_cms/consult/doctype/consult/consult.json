@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:CSL-{YYYYMM}{####}",
+ "autoname": "format:CSL-{YY}{MM}{####}",
  "creation": "2022-09-08 20:23:02.206509",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -13,13 +13,14 @@
   "kategori",
   "published",
   "image",
-  "section_break_6",
+  "section_break_7",
+  "route",
+  "column_break_9",
+  "amended_from",
+  "section_break_8",
   "deskripsi",
   "section_break_9",
-  "hari_tersedia",
-  "jam_mulai",
-  "column_break_11",
-  "jam_selesai",
+  "jadwal",
   "section_break_13",
   "rating",
   "column_break_15",
@@ -27,8 +28,7 @@
   "like_count",
   "column_break_19",
   "favorit",
-  "favorit_count",
-  "route"
+  "favorit_count"
  ],
  "fields": [
   {
@@ -49,8 +49,9 @@
   },
   {
    "fieldname": "peran",
-   "fieldtype": "Data",
-   "label": "Peran"
+   "fieldtype": "Link",
+   "label": "Peran",
+   "options": "Consult Role"
   },
   {
    "fieldname": "kategori",
@@ -62,16 +63,6 @@
    "fieldname": "deskripsi",
    "fieldtype": "Text",
    "label": "Deskripsi"
-  },
-  {
-   "fieldname": "jam_mulai",
-   "fieldtype": "Datetime",
-   "label": "Jam Mulai"
-  },
-  {
-   "fieldname": "jam_selesai",
-   "fieldtype": "Datetime",
-   "label": "Jam Selesai"
   },
   {
    "fieldname": "section_break_9",
@@ -95,11 +86,10 @@
    "label": "Like"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "like_count",
@@ -112,15 +102,7 @@
    "label": "Favorit Count"
   },
   {
-   "fieldname": "section_break_6",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "column_break_4",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "column_break_11",
    "fieldtype": "Column Break"
   },
   {
@@ -136,18 +118,40 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "hari_tersedia",
-   "fieldtype": "Check",
-   "label": "Hari Tersedia"
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Consult",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_9",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "jadwal",
+   "fieldtype": "Table",
+   "label": "Jadwal",
+   "options": "Consult Available"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
- "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-09-09 00:32:45.594483",
+ "modified": "2022-09-15 16:30:05.063758",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consult",
@@ -167,7 +171,8 @@
    "write": 1
   }
  ],
- "route": "route",
+ "quick_entry": 1,
+ "route": "consults",
  "search_fields": "nama, peran",
  "sort_field": "modified",
  "sort_order": "DESC",
