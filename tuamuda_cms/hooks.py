@@ -18,8 +18,8 @@ app_logo_url = '/assets/logo.png'
 app_include_js = "/assets/tuamuda_cms/js/app_script.js"
 
 # include js, css files in header of web template
-# web_include_css = "/assets/tuamuda_cms/css/tuamuda_cms.css"
-# web_include_js = "/assets/tuamuda_cms/js/tuamuda_cms.js"
+web_include_css = "/assets/tuamuda_cms/css/web.css"
+web_include_js = "/assets/tuamuda_cms/js/web_script.js"
 
 # include custom scss in every website theme (without file extension ".scss")
 # website_theme_scss = "tuamuda_cms/public/scss/website"
@@ -52,7 +52,7 @@ home_page = "login"
 # ----------
 
 # automatically create page for each record of this doctype
-# website_generators = ["Web Page"]
+# website_generators = ["Web Page", "Rooms", "Articles", "Podcast", "Chat Group", "Consult", "Agenda"]
 
 # Installation
 # ------------
