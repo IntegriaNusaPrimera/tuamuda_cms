@@ -17,6 +17,7 @@
  "links": [
   {
    "hidden": 0,
+   "icon": "list",
    "is_query_report": 0,
    "label": "List",
    "link_type": "DocType",
@@ -34,6 +35,7 @@
   },
   {
    "hidden": 0,
+   "icon": "setting",
    "is_query_report": 0,
    "label": "Setup",
    "link_type": "DocType",
@@ -50,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-13 23:00:08.299455",
+ "modified": "2022-09-16 17:24:42.438539",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Rooms",
@@ -73,6 +75,7 @@
    "type": "DocType"
   },
   {
+   "color": "",
    "doc_view": "Dashboard",
    "format": "Total: {}",
    "icon": "dashboard",

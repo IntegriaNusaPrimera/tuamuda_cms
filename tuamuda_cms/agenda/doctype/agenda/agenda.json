@@ -2,7 +2,8 @@
  "actions": [],
  "allow_guest_to_view": 1,
  "allow_import": 1,
- "autoname": "format:AGD-{YYYYMM}{####}",
+ "allow_rename": 1,
+ "autoname": "format:AGD{YY}{MM}{####}",
  "creation": "2022-09-09 11:25:43.976751",
  "doctype": "DocType",
  "document_type": "Document",
@@ -15,6 +16,10 @@
   "category",
   "published",
   "image",
+  "section_break_8",
+  "route",
+  "column_break_10",
+  "amended_from",
   "section_break_10",
   "deskripsi",
   "section_break_12",
@@ -35,18 +40,22 @@
   "friday",
   "saturday",
   "sunday",
-  "section_break_8",
+  "section_break_30",
   "participants",
   "event_participants",
   "section_break_31",
   "rating",
+  "5_star",
+  "4_star",
+  "3_star",
+  "2_star",
+  "1_star",
   "column_break_33",
-  "like",
   "like_count",
   "column_break_36",
-  "favorit",
   "favorit_count",
-  "route"
+  "column_break_46",
+  "member_count"
  ],
  "fields": [
   {
@@ -155,6 +164,7 @@
    "label": "Sunday"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
    "fieldname": "section_break_8",
    "fieldtype": "Section Break"
   },
@@ -173,9 +183,7 @@
   {
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "column_break_7",
@@ -204,7 +212,7 @@
   },
   {
    "fieldname": "deskripsi",
-   "fieldtype": "Text Editor",
+   "fieldtype": "Small Text",
    "label": "Deskripsi"
   },
   {
@@ -220,7 +228,8 @@
    "fieldname": "category",
    "fieldtype": "Table MultiSelect",
    "label": "Category",
-   "options": "Multi Category Agenda"
+   "options": "Multi Category Agenda",
+   "reqd": 1
   },
   {
    "fieldname": "agenda_type",
@@ -252,12 +261,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "like",
-   "fieldtype": "Check",
-   "label": "Like"
-  },
-  {
    "fieldname": "like_count",
    "fieldtype": "Int",
    "label": "Like Count"
@@ -267,22 +270,86 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "0",
-   "fieldname": "favorit",
-   "fieldtype": "Check",
-   "label": "Favorit"
-  },
-  {
    "fieldname": "favorit_count",
    "fieldtype": "Int",
    "label": "Favorit Count"
+  },
+  {
+   "fieldname": "section_break_30",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "5_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "5 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "4_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "4 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "3_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "3 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "2_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "2 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "1_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "1 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Agenda",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_46",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member_count",
+   "fieldtype": "Data",
+   "label": "Member Count"
   }
  ],
  "has_web_view": 1,
  "icon": "fa fa-calendar",
+ "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-09-09 13:34:56.210288",
+ "make_attachments_public": 1,
+ "max_attachments": 1,
+ "modified": "2022-09-16 21:49:52.881570",
  "modified_by": "Administrator",
  "module": "Agenda",
  "name": "Agenda",
@@ -321,7 +388,5 @@
  "sort_order": "DESC",
  "subject_field": "subject",
  "title_field": "judul",
- "track_changes": 1,
- "track_seen": 1,
- "track_views": 1
+ "track_changes": 1
 }

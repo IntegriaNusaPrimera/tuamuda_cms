@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:POD-{YYYYMM}{####}",
+ "autoname": "format:POD-{YYYY}{MM}{####}",
  "creation": "2022-09-08 20:12:20.387908",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -14,17 +14,25 @@
   "category",
   "published",
   "image",
+  "meta_section",
+  "route",
+  "column_break_10",
+  "amended_from",
   "section_break_3",
   "deskripsi",
   "section_break_11",
   "rating",
+  "5_star",
+  "4_star",
+  "3_star",
+  "2_star",
+  "1_star",
   "column_break_13",
-  "like",
   "like_count",
   "column_break_15",
-  "favorit",
   "favorit_count",
-  "route"
+  "column_break_25",
+  "member_count"
  ],
  "fields": [
   {
@@ -45,7 +53,7 @@
   },
   {
    "fieldname": "deskripsi",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Deskripsi"
   },
   {
@@ -75,23 +83,9 @@
    "label": "Rating"
   },
   {
-   "default": "0",
-   "fieldname": "like",
-   "fieldtype": "Check",
-   "label": "Like"
-  },
-  {
-   "default": "0",
-   "fieldname": "favorit",
-   "fieldtype": "Check",
-   "label": "Favorit"
-  },
-  {
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "like_count",
@@ -108,6 +102,7 @@
    "fieldtype": "Column Break"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
    "fieldname": "section_break_3",
    "fieldtype": "Section Break"
   },
@@ -118,14 +113,80 @@
   {
    "fieldname": "column_break_15",
    "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
+   "fieldname": "meta_section",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Podcast",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "5_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "5 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "4_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "4 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "3_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "3 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "2_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "2 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "1_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "1 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_25",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member_count",
+   "fieldtype": "Int",
+   "label": "Member Count"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
- "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-09-09 00:33:46.766933",
+ "modified": "2022-09-16 22:29:50.676482",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcast",
@@ -145,9 +206,10 @@
    "write": 1
   }
  ],
- "route": "route",
+ "route": "podcast",
  "search_fields": "judul",
  "sort_field": "modified",
  "sort_order": "DESC",
- "title_field": "judul"
+ "title_field": "judul",
+ "track_changes": 1
 }

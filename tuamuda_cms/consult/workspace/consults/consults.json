@@ -1,11 +1,7 @@
 {
  "cards_label": "Contents",
  "category": "Modules",
- "charts": [
-  {
-   "chart_name": "Consult Chart"
-  }
- ],
+ "charts": [],
  "creation": "2022-09-09 00:15:07.702263",
  "developer_mode_only": 0,
  "disable_user_customization": 1,
@@ -21,6 +17,7 @@
  "links": [
   {
    "hidden": 0,
+   "icon": "list",
    "is_query_report": 0,
    "label": "List",
    "link_type": "DocType",
@@ -38,6 +35,7 @@
   },
   {
    "hidden": 0,
+   "icon": "setting",
    "is_query_report": 0,
    "label": "Setup",
    "link_type": "DocType",
@@ -54,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-09 00:15:57.143895",
+ "modified": "2022-09-16 21:09:20.914484",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consults",
@@ -64,8 +62,25 @@
  "shortcuts": [
   {
    "doc_view": "New",
-   "label": "New Consult",
+   "icon": "add",
+   "label": "Consult",
    "link_to": "Consult",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Calendar",
+   "icon": "calendar",
+   "label": "Calendar",
+   "link_to": "Consult",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
+   "link_to": "Consult",
+   "stats_filter": "{}",
    "type": "DocType"
   }
  ],

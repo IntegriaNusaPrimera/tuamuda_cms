@@ -17,6 +17,7 @@
  "links": [
   {
    "hidden": 0,
+   "icon": "list",
    "is_query_report": 0,
    "label": "List",
    "link_type": "DocType",
@@ -34,6 +35,7 @@
   },
   {
    "hidden": 0,
+   "icon": "setting",
    "is_query_report": 0,
    "label": "Setup",
    "link_type": "DocType",
@@ -50,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-13 22:15:33.791174",
+ "modified": "2022-09-16 22:15:27.183737",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Members",
@@ -63,6 +65,22 @@
    "icon": "add",
    "label": "Member",
    "link_to": "Member",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Calendar",
+   "icon": "calendar",
+   "label": "Calendar",
+   "link_to": "Member",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
+   "link_to": "Member",
+   "stats_filter": "{}",
    "type": "DocType"
   }
  ],

@@ -1,7 +1,8 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:CHT-{YYYYMM}{####}",
+ "allow_rename": 1,
+ "autoname": "format:CHT{YY}{MM}{###}",
  "creation": "2022-09-08 20:12:43.737699",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -14,17 +15,24 @@
   "category",
   "published",
   "image",
-  "section_break_4",
+  "section_break_8",
+  "route",
+  "amended_from",
+  "section_break_10",
   "deskripsi",
   "section_break_11",
   "rating",
+  "5_star",
+  "4_star",
+  "3_star",
+  "2_star",
+  "1_star",
   "column_break_12",
-  "like",
   "like_count",
   "column_break_15",
-  "favorit",
-  "favorit_count",
-  "route"
+  "favorite_count",
+  "column_break_19",
+  "member_count"
  ],
  "fields": [
   {
@@ -38,10 +46,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "section_break_4",
-   "fieldtype": "Section Break"
-  },
-  {
    "fieldname": "judul",
    "fieldtype": "Data",
    "label": "Judul"
@@ -53,7 +57,7 @@
   },
   {
    "fieldname": "deskripsi",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Deskripsi"
   },
   {
@@ -69,8 +73,9 @@
   },
   {
    "fieldname": "category",
-   "fieldtype": "Data",
-   "label": "Category"
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Multi Category Chat"
   },
   {
    "fieldname": "section_break_11",
@@ -82,23 +87,10 @@
    "label": "Rating"
   },
   {
-   "default": "0",
-   "fieldname": "like",
-   "fieldtype": "Check",
-   "label": "Like"
-  },
-  {
-   "default": "0",
-   "fieldname": "favorit",
-   "fieldtype": "Check",
-   "label": "Favorit"
-  },
-  {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "column_break_12",
@@ -114,17 +106,87 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "favorit_count",
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Chat Group",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_10",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_19",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member_count",
    "fieldtype": "Int",
-   "label": "Favorit Count"
+   "label": "Member Count"
+  },
+  {
+   "fieldname": "favorite_count",
+   "fieldtype": "Int",
+   "label": "Favorite Count"
+  },
+  {
+   "fieldname": "5_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "5 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "4_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "4 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "3_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "3 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "2_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "2 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "1_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "1 star",
+   "non_negative": 1,
+   "read_only": 1
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
+ "is_submittable": 1,
  "links": [],
- "modified": "2022-09-09 00:33:29.263200",
+ "make_attachments_public": 1,
+ "max_attachments": 1,
+ "modified": "2022-09-16 22:25:49.975590",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Group",
@@ -144,9 +206,10 @@
    "write": 1
   }
  ],
- "route": "route",
+ "route": "chatgroups",
  "search_fields": "judul",
  "sort_field": "modified",
  "sort_order": "DESC",
- "title_field": "judul"
+ "title_field": "judul",
+ "track_changes": 1
 }

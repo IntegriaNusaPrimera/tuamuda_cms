@@ -1,7 +1,8 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:CSL-{YY}{MM}{####}",
+ "allow_rename": 1,
+ "autoname": "format:CSL{YY}{MM}{###}",
  "creation": "2022-09-08 20:23:02.206509",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -24,11 +25,11 @@
   "section_break_13",
   "rating",
   "column_break_15",
-  "like",
   "like_count",
   "column_break_19",
-  "favorit",
-  "favorit_count"
+  "favorite_count",
+  "column_break_21",
+  "member_count"
  ],
  "fields": [
   {
@@ -61,7 +62,7 @@
   },
   {
    "fieldname": "deskripsi",
-   "fieldtype": "Text",
+   "fieldtype": "Small Text",
    "label": "Deskripsi"
   },
   {
@@ -74,18 +75,6 @@
    "label": "Rating"
   },
   {
-   "default": "0",
-   "fieldname": "favorit",
-   "fieldtype": "Check",
-   "label": "Favorit"
-  },
-  {
-   "default": "0",
-   "fieldname": "like",
-   "fieldtype": "Check",
-   "label": "Like"
-  },
-  {
    "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
@@ -95,11 +84,6 @@
    "fieldname": "like_count",
    "fieldtype": "Data",
    "label": "Like Count"
-  },
-  {
-   "fieldname": "favorit_count",
-   "fieldtype": "Data",
-   "label": "Favorit Count"
   },
   {
    "fieldname": "column_break_4",
@@ -144,14 +128,31 @@
    "fieldtype": "Table",
    "label": "Jadwal",
    "options": "Consult Available"
+  },
+  {
+   "fieldname": "favorite_count",
+   "fieldtype": "Data",
+   "label": "Favorite Count"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "member_count",
+   "fieldtype": "Int",
+   "label": "Member Count"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
+ "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "is_submittable": 1,
  "links": [],
- "modified": "2022-09-15 16:30:05.063758",
+ "make_attachments_public": 1,
+ "max_attachments": 1,
+ "modified": "2022-09-16 18:08:24.307236",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consult",
@@ -171,10 +172,10 @@
    "write": 1
   }
  ],
- "quick_entry": 1,
  "route": "consults",
  "search_fields": "nama, peran",
  "sort_field": "modified",
  "sort_order": "DESC",
- "title_field": "nama"
+ "title_field": "nama",
+ "track_changes": 1
 }

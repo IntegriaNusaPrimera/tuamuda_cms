@@ -1,11 +1,7 @@
 {
  "cards_label": "Contents",
  "category": "Modules",
- "charts": [
-  {
-   "chart_name": "Podcast Chart"
-  }
- ],
+ "charts": [],
  "creation": "2022-09-09 00:14:41.371397",
  "developer_mode_only": 0,
  "disable_user_customization": 1,
@@ -21,6 +17,7 @@
  "links": [
   {
    "hidden": 0,
+   "icon": "list",
    "is_query_report": 0,
    "label": "List",
    "link_type": "DocType",
@@ -38,6 +35,7 @@
   },
   {
    "hidden": 0,
+   "icon": "setting",
    "is_query_report": 0,
    "label": "Setup",
    "link_type": "DocType",
@@ -54,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-09 00:16:04.714942",
+ "modified": "2022-09-16 22:21:45.000918",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcasts",
@@ -64,8 +62,25 @@
  "shortcuts": [
   {
    "doc_view": "New",
-   "label": "New Podcast",
+   "icon": "add",
+   "label": "Podcast",
    "link_to": "Podcast",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Calendar",
+   "icon": "calendar",
+   "label": "Calendar",
+   "link_to": "Podcast",
+   "type": "DocType"
+  },
+  {
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
+   "link_to": "Podcast",
+   "stats_filter": "{}",
    "type": "DocType"
   }
  ],

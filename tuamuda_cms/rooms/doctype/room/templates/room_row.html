@@ -35,7 +35,6 @@
 					<a href="/blog?blogger={{ doc.blogger }}">{{ doc.owner }}</a>
 					<div class="small">
 						{{ frappe.format_date(doc.published_on) }}
-						{% if doc.read_time %} &middot; {{ doc.read_time }} min read {% endif %}
 					</div>
 				</div>
 			</div>
