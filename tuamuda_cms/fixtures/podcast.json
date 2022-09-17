@@ -1,0 +1,69 @@
+[
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "amended_from": null,
+  "category": [
+   {
+    "category": "Kesehatan",
+    "parent": "seputar-makanan-sehat",
+    "parentfield": "category",
+    "parenttype": "Podcast"
+   },
+   {
+    "category": "Makanan",
+    "parent": "seputar-makanan-sehat",
+    "parentfield": "category",
+    "parenttype": "Podcast"
+   }
+  ],
+  "deskripsi": "Bagaimana cara memilih makanan yang sehat untuk tubuh",
+  "docstatus": 2,
+  "doctype": "Podcast",
+  "favorite_count": 0,
+  "image": null,
+  "judul": "Seputar Makanan Sehat",
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-09-12 21:52:48.538896",
+  "name": "seputar-makanan-sehat",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 1,
+  "rating": null,
+  "route": "podcast/seputar-makanan-sehat",
+  "subjudul": "Memilih makanan sehat",
+  "url": null
+ },
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "amended_from": "seputar-makanan-sehat",
+  "category": [],
+  "deskripsi": "Bagaimana cara memilih makanan yang sehat untuk tubuh",
+  "docstatus": 0,
+  "doctype": "Podcast",
+  "favorite_count": 0,
+  "image": null,
+  "judul": "Seputar Makanan Sehat",
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-09-12 21:54:39.186981",
+  "name": "seputar-makanan-sehat-1",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 1,
+  "rating": null,
+  "route": "podcast/seputar-makanan-sehat",
+  "subjudul": "Memilih makanan sehat",
+  "url": null
+ }
+]

@@ -1,0 +1,69 @@
+[
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "amended_from": null,
+  "category": [],
+  "deskripsi": null,
+  "docstatus": 0,
+  "doctype": "Chat Group",
+  "favorite_count": 0,
+  "image": null,
+  "judul": "CG123",
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-09-12 14:48:29.871292",
+  "name": "cg123",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 0,
+  "rating": null,
+  "route": null,
+  "subjudul": null,
+  "url": null
+ },
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "amended_from": null,
+  "category": [
+   {
+    "category": "Hiburan",
+    "parent": "group-1",
+    "parentfield": "category",
+    "parenttype": "Chat Group"
+   },
+   {
+    "category": "Jalan-jalan",
+    "parent": "group-1",
+    "parentfield": "category",
+    "parenttype": "Chat Group"
+   }
+  ],
+  "deskripsi": null,
+  "docstatus": 1,
+  "doctype": "Chat Group",
+  "favorite_count": 0,
+  "image": null,
+  "judul": "Group 1",
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-09-12 21:57:31.738918",
+  "name": "group-1",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 1,
+  "rating": 4,
+  "route": "chatgroups/group-1",
+  "subjudul": null,
+  "url": null
+ }
+]

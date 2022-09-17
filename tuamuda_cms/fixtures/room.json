@@ -1,0 +1,44 @@
+[
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "amended_from": null,
+  "category": [
+   {
+    "category": "Aktivitas",
+    "parent": "obrolan-bebas",
+    "parentfield": "category",
+    "parenttype": "Room"
+   },
+   {
+    "category": "Bebas",
+    "parent": "obrolan-bebas",
+    "parentfield": "category",
+    "parenttype": "Room"
+   }
+  ],
+  "deskripsi": "Ini forum tempat ngobrol bebas tentang topik apa saja",
+  "docstatus": 0,
+  "doctype": "Room",
+  "end": null,
+  "favorite_count": 0,
+  "image": null,
+  "judul": "Obrolan Bebas",
+  "like_count": 3,
+  "member_count": 5,
+  "modified": "2022-09-17 20:08:43.772949",
+  "name": "obrolan-bebas",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 1,
+  "rating": 3,
+  "route": "room/obrolan-bebas",
+  "start": "2022-09-17",
+  "subjudul": "Ngobrol apa aja disini",
+  "url": "https://tuamuda.id/obrolan-bebas"
+ }
+]

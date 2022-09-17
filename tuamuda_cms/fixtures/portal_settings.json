@@ -1,0 +1,16 @@
+[
+ {
+  "custom_menu": [],
+  "default_portal_home": null,
+  "default_role": null,
+  "docstatus": 0,
+  "doctype": "Portal Settings",
+  "hide_standard_menu": 0,
+  "menu": [],
+  "modified": "2022-09-07 19:07:30.662649",
+  "name": "Portal Settings",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ }
+]
