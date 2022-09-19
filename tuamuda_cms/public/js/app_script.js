@@ -1,3 +1,7 @@
+// $(document).on("startup", function () {
+//     frappe.set_route("Form","User",frappe.session.user);
+// });
+
 function logo() {
     let logo = document.getElementsByClassName( 'app-logo' )[0];
         logo.removeAttribute( 'style' );

@@ -8,7 +8,7 @@ app_icon = "octicon octicon-file-directory"
 app_color = "grey"
 app_email = "dev@integria.co.id"
 app_license = "MIT"
-app_logo_url = '/assets/logo.png'
+app_logo_url = '/assets/tuamuda_cms/image/logo.png'
 
 # Includes in <head>
 # ------------------
@@ -18,7 +18,10 @@ app_logo_url = '/assets/logo.png'
 app_include_js = "/assets/tuamuda_cms/js/app_script.js"
 
 # include js, css files in header of web template
-web_include_css = "/assets/tuamuda_cms/css/web.css"
+web_include_css = [
+    "/assets/tuamuda_cms/css/web.css",
+    "/assets/frappe/css/font-awesome.min.css"
+    ]
 web_include_js = "/assets/tuamuda_cms/js/web_script.js"
 
 # include custom scss in every website theme (without file extension ".scss")
@@ -41,7 +44,7 @@ web_include_js = "/assets/tuamuda_cms/js/web_script.js"
 # ----------
 
 # application home page (will override Website Settings)
-home_page = "login"
+home_page = "room"
 
 # website user home page (by Role)
 # role_home_page = {
@@ -182,33 +185,33 @@ user_data_fields = [
 
 # Customize looks
 # ---------------
-brand_html = '<div><img src="/assets/logo.png">&nbsp;&nbsp; tuamuda ID</div>'
+brand_html = '<div><img src="/assets/tuamuda_cms/image/logo.png">&nbsp;&nbsp; tuamuda ID</div>'
 
 website_context = {
-    "favicon": "/assets/logo.png",
-	"logo_image_url": "/assets/logo.png",
-    "splash_image": "/assets/logo.png"
+    "favicon": "/assets/tuamuda_cms/image/logo.png",
+	"logo_image_url": "/assets/tuamuda_cms/image/logo.png",
+    "splash_image": "/assets/tuamuda_cms/image/logo.png"
 }
 
 
 fixtures = [
-	# {"dt": "Member Profile"},
-	# {"dt": "Business Profile"},
-	# {"dt": "Member Business"},
-	# {"dt": "Angkatan"},
-	# {"dt": "Expertise"},
-	# {"dt": "Category"},
-	# {"dt": "Website Settings"},
+	{"dt": "Room"},
+	{"dt": "Chat Group"},
+	{"dt": "Podcast"},
+	{"dt": "Agenda"},
+	# {"dt": "Article"},
+	{"dt": "Consult"},
+	{"dt": "Website Settings"},
 	# {"dt": "Website Page"},
 	# {"dt": "Website Form"},
     # {"dt": "Website Sidebar"},
 	# {"dt": "Website Theme"},
 	# {"dt": "Website Script"},
-	# {"dt": "Portal Settings"},
+	{"dt": "Portal Settings"},
 	# {"dt": "Notification"},
 	# {"dt": "Notification Settings"},
 	# {"dt": "Email Template"},
-	# {"dt": "System Settings"},
+	{"dt": "System Settings"},
 	# {"dt": "Workflow"},
 	# {"dt": "Workflow State"},
 	# {"dt": "Workflow Action"},
