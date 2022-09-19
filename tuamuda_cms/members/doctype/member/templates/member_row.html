@@ -1,4 +1,46 @@
-<div>
-	<a href="{{ doc.route }}">{{ doc.title or doc.name }}</a>
+<div class="content-card col-sm-12 {{ 'col-md-8' if doc.featured else 'col-md-4' }}">
+	<div class="card h-100">
+		<div class="card-img-top">
+			{% if doc.image %}
+				<img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
+			{% else %}
+                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
+			{% endif %}
+		</div>
+		<div class="card-body">
+			<div>
+				<div class="text-muted small">
+					{%- if doc.featured -%}
+						<span class="text-body">{{ _('Featured') }} &middot; </span>
+					{%- endif -%}
+                    <span>CATEGORY:
+                        {%- for cat in doc.category %}
+                            {{ cat.category }}{{ "," if not loop.last }}
+                        {%- endfor %}
+                    </span>
+				</div>
+				{%- if doc.featured -%}
+					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
+				{%- else -%}
+					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
+				{%- endif -%}
+				<p class="post-description text-muted">{{ doc.subjudul }}</p>
+			</div>
+			<div class="content-card-footer row px-4">
+                {%- if doc.avatar -%}
+                <img class="avatar website-image-extra-small" src="{{ doc.avatar }}">
+                {%- else -%}
+                <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
+                {%- endif -%}
+				<div class="text-muted small pl-2">
+					<div class="">{{ doc.owner }}</div>
+					<div class="small">
+						{{ frappe.format_date(doc.published_on) }}
+						{% if doc.read_time %} &middot; {{ doc.read_time }} min read {% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+		<a class="stretched-link" href="/{{ doc.route }}"></a>
+	</div>
 </div>
-<!-- this is a sample default list template -->

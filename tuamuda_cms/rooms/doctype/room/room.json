@@ -35,7 +35,7 @@
   "column_break_13",
   "like_count",
   "column_break_15",
-  "favorit_count",
+  "favorite_count",
   "column_break_29",
   "member_count"
  ],
@@ -55,7 +55,6 @@
   {
    "fieldname": "url",
    "fieldtype": "Data",
-   "in_list_view": 1,
    "label": "URL",
    "options": "URL",
    "reqd": 1
@@ -72,9 +71,11 @@
    "reqd": 1
   },
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Published"
   },
   {
@@ -98,6 +99,7 @@
   {
    "fieldname": "rating",
    "fieldtype": "Rating",
+   "in_list_view": 1,
    "label": "Rating"
   },
   {
@@ -114,22 +116,19 @@
    "fieldtype": "Column Break"
   },
   {
-   "fieldname": "favorit_count",
-   "fieldtype": "Int",
-   "label": "Favorit Count"
-  },
-  {
    "depends_on": "eval:frappe.user.has_role(\"Administrator\")",
    "fieldname": "route",
    "fieldtype": "Data",
    "label": "Route"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "start",
    "fieldtype": "Date",
    "label": "Start"
   },
   {
+   "allow_on_submit": 1,
    "fieldname": "end",
    "fieldtype": "Date",
    "label": "End"
@@ -201,19 +200,22 @@
   },
   {
    "fieldname": "member_count",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Member Count"
+  },
+  {
+   "fieldname": "favorite_count",
+   "fieldtype": "Int",
+   "label": "Favorite Count"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
- "is_submittable": 1,
  "links": [],
  "make_attachments_public": 1,
- "max_attachments": 1,
- "modified": "2022-09-16 18:06:54.834644",
+ "modified": "2022-09-17 20:16:20.803345",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Room",
@@ -233,7 +235,7 @@
    "write": 1
   }
  ],
- "route": "route",
+ "route": "room",
  "search_fields": "judul",
  "sort_field": "modified",
  "sort_order": "DESC",

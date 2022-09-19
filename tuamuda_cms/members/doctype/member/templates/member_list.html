@@ -1,12 +1,12 @@
 {% extends "templates/web_alt.html" %}
-{% block title %}{{ podcast_title or _("Consult") }}{% endblock %}
+{% block title %}{{ podcast_title or _("Members") }}{% endblock %}
 {% block hero %}{% endblock %}
 
 {% block page_content %}
 
 {{ web_block("Hero",
 	values={
-		'title': room_title or _("Consult"),
+		'title': room_title or _("Members"),
 		'subtitle': room_introduction or '',
 	},
 	add_container=0,
@@ -47,7 +47,7 @@
     }
 </style>
 
-{% set catlist = frappe.get_list("Category Consult") %}
+{% set catlist = frappe.get_list("Category Member") %}
 <div id="cat-chooser" class="small">
     <ul>
         {% for cat in catlist | sort(attribute='name') %}

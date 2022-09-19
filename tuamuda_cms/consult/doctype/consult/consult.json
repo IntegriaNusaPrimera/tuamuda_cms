@@ -11,7 +11,7 @@
   "nama",
   "peran",
   "column_break_4",
-  "kategori",
+  "category",
   "published",
   "image",
   "section_break_7",
@@ -24,6 +24,11 @@
   "jadwal",
   "section_break_13",
   "rating",
+  "5_star",
+  "4_star",
+  "3_star",
+  "2_star",
+  "1_star",
   "column_break_15",
   "like_count",
   "column_break_19",
@@ -33,6 +38,7 @@
  ],
  "fields": [
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
@@ -41,24 +47,23 @@
   {
    "fieldname": "image",
    "fieldtype": "Attach Image",
-   "label": "Image"
+   "label": "Image",
+   "length": 1
   },
   {
    "fieldname": "nama",
    "fieldtype": "Data",
-   "label": "Nama"
+   "in_list_view": 1,
+   "label": "Nama",
+   "reqd": 1
   },
   {
    "fieldname": "peran",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Peran",
-   "options": "Consult Role"
-  },
-  {
-   "fieldname": "kategori",
-   "fieldtype": "Table MultiSelect",
-   "label": "Kategori",
-   "options": "Multi Category Consult"
+   "options": "Consult Role",
+   "reqd": 1
   },
   {
    "fieldname": "deskripsi",
@@ -82,7 +87,7 @@
   },
   {
    "fieldname": "like_count",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Like Count"
   },
   {
@@ -131,7 +136,7 @@
   },
   {
    "fieldname": "favorite_count",
-   "fieldtype": "Data",
+   "fieldtype": "Int",
    "label": "Favorite Count"
   },
   {
@@ -142,17 +147,62 @@
    "fieldname": "member_count",
    "fieldtype": "Int",
    "label": "Member Count"
+  },
+  {
+   "fieldname": "5_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "5 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "4_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "4 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "3_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "3 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "2_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "2 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "1_star",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "1 star",
+   "non_negative": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Multi Category Consult",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
- "is_submittable": 1,
  "links": [],
  "make_attachments_public": 1,
- "max_attachments": 1,
- "modified": "2022-09-16 18:08:24.307236",
+ "modified": "2022-09-18 07:24:44.309222",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consult",
@@ -172,7 +222,7 @@
    "write": 1
   }
  ],
- "route": "consults",
+ "route": "consult",
  "search_fields": "nama, peran",
  "sort_field": "modified",
  "sort_order": "DESC",

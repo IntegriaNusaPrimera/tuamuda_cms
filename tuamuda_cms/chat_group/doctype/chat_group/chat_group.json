@@ -39,6 +39,7 @@
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
+   "in_list_view": 1,
    "label": "Published"
   },
   {
@@ -48,7 +49,9 @@
   {
    "fieldname": "judul",
    "fieldtype": "Data",
-   "label": "Judul"
+   "in_list_view": 1,
+   "label": "Judul",
+   "reqd": 1
   },
   {
    "fieldname": "subjudul",
@@ -69,7 +72,8 @@
    "fieldname": "url",
    "fieldtype": "Data",
    "label": "URL",
-   "options": "URL"
+   "options": "URL",
+   "reqd": 1
   },
   {
    "fieldname": "category",
@@ -84,6 +88,7 @@
   {
    "fieldname": "rating",
    "fieldtype": "Rating",
+   "in_list_view": 1,
    "label": "Rating"
   },
   {
@@ -182,11 +187,10 @@
  "image_field": "image",
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
- "is_submittable": 1,
  "links": [],
  "make_attachments_public": 1,
  "max_attachments": 1,
- "modified": "2022-09-16 22:25:49.975590",
+ "modified": "2022-09-17 20:17:22.677883",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Group",

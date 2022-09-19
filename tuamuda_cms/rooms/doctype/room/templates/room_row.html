@@ -1,12 +1,10 @@
-<div class="blog-card col-sm-12 {{ 'col-md-8' if doc.featured else 'col-md-4' }}">
+<div class="content-card col-sm-12 {{ 'col-md-8' if doc.featured else 'col-md-4' }}">
 	<div class="card h-100">
 		<div class="card-img-top">
 			{% if doc.image %}
-				<img src="{{ doc.image }}" alt="{{ doc.title or doc.name }} - Cover Image">
+				<img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
 			{% else %}
-				<div class="default-cover">
-					<span>{{ doc.title or doc.name }}</span>
-				</div>
+                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
 			{% endif %}
 		</div>
 		<div class="card-body">
@@ -15,26 +13,33 @@
 					{%- if doc.featured -%}
 						<span class="text-body">{{ _('Featured') }} &middot; </span>
 					{%- endif -%}
-                    <span>Category:
+                    <span>#
                         {%- for cat in doc.category %}
                             {{ cat.category }}{{ "," if not loop.last }}
                         {%- endfor %}
                     </span>
 				</div>
-				<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
+				{%- if doc.featured -%}
+					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
+				{%- else -%}
+					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
+				{%- endif -%}
 				<p class="post-description text-muted">{{ doc.subjudul }}</p>
-                <div>
-                    <i class="fa fa-star"></i>{{ doc.rating }}
-                    <i class="fa fa-thumbs-up"></i>{{ doc.like }}
-                    <i class="fa fa-heart"></i>{{doc.favorit }}
-                </div>
 			</div>
-			<div class="blog-card-footer">
-				<img class="avatar website-image-extra-small" src="{{ doc.avatar }}">
+			<div class="content-card-footer row px-4">
+                <!-- {%- if doc.avatar -%}
+                <img class="avatar website-image-extra-small" src="{{ doc.avatar }}">
+                {%- else -%}
+                <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
+                {%- endif -%} -->
 				<div class="text-muted small">
-					<a href="/blog?blogger={{ doc.blogger }}">{{ doc.owner }}</a>
+					<!-- <div class="">{{ doc.owner }}</div> -->
+                    <div>Available on:</div>
 					<div class="small">
-						{{ frappe.format_date(doc.published_on) }}
+						<!-- {{ frappe.format_date(doc.published_on) }} -->
+						<!-- {% if doc.read_time %} &middot; {{ doc.read_time }} min read {% endif %} -->
+						<div>Start: {{ frappe.format_date(doc.start) }}</div>
+						<div>End: {{ frappe.format_date(doc.end) }}</div>
 					</div>
 				</div>
 			</div>

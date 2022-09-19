@@ -1,7 +1,94 @@
-{% extends "templates/web.html" %}
+{% extends "templates/web_alt.html" %}
 
 {% block page_content %}
-<h1>{{ title }}</h1>
+<style>
+    .video-container {
+        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: calc(100% - 120px);
+        /* padding-top: 56.25%; */ /* ratio 16:9 */
+        padding-top: 49.5%; /* no shoebox */
+        position: relative;
+    }
+    @media (max-width:767px) {
+        .video-container {
+            width: calc(100% - 20px);
+        }
+    }
+
+    iframe{
+        box-shadow: 6px 6px 12px #b5b5b5;
+        position: absolute;
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        top: 0;
+    }
+    .info {
+        margin-top: 3rem;
+    }
+    .cat-bullet {
+        background-color: #EAF5EE;
+        color: #2F9D58;
+        padding: 3px 10px;
+        border-radius: 6px;
+        margin-right: 2px;
+    }
+</style>
+<a href="#" onclick="history.back()"><i class="fa fa-chevron-left mr-2 text-muted"></i></a>
+<span class="text-uppercase mt-6">PODCAST</span>
+
+<h1 class="my-4">{{ title }}</h1>
+
+<div class="small text-muted">
+{%- for cat in doc.category -%}
+    <span class="cat-bullet">
+        {{ cat.category }}
+    </span>
+{%- endfor -%}
+</div>
+
+{%- if doc.video_source -%}
+<div class="video-container">
+    {% if doc.video_source == "YouTube" %}
+        <iframe src="https://www.{{ doc.video_source | lower }}-nocookie.com/embed/{{ doc.video_id }}?autoplay=0&fs=0&iv_load_policy=3&autohide=2&&theme=light&showinfo=0&rel=0&cc_load_policy=0&modestbranding=1&showsearch=0&enablejsapi=1&rel=0" title="{{ doc.judul }}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% elif doc.video_source == "Facebook" %}
+        <iframe src="https://www.{{ doc.video_source }}.com/embed/{{ doc.video_id }}">Facebook video</iframe>
+    {% else %}
+        <span>No Video</span>
+    {% endif %}
+{%- else -%}
+    <span>No Video</span>
+{%- endif -%}
+</div>
+
+<div class="info">
+    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
+    <div class="mb-4">Published on: {{ date }}</div>
+    <div>{{ doc.deskripsi }}</div>
+</div>
+
+<div class="info flex">
+    <div class="mr-6">
+        {% if doc.rating == 5 %}
+        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></span>
+        {% elif doc.rating == 4 %}
+        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></span>
+        {% elif doc.rating == 3 %}
+        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+        {% elif doc.rating == 2 %}
+        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+        {% elif doc.rating == 1 %}
+        <span><i class="fa fa-star"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+        {% else %}
+        <span><i class="fa fa-star-o text-muted"><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+        {% endif %}
+    </div>
+    <div class="mx-6"><i class="fa fa-thumbs-o-up"></i> {{ doc.like_count }}</div>
+    <div class="ml-6"><i class="fa fa-heart-o"></i> {{ doc.favorite_count }}</div>
+</div>
+
 {% endblock %}
 
-<!-- this is a sample default web page template -->

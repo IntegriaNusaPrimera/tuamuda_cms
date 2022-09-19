@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_guest_to_view": 1,
- "autoname": "format:POD-{YYYY}{MM}{####}",
+ "autoname": "format:POD{YY}{MM}{###}",
  "creation": "2022-09-08 20:12:20.387908",
  "doctype": "DocType",
  "editable_grid": 1,
@@ -9,7 +9,8 @@
  "field_order": [
   "judul",
   "subjudul",
-  "url",
+  "video_source",
+  "video_id",
   "column_break_7",
   "category",
   "published",
@@ -30,12 +31,13 @@
   "column_break_13",
   "like_count",
   "column_break_15",
-  "favorit_count",
+  "favorite_count",
   "column_break_25",
   "member_count"
  ],
  "fields": [
   {
+   "allow_on_submit": 1,
    "default": "0",
    "fieldname": "published",
    "fieldtype": "Check",
@@ -44,7 +46,9 @@
   {
    "fieldname": "judul",
    "fieldtype": "Data",
-   "label": "Judul"
+   "in_list_view": 1,
+   "label": "Judul",
+   "reqd": 1
   },
   {
    "fieldname": "subjudul",
@@ -62,16 +66,11 @@
    "label": "Image"
   },
   {
-   "fieldname": "url",
-   "fieldtype": "Data",
-   "label": "URL",
-   "options": "URL"
-  },
-  {
    "fieldname": "category",
    "fieldtype": "Table MultiSelect",
    "label": "Category",
-   "options": "Multi Category Podcast"
+   "options": "Multi Category Podcast",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_11",
@@ -91,11 +90,6 @@
    "fieldname": "like_count",
    "fieldtype": "Int",
    "label": "Like Count"
-  },
-  {
-   "fieldname": "favorit_count",
-   "fieldtype": "Int",
-   "label": "Favorit Count"
   },
   {
    "fieldname": "column_break_7",
@@ -179,14 +173,33 @@
    "fieldname": "member_count",
    "fieldtype": "Int",
    "label": "Member Count"
+  },
+  {
+   "fieldname": "favorite_count",
+   "fieldtype": "Int",
+   "label": "Favorite Count"
+  },
+  {
+   "fieldname": "video_source",
+   "fieldtype": "Select",
+   "label": "Video Source",
+   "options": "\nYouTube\nFacebook\nServer",
+   "reqd": 1
+  },
+  {
+   "description": "Hanya masukkan ID Video tanpa link URL.",
+   "fieldname": "video_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Video ID",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
  "is_published_field": "published",
- "is_submittable": 1,
  "links": [],
- "modified": "2022-09-16 22:29:50.676482",
+ "modified": "2022-09-19 12:42:21.609428",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcast",

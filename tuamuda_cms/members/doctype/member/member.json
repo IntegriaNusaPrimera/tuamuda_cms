@@ -28,7 +28,9 @@
   {
    "fieldname": "nama",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Nama",
+   "reqd": 1,
    "unique": 1
   },
   {
@@ -79,11 +81,10 @@
    "label": "Active"
   },
   {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
    "fieldname": "route",
    "fieldtype": "Data",
-   "hidden": 1,
-   "label": "Route",
-   "read_only": 1
+   "label": "Route"
   },
   {
    "fieldname": "section_break_11",
@@ -105,7 +106,8 @@
    "fieldname": "category",
    "fieldtype": "Table MultiSelect",
    "label": "Category",
-   "options": "Multi Category Member"
+   "options": "Multi Category Member",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_15",
@@ -116,7 +118,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "active",
  "links": [],
- "modified": "2022-09-09 14:22:15.929428",
+ "modified": "2022-09-18 06:55:15.675498",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Member",
