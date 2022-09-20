@@ -1,9 +1,11 @@
 {% extends "templates/web_alt.html" %}
 
 {% block page_content %}
+
 <style>
     .video-container {
-        margin-top: 3rem;
+        margin-top: 2rem;
+        margin-bottom: 4rem;
         margin-left: auto;
         margin-right: auto;
         display: block;
@@ -27,8 +29,16 @@
         top: 0;
     }
     .info {
-        margin-top: 3rem;
+        margin-top: 1.5rem;
+        border-top: 1px solid #E2E6E9;
+        border-bottom: 1px solid #E2E6E9;
     }
+    /* .meta-publish {
+        padding-left: 4rem;
+    } */
+    /* .meta-icons {
+        padding-right: 4rem;
+    } */
     .cat-bullet {
         background-color: #EAF5EE;
         color: #2F9D58;
@@ -50,6 +60,34 @@
 {%- endfor -%}
 </div>
 
+<div class="info row py-2 py-sm-0">
+    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left font-weight-bold">{{ doc.publisher }}</div>
+
+    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
+    <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
+
+    <div class="meta-icons flex col-12 col-md-3 pt-4 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
+        <div class="">
+            {% if doc.rating == 5 %}
+            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></span>
+            {% elif doc.rating == 4 %}
+            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></span>
+            {% elif doc.rating == 3 %}
+            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            {% elif doc.rating == 2 %}
+            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            {% elif doc.rating == 1 %}
+            <span><i class="fa fa-star"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            {% else %}
+            <span><i class="fa fa-star-o text-muted"><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            {% endif %}
+        </div>
+        <div class=""><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i> {{ doc.like_count }}</div>
+        <div class=""><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i> {{ doc.favorite_count }}</div>
+        <div class=""><i class="fa fa-user-o" id="memberCount" onClick="member()"></i> {{ doc.member_count }}</div>
+    </div>
+</div>
+
 {%- if doc.video_source -%}
 <div class="video-container">
     {% if doc.video_source == "YouTube" %}
@@ -64,31 +102,15 @@
 {%- endif -%}
 </div>
 
-<div class="info">
-    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
-    <div class="mb-4">Published on: {{ date }}</div>
+<div class="mt-6">
     <div>{{ doc.deskripsi }}</div>
 </div>
-
-<div class="info flex">
-    <div class="mr-6">
-        {% if doc.rating == 5 %}
-        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></span>
-        {% elif doc.rating == 4 %}
-        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></span>
-        {% elif doc.rating == 3 %}
-        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-        {% elif doc.rating == 2 %}
-        <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-        {% elif doc.rating == 1 %}
-        <span><i class="fa fa-star"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-        {% else %}
-        <span><i class="fa fa-star-o text-muted"><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-        {% endif %}
-    </div>
-    <div class="mx-6"><i class="fa fa-thumbs-o-up"></i> {{ doc.like_count }}</div>
-    <div class="ml-6"><i class="fa fa-heart-o"></i> {{ doc.favorite_count }}</div>
-</div>
-
 {% endblock %}
 
+<script>
+    var likeCount = 10;
+
+    function like(){
+        likeCount++;
+    }
+</script>

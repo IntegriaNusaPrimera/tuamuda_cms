@@ -13,7 +13,7 @@
 					{%- if doc.featured -%}
 						<span class="text-body">{{ _('Featured') }} &middot; </span>
 					{%- endif -%}
-                    <span>CATEGORY:
+                    <span>#
                         {%- for cat in doc.category %}
                             {{ cat.category }}{{ "," if not loop.last }}
                         {%- endfor %}
@@ -24,7 +24,7 @@
 				{%- else -%}
 					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
 				{%- endif -%}
-				<p class="post-description text-muted">{{ doc.subjudul }}</p>
+				<!-- <p class="post-description text-muted">{{ doc.subjudul }}</p> -->
 			</div>
 			<div class="content-card-footer row px-4">
                 {%- if doc.avatar -%}
@@ -33,10 +33,9 @@
                 <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
                 {%- endif -%}
 				<div class="text-muted small pl-2">
-					<div class="">{{ doc.owner }}</div>
+					<div class="">{{ doc.publisher }}</div>
 					<div class="small">
 						{{ frappe.format_date(doc.published_on) }}
-						{% if doc.read_time %} &middot; {{ doc.read_time }} min read {% endif %}
 					</div>
 				</div>
 			</div>
