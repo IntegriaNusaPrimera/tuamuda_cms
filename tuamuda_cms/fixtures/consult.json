@@ -1,1 +1,59 @@
-[]
+[
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "amended_from": null,
+  "category": [
+   {
+    "category": "Dokter",
+    "parent": "dr-budi",
+    "parentfield": "category",
+    "parenttype": "Consult"
+   },
+   {
+    "category": "Psikiater",
+    "parent": "dr-budi",
+    "parentfield": "category",
+    "parenttype": "Consult"
+   }
+  ],
+  "deskripsi": "Konsultasi mengenai keresahan",
+  "docstatus": 0,
+  "doctype": "Consult",
+  "favorite_count": 0,
+  "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d",
+  "jadwal": [
+   {
+    "hari": "Senin",
+    "jam_mulai": "7:00:00",
+    "jam_selesai": "16:00:00",
+    "parent": "dr-budi",
+    "parentfield": "jadwal",
+    "parenttype": "Consult"
+   },
+   {
+    "hari": "Rabu",
+    "jam_mulai": "9:00:00",
+    "jam_selesai": "14:30:00",
+    "parent": "dr-budi",
+    "parentfield": "jadwal",
+    "parenttype": "Consult"
+   }
+  ],
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-09-18 07:35:57.679557",
+  "nama": "Budi Chandra",
+  "name": "dr-budi",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "peran": "Dokter",
+  "published": 1,
+  "rating": null,
+  "route": "consult/dr-budi"
+ }
+]

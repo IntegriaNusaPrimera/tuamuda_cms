@@ -1,1 +1,51 @@
-[]
+[
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "agenda_type": "Member",
+  "all_day": 1,
+  "amended_from": null,
+  "category": [
+   {
+    "category": "Trip",
+    "parent": "city-tour",
+    "parentfield": "category",
+    "parenttype": "Agenda"
+   }
+  ],
+  "deskripsi": null,
+  "docstatus": 0,
+  "doctype": "Agenda",
+  "ends_on": null,
+  "event_participants": [],
+  "favorite_count": 0,
+  "friday": 0,
+  "image": "https://images.unsplash.com/photo-1645260782145-4ae1b02ec7c5",
+  "judul": "City Tour",
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-09-18 07:05:55.197601",
+  "monday": 0,
+  "name": "city-tour",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 1,
+  "rating": null,
+  "repeat_on": "",
+  "repeat_this_event": 0,
+  "repeat_till": null,
+  "route": "agenda/city-tour",
+  "saturday": 0,
+  "starts_on": "2022-09-20 07:03:10",
+  "status": "Open",
+  "subjudul": "Jalan-jalan dalam kota",
+  "sunday": 0,
+  "thursday": 0,
+  "tuesday": 0,
+  "wednesday": 0
+ }
+]
