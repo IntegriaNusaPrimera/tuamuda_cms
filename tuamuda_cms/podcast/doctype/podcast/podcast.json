@@ -9,17 +9,26 @@
  "field_order": [
   "judul",
   "subjudul",
-  "video_source",
-  "video_id",
-  "column_break_7",
   "category",
-  "publisher",
+  "column_break_7",
   "image",
   "published",
+  "section_break_5",
+  "video_source",
+  "video_id",
+  "column_break_12",
+  "publisher",
+  "publisher_logo",
+  "image_15",
   "meta_section",
   "route",
   "column_break_10",
   "amended_from",
+  "section_break_18",
+  "featured",
+  "featured_image",
+  "column_break_20",
+  "featured_text",
   "section_break_3",
   "deskripsi",
   "section_break_11",
@@ -78,6 +87,7 @@
    "fieldtype": "Section Break"
   },
   {
+   "default": "0",
    "fieldname": "rating",
    "fieldtype": "Rating",
    "label": "Rating"
@@ -88,6 +98,7 @@
    "label": "Route"
   },
   {
+   "default": "0",
    "fieldname": "like_count",
    "fieldtype": "Int",
    "label": "Like Count"
@@ -127,6 +138,7 @@
    "print_hide": 1
   },
   {
+   "default": "0",
    "fieldname": "5_star",
    "fieldtype": "Int",
    "hidden": 1,
@@ -135,6 +147,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "4_star",
    "fieldtype": "Int",
    "hidden": 1,
@@ -143,6 +156,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "3_star",
    "fieldtype": "Int",
    "hidden": 1,
@@ -151,6 +165,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "2_star",
    "fieldtype": "Int",
    "hidden": 1,
@@ -159,6 +174,7 @@
    "read_only": 1
   },
   {
+   "default": "0",
    "fieldname": "1_star",
    "fieldtype": "Int",
    "hidden": 1,
@@ -171,11 +187,13 @@
    "fieldtype": "Column Break"
   },
   {
+   "default": "0",
    "fieldname": "member_count",
    "fieldtype": "Int",
    "label": "Member Count"
   },
   {
+   "default": "0",
    "fieldname": "favorite_count",
    "fieldtype": "Int",
    "label": "Favorite Count"
@@ -201,13 +219,60 @@
    "in_list_view": 1,
    "label": "Publisher",
    "reqd": 1
+  },
+  {
+   "default": "0",
+   "description": "Hanya bisa ada 1 Featured Podcast. Jika sudah ada podcast lain yg ditandai Featured, maka podcast ini tidak bisa ditandai Featured.",
+   "fieldname": "featured",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Featured"
+  },
+  {
+   "depends_on": "eval:doc.featured==1;",
+   "fieldname": "featured_text",
+   "fieldtype": "Small Text",
+   "label": "Featured Text"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "publisher_logo",
+   "fieldtype": "Attach Image",
+   "label": "Publisher Logo"
+  },
+  {
+   "fetch_from": "frm.doc.publisher_logo",
+   "fieldname": "image_15",
+   "fieldtype": "Image"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_20",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.featured==1;",
+   "fieldname": "featured_image",
+   "fieldtype": "Attach Image",
+   "label": "Featured Image"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
  "is_published_field": "published",
  "links": [],
- "modified": "2022-09-20 12:02:00.165390",
+ "modified": "2022-09-23 00:38:46.333648",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcast",

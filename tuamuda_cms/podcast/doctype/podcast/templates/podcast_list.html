@@ -16,42 +16,57 @@
 ) }}
 
 <style>
+    .text-muted-light {
+        color: #c8c8c8;
+    }
     #cat-chooser {
         height: 30px;
+        background-color: #f4f4f4;
         border-top: 1px solid #E2E6E9;
         border-bottom: 1px solid #E2E6E9;
         margin-bottom: 3rem;
+        overflow: hidden;
+        white-space: nowrap;
     }
     #cat-chooser ul {
         text-align: center;
         height: 30px;
         padding-left: 0;
         padding-right: 0;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
     }
+    #cat-chooser ul::-webkit-scrollbar {
+        display: none;  /* Safari, Chrome */
+    }
+
     #cat-chooser li {
         display: inline-block;
         list-style: none;
-        margin-right: 10px;
         width: 100px;
         line-height: 28px;
     }
     #cat-chooser li a {
         text-decoration: none;
-        color: #8a8a8a;
+        color: #333;
         display: block;
     }
     #cat-chooser li a:hover {
         text-decoration: none;
-        color: #000000;
+        /* color: #000000; */
         background-color: #ffc863;
     }
 </style>
 
 {% set catlist = frappe.get_list("Category Podcast") %}
 <div id="cat-chooser" class="small">
+    <span><i class="fa fa-chevron-left text-muted float-left my-2 pl-1 pr-2"></i></span>
+    <span><i class="fa fa-chevron-right text-muted float-right my-2 pl-2 pr-1"></i></span>
     <ul>
         {% for cat in catlist | sort(attribute='name') %}
-        <li><a href="{{ cat.name }}">#{{ cat.name }}</a></li>
+        <li><a href="#">#{{ cat.name }}</a></li>
         {% endfor %}
     </ul>
 </div>

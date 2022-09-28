@@ -44,3 +44,15 @@
 .content-card-footer .avatar {
     border-radius: 50%;
 }
+.star {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background-color: #fff;
+    border-radius: 14px;
+    margin-left: 0px;
+    padding: 0 10px;
+}
+.featured {
+    order: -1;
+}

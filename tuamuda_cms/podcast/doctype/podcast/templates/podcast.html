@@ -47,8 +47,10 @@
         margin-right: 2px;
     }
 </style>
-<a href="#" onclick="history.back()"><i class="fa fa-chevron-left mr-2 text-muted"></i></a>
-<span class="text-uppercase mt-6">PODCAST</span>
+<a href="#" onclick="history.back()" class="text-decoration-none">
+    <i class="fa fa-chevron-left mr-2 text-muted"></i>
+    <span class="text-uppercase mt-6 text-dark">PODCAST</span>
+</a>
 
 <h1 class="my-4">{{ title }}</h1>
 
@@ -68,18 +70,18 @@
 
     <div class="meta-icons flex col-12 col-md-3 pt-4 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
         <div class="">
-            {% if doc.rating == 5 %}
+            {% if doc.rating == 5 -%}
             <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></span>
-            {% elif doc.rating == 4 %}
+            {% elif doc.rating == 4 -%}
             <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% elif doc.rating == 3 %}
+            {% elif doc.rating == 3 -%}
             <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% elif doc.rating == 2 %}
+            {% elif doc.rating == 2 -%}
             <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% elif doc.rating == 1 %}
-            <span><i class="fa fa-star"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            {% elif doc.rating == 1 -%}
+            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
             {% else %}
-            <span><i class="fa fa-star-o text-muted"><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            <span><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
             {% endif %}
         </div>
         <div class=""><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i> {{ doc.like_count }}</div>
