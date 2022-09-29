@@ -199,7 +199,7 @@ fixtures = [
 	{"dt": "Chat Group"},
 	{"dt": "Podcast"},
 	{"dt": "Agenda"},
-	{"dt": "Blog"},
+	# {"dt": "Blog"},
 	{"dt": "Consult"},
 	{"dt": "Website Settings"},
 	# {"dt": "Website Page"},
