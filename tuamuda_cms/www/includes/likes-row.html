@@ -1,0 +1,5 @@
+<div class="likes row mt-5 {{ 'mr-md-4 mr-lg-6' if doc.featured }}">
+    <div class="col text-center text-muted px-0"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small">{{ doc.like_count }} likes</div></div>
+    <div class="col text-center text-muted px-0"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small">{{ doc.favorite_count }} saves</div></div>
+    <div class="col text-center text-muted px-0"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small">{{ doc.member_count }} follow</div></div>
+</div>

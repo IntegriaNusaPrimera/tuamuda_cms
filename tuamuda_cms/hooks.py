@@ -191,7 +191,7 @@ website_context = {
     "favicon": "/assets/tuamuda_cms/image/logo.png",
 	"logo_image_url": "/assets/tuamuda_cms/image/logo.png",
     "splash_image": "/assets/tuamuda_cms/image/logo.png",
-    "footer_logo": "/assets/tuamuda_cms/image/logo.png"
+    "footer_logo": "/assets/tuamuda_cms/image/logo2.png"
 }
 
 
