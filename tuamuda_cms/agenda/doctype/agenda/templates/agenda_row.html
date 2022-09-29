@@ -1,45 +1,87 @@
-<div class="content-card col-sm-12 {{ 'col-md-8' if doc.featured else 'col-md-4' }}">
+<div class="content-card col-sm-12 {{ 'col-md-12 featured' if doc.featured else 'col-md-4' }}">
 	<div class="card h-100">
-		<div class="card-img-top">
-			{% if doc.image %}
-				<img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
-			{% else %}
-                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
-			{% endif %}
-		</div>
-		<div class="card-body">
-			<div>
-				<div class="text-muted small">
-					{%- if doc.featured -%}
-						<span class="text-body">{{ _('Featured') }} &middot; </span>
-					{%- endif -%}
-                    <span>CATEGORY:
-                        {%- for cat in doc.category %}
-                            {{ cat.category }}{{ "," if not loop.last }}
-                        {%- endfor %}
-                    </span>
-				</div>
-				{%- if doc.featured -%}
-					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
-				{%- else -%}
-					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
-				{%- endif -%}
-				<p class="post-description text-muted">{{ doc.subjudul }}</p>
-			</div>
-			<div class="content-card-footer row px-4">
-                {%- if doc.avatar -%}
-                <img class="avatar website-image-extra-small" src="{{ doc.avatar }}">
-                {%- else -%}
-                <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
-                {%- endif -%}
-				<div class="text-muted small pl-2">
-					<div class="">{{ doc.owner }}</div>
-					<div class="small">
-						{{ frappe.format_date(doc.published_on) }}
-						{% if doc.read_time %} &middot; {{ doc.read_time }} min read {% endif %}
-					</div>
-				</div>
-			</div>
+		<div class="card-img-top {{ 'feat-img row mx-0' if doc.featured }} position-relative">
+            {%- if doc.featured -%}
+                {% if doc.image %}
+                <div class="col-12 col-md-4 px-0">
+                    <img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
+                </div>
+                <div class="col-md-8 px-0 d-none d-md-block">
+                    {%- if doc.featured_image -%}
+                    <img src="{{ doc.featured_image }}" alt="{{doc.judul}} - Feature Image">
+                    {%- else -%}
+                    <img src="{{ doc.image }}" alt="{{doc.judul}} - Feature Image">
+                    {%- endif -%}
+                </div>
+                {% else %}
+                <div class="col-12 col-md-4 px-0">
+                    <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
+                </div>
+                <div class="col-md-8 px-0 d-none d-md-block">
+                    <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Feature Image">
+                </div>
+                {% endif %}
+            {%- else -%}
+                {% if doc.image %}
+                <div>
+                    <img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
+                    <div class="member row text-success">
+                        <div>
+                            <i class="fa fa-user mr-1"></i>
+                            <span>Member</span>
+                        </div>
+                    </div>
+                </div>
+                {% else %}
+                    <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
+                {% endif %}
+            {%- endif -%}
+            <div class="star row">
+                <div><i class="fa {{ 'fa-star text-warning' if doc.rating else 'fa-star-o text-muted' }} pr-2" id="ratingCount" onClick="rating()"></i></div>
+                <div class="small align-self-center font-weight-bold">{{ doc.rating if doc.rating else 0 }}</div>
+            </div>
+        </div>
+		<div class="card-body {{ 'flex-row' if doc.featured }}">
+            <div class="kolom-1 col-12 {{ 'col-md-4' if doc.featured }} px-0">
+                <div>
+                    <div class="text-muted small">
+                        {%- if doc.featured -%}
+                            <span class="text-danger font-weight-bold">{{ _('Featured') }} &middot; </span>
+                        {%- endif -%}
+                        <span>#
+                            {%- for cat in doc.category %}
+                                {{ cat.category }}{{ "," if not loop.last }}
+                            {%- endfor %}
+                        </span>
+                    </div>
+                    <h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
+                </div>
+                <div class="content-card-footer row px-4">
+                    <!-- {%- if doc.publisher_logo -%}
+                    <img class="avatar website-image-extra-small" src="{{ doc.publisher_logo }}">
+                    {%- else -%}
+                    <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
+                    {%- endif -%} -->
+                    <div class="text-muted small pl-2">
+                        <!-- <div class="">{{ doc.agenda_type }}</div> -->
+                        <div class="small">
+                            <table>
+                                <tr><td>Location</td><td>:</td><td>{{ doc.location }}</td></tr>
+                                <tr><td>Start</td><td>:</td><td>{{ frappe.format_date(doc.starts_on) }}</td></tr>
+                                <tr><td>End</td><td>:</td><td>{{ frappe.format_date(doc.ends_on) }}</td></tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="likes row mt-5 {{ 'mr-md-4 mr-lg-6' if doc.featured }}">
+                    <div class="col text-center text-muted px-0"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small">{{ doc.like_count }} likes</div></div>
+                    <div class="col text-center text-muted px-0"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small">{{ doc.favorite_count }} saves</div></div>
+                    <div class="col text-center text-muted px-0"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small">{{ doc.member_count }} follow</div></div>
+                </div>
+            </div>
+            <div class="kolom-2 {{ 'col-md-8 d-none d-md-block pr-0' if doc.featured else 'd-none' }} align-self-center">
+                <div class="text-muted small">{{ doc.featured_text }}</div>
+            </div>
 		</div>
 		<a class="stretched-link" href="/{{ doc.route }}"></a>
 	</div>

@@ -24,11 +24,13 @@
   "deskripsi",
   "section_break_12",
   "starts_on",
+  "location",
+  "organizer",
+  "column_break_14",
+  "ends_on",
   "status",
   "all_day",
   "repeat_this_event",
-  "column_break_14",
-  "ends_on",
   "section_break_13",
   "repeat_on",
   "repeat_till",
@@ -345,6 +347,16 @@
    "fieldname": "favorite_count",
    "fieldtype": "Int",
    "label": "Favorite Count"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "organizer",
+   "fieldtype": "Data",
+   "label": "Organizer"
   }
  ],
  "has_web_view": 1,
@@ -354,7 +366,7 @@
  "links": [],
  "make_attachments_public": 1,
  "max_attachments": 1,
- "modified": "2022-09-17 20:23:21.045472",
+ "modified": "2022-09-29 20:42:03.440711",
  "modified_by": "Administrator",
  "module": "Agenda",
  "name": "Agenda",
