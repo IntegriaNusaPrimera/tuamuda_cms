@@ -185,7 +185,7 @@ user_data_fields = [
 
 # Customize looks
 # ---------------
-brand_html = '<div><img src="/assets/tuamuda_cms/image/logo.png">&nbsp;&nbsp; tuamuda ID</div>'
+brand_html = '<div><img src="/assets/tuamuda_cms/image/logo.png"></div>'
 
 website_context = {
     "favicon": "/assets/tuamuda_cms/image/logo.png",
