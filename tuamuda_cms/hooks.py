@@ -190,7 +190,8 @@ brand_html = '<div><img src="/assets/tuamuda_cms/image/logo.png"></div>'
 website_context = {
     "favicon": "/assets/tuamuda_cms/image/logo.png",
 	"logo_image_url": "/assets/tuamuda_cms/image/logo.png",
-    "splash_image": "/assets/tuamuda_cms/image/logo.png"
+    "splash_image": "/assets/tuamuda_cms/image/logo.png",
+    "footer_logo": "/assets/tuamuda_cms/image/logo.png"
 }
 
 

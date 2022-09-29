@@ -66,7 +66,7 @@
     <span><i class="fa fa-chevron-right text-muted float-right my-2 pl-2 pr-1"></i></span>
     <ul>
         {% for cat in catlist | sort(attribute='name') %}
-        <li><a href="#">#{{ cat.name }}</a></li>
+        <li><a href="#">{{ cat.name }}</a></li>
         {% endfor %}
     </ul>
 </div>
