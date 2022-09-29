@@ -118,7 +118,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "active",
  "links": [],
- "modified": "2022-09-18 06:55:15.675498",
+ "modified": "2022-09-29 10:04:24.258381",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Member",
@@ -140,5 +140,6 @@
  ],
  "route": "route",
  "sort_field": "modified",
- "sort_order": "DESC"
+ "sort_order": "DESC",
+ "track_changes": 1
 }
