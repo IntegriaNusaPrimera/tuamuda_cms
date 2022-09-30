@@ -1,11 +1,11 @@
 [
  {
   "cards_label": null,
-  "category": "Domains",
+  "category": "Places",
   "charts": [],
   "charts_label": null,
   "developer_mode_only": 0,
-  "disable_user_customization": 0,
+  "disable_user_customization": 1,
   "docstatus": 0,
   "doctype": "Workspace",
   "extends": null,
@@ -333,7 +333,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-10 13:57:04.776945",
+  "modified": "2022-09-30 09:31:45.914111",
   "module": "Website",
   "name": "Website",
   "onboarding": "Website",
@@ -419,7 +419,7 @@
  },
  {
   "cards_label": null,
-  "category": "Domains",
+  "category": "Places",
   "charts": [],
   "charts_label": null,
   "developer_mode_only": 0,
@@ -631,7 +631,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-29 21:29:17.993371",
+  "modified": "2022-09-30 09:31:28.344723",
   "module": "Automation",
   "name": "Tools",
   "onboarding": null,
@@ -1274,11 +1274,11 @@
  },
  {
   "cards_label": null,
-  "category": "Administration",
+  "category": "Domains",
   "charts": [],
   "charts_label": null,
   "developer_mode_only": 0,
-  "disable_user_customization": 0,
+  "disable_user_customization": 1,
   "docstatus": 0,
   "doctype": "Workspace",
   "extends": null,
@@ -1486,7 +1486,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2021-03-25 23:02:34.582569",
+  "modified": "2022-09-30 09:32:00.998439",
   "module": "Core",
   "name": "Users",
   "onboarding": null,
