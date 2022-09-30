@@ -14,12 +14,18 @@
     "parent": "city-tour",
     "parentfield": "category",
     "parenttype": "Agenda"
+   },
+   {
+    "category": "Seminar",
+    "parent": "city-tour",
+    "parentfield": "category",
+    "parenttype": "Agenda"
    }
   ],
   "deskripsi": "Jalan-jalan santai dalam kota. Menikmati kuliner. Melihat tempat-tempat menarik di kota metropolitan.",
   "docstatus": 0,
   "doctype": "Agenda",
-  "ends_on": "2022-09-30 20:36:10",
+  "ends_on": "2022-09-30 21:04:35",
   "event_participants": [],
   "favorite_count": 0,
   "friday": 0,
@@ -28,7 +34,7 @@
   "like_count": 0,
   "location": "Kota Tua, Jakarta",
   "member_count": 0,
-  "modified": "2022-09-29 20:42:29.380346",
+  "modified": "2022-09-29 21:05:52.475672",
   "monday": 0,
   "name": "city-tour",
   "organizer": "Senanghati Tour & Travel",

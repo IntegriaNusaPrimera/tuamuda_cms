@@ -12,6 +12,12 @@
     "parent": "seputar-makanan-sehat-1",
     "parentfield": "category",
     "parenttype": "Podcast"
+   },
+   {
+    "category": "Kesenian",
+    "parent": "seputar-makanan-sehat-1",
+    "parentfield": "category",
+    "parenttype": "Podcast"
    }
   ],
   "deskripsi": "<div class=\"ql-editor read-mode\"><p>Bagaimana cara memilih makanan yang sehat untuk tubuh. </p><p><br></p><p><span style=\"background-color: rgb(0, 138, 0);\">Lorem ipsum</span> <em>dolor sit amet</em>, <span style=\"color: rgb(240, 102, 102);\">consectetur adipiscing</span> elit. <em>Maecenas consectetur</em> nunc quis mi rutrum, eget rutrum est sollicitudin. Etiam sit amet facilisis odio. <strong>Nullam vel euismod nulla</strong>, at vulputate diam. Cras gravida mattis lectus, eget lobortis lacus finibus non. Duis mollis odio ligula, non tempor sem aliquam et. Phasellus efficitur dui neque, a molestie erat tempor sed. Suspendisse non tempus tellus. Proin at risus nec tortor vulputate mollis non at erat. Ut non dui sit amet purus vehicula luctus. Sed euismod sapien risus, ornare auctor orci malesuada sit amet. In porttitor risus eget turpis finibus porttitor. Duis vitae nisi ex. Aenean vestibulum gravida diam, quis consectetur ante lobortis a.</p><p><br></p><ol><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Aenean fringilla interdum purus eu imperdiet. </li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Pellentesque et justo aliquet odio luctus dapibus in ut velit. </li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Praesent ac consequat metus. </li><li data-list=\"bullet\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Vivamus id dolor non est posuere pulvinar mattis nec mauris. </li></ol><p><br></p><ol><li data-list=\"checked\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Quisque pretium, purus eu lacinia sodales, orci massa suscipit augue, sed auctor turpis justo ut tortor. </li><li data-list=\"unchecked\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Sed sit amet magna id ante scelerisque fermentum sit amet vestibulum mi. </li><li data-list=\"unchecked\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Morbi suscipit ultricies velit non elementum. </li></ol><p><br></p><ol><li data-list=\"ordered\"><span class=\"ql-ui\" contenteditable=\"false\"></span>Integer sem justo, rutrum in lectus ac, congue consequat eros. </li><li data-list=\"ordered\"><span class=\"ql-ui\" contenteditable=\"false\"></span>In hac habitasse platea dictumst.</li></ol><p><br></p><p>Nam ut quam pretium, ultricies diam at, sollicitudin massa. Ut nunc dui, iaculis in iaculis at, accumsan nec nisl. Fusce ut scelerisque leo. Vestibulum facilisis leo vitae nunc fermentum porttitor. Pellentesque iaculis venenatis aliquet. Nunc ligula elit, maximus at nunc at, consequat porta velit. Curabitur imperdiet elit eget sollicitudin consectetur. Maecenas ut convallis leo. Morbi nec sem tortor. In porttitor justo et dapibus congue.</p></div>",
@@ -25,7 +31,7 @@
   "judul": "Cara sehat pilih makanan",
   "like_count": 3,
   "member_count": 7,
-  "modified": "2022-09-23 09:33:53.787791",
+  "modified": "2022-09-29 18:44:22.705480",
   "name": "seputar-makanan-sehat-1",
   "parent": null,
   "parentfield": null,
@@ -140,19 +146,13 @@
   "amended_from": null,
   "category": [
    {
-    "category": "Kesehatan",
+    "category": "Aktivitas",
     "parent": "tentang-makanan-sehat-2",
     "parentfield": "category",
     "parenttype": "Podcast"
    },
    {
-    "category": "Makanan",
-    "parent": "tentang-makanan-sehat-2",
-    "parentfield": "category",
-    "parenttype": "Podcast"
-   },
-   {
-    "category": "Olahraga",
+    "category": "Kesenian",
     "parent": "tentang-makanan-sehat-2",
     "parentfield": "category",
     "parenttype": "Podcast"
@@ -162,14 +162,14 @@
   "docstatus": 0,
   "doctype": "Podcast",
   "favorite_count": 0,
-  "featured": 1,
+  "featured": 0,
   "featured_image": null,
   "featured_text": "wwwwwwwsadkhaskjh asdhj dja dasjhdadajhda jahd asdhjakj dasdhaj dadad ad ashajdh aa ahdla dasdhjlk.jjjjjj kjkdksjakjs dsdjsa daskdj asdjsakjdjdk askdja sdaslkjdwwwwwwwsadkhaskjh asdhj dja dasjhda dajhda jahd asdhjakj dasdhaj ddad ad ashdajdh aa ahdla dasdhjlk.jjjjjj kjkdksjakjs dsdjsa dasasdasadsdss",
   "image": null,
   "judul": "Tentang makanan sehat 2",
   "like_count": 0,
   "member_count": 0,
-  "modified": "2022-09-23 17:56:03.590343",
+  "modified": "2022-09-29 18:43:05.582756",
   "name": "tentang-makanan-sehat-2",
   "parent": null,
   "parentfield": null,
