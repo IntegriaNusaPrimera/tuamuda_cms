@@ -52,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-09-16 21:09:20.914484",
+ "modified": "2022-09-30 09:45:41.321643",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consults",
@@ -75,6 +75,7 @@
    "type": "DocType"
   },
   {
+   "color": "",
    "doc_view": "Dashboard",
    "format": "Total: {}",
    "icon": "dashboard",
