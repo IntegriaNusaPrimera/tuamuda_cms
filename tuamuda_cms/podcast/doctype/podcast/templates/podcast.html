@@ -1,4 +1,5 @@
 {% extends "templates/web_alt.html" %}
+{% from "templates/macros/for_detail_page.html" import page_head, meta_publisher, meta_icons %}
 
 {% block page_content %}
 
@@ -28,47 +29,15 @@
     }
 </style>
 
-<a href="#" onclick="history.back()" class="text-decoration-none">
-    <i class="fa fa-chevron-left mr-2 text-muted"></i>
-    <span class="text-uppercase mt-6 text-dark">PODCAST</span>
-</a>
-
-<h1 class="my-4">{{ title }}</h1>
-
-<div class="small text-muted">
-{%- for cat in doc.category -%}
-    <span class="cat-bullet">
-        {{ cat.category }}
-    </span>
-{%- endfor -%}
-</div>
+{{ page_head ( 'PODCAST', doc.judul, doc.category ) }}
 
 <div class="info row py-2 py-sm-0">
-    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left font-weight-bold">{{ doc.publisher }}</div>
+    {{ meta_publisher( doc.publisher ) }}
 
     {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
     <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
 
-    <div class="meta-icons flex col-12 col-md-3 pt-4 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
-        <div class="">
-            {% if doc.rating == 5 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></span>
-            {% elif doc.rating == 4 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% elif doc.rating == 3 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% elif doc.rating == 2 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% elif doc.rating == 1 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% else %}
-            <span><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
-            {% endif %}
-        </div>
-        <div class=""><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i> {{ doc.like_count }}</div>
-        <div class=""><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i> {{ doc.favorite_count }}</div>
-        <div class=""><i class="fa fa-user-o" id="memberCount" onClick="member()"></i> {{ doc.member_count }}</div>
-    </div>
+    {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
 </div>
 
 {%- if doc.video_source -%}
