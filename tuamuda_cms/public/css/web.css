@@ -30,7 +30,9 @@
     -o-object-fit: cover;
     object-fit: cover;
 }
-
+.text-muted-light {
+    color: #c8c8c8;
+}
 .card-body {
     display: flex;
     flex-direction: column;
@@ -66,6 +68,7 @@
     padding: 0 10px;
 }
 .info {
+    background-color: #f4f4f4;
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     border-top: 1px solid #E2E6E9;
@@ -77,4 +80,48 @@
     padding: 3px 10px;
     border-radius: 6px;
     margin-right: 8px;
+}
+#cat-chooser {
+    height: 30px;
+    background-color: #f4f4f4;
+    border-top: 1px solid #E2E6E9;
+    border-bottom: 1px solid #E2E6E9;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    white-space: nowrap;
+}
+#cat-chooser ul {
+    text-align: center;
+    height: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+#cat-chooser ul::-webkit-scrollbar {
+    display: none;  /* Safari, Chrome */
+}
+#cat-chooser li {
+    display: inline-block;
+    list-style: none;
+    width: 100px;
+    line-height: 28px;
+}
+#cat-chooser li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+#cat-chooser li a:hover {
+    text-decoration: none;
+    /* color: #000000; */
+    background-color: #ffc863;
+}
+.bg-yellow {
+    background-color: #fffada;
+    border: 1px solid #ffe121;
+    padding: 2px 4px;
+    border-radius: 4px;
 }
