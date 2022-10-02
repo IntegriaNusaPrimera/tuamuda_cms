@@ -1,72 +1,41 @@
 {% extends "templates/web_alt.html" %}
-{% block title %}{{ room_title or _("Rooms") }}{% endblock %}
+{% block title %}{{ podcast_title or _("Rooms") }}{% endblock %}
 {% block hero %}{% endblock %}
 
 {% block page_content %}
 
 {{ web_block("Hero",
 	values={
-		'title': room_title or _("Rooms"),
-		'subtitle': room_introduction or '',
+		'title': room_title or _("Video Meetup Rooms"),
+		'subtitle': introduction or '',
 	},
 	add_container=0,
 	add_top_padding=0,
 	add_bottom_padding=0,
 	css_class="py-5",
-    no_result_message="tidak ada konten tersedia"
 ) }}
-
-<style>
-    #cat-chooser {
-        height: 30px;
-        border-top: 1px solid #E2E6E9;
-        border-bottom: 1px solid #E2E6E9;
-        margin-bottom: 3rem;
-    }
-    #cat-chooser ul {
-        text-align: center;
-        height: 30px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #cat-chooser li {
-        display: inline-block;
-        list-style: none;
-        margin-right: 10px;
-        width: 100px;
-        line-height: 28px;
-    }
-    #cat-chooser li a {
-        text-decoration: none;
-        color: #8a8a8a;
-        display: block;
-    }
-    #cat-chooser li a:hover {
-        text-decoration: none;
-        color: #000000;
-        background-color: #ffc863;
-    }
-</style>
 
 {% set catlist = frappe.get_list("Category Room") %}
 <div id="cat-chooser" class="small">
+    <span id="chevron-left"></span>
+    <span id="chevron-right"></span>
     <ul>
         {% for cat in catlist | sort(attribute='name') %}
-        <li><a href="{{ cat.name }}">#{{ cat.name }}</a></li>
+        <li><a href="#">{{ cat.name }}</a></li>
         {% endfor %}
     </ul>
 </div>
 
-<div class="room-list-content">
+<div class="list-content">
 	<div class="website-list" data-doctype="{{ doctype }}" data-txt="{{ txt or '[notxt]' | e }}">
 		{% if not result -%}
 		<div class="text-muted" style="min-height: 300px;">
 			{{ no_result_message or _("Nothing to show") }}
 		</div>
 		{% else %}
-		<div id="room-list" class="room-list result row">
+		<div id="card-list" class="card-list result row">
 			{% for item in result %}
-                <p>{{ item }}</p>
+			{{ item }}
 			{% endfor %}
 		</div>
 		{% endif %}

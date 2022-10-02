@@ -11,6 +11,7 @@
  "field_order": [
   "judul",
   "subjudul",
+  "host",
   "url",
   "column_break_7",
   "category",
@@ -208,6 +209,12 @@
    "fieldname": "favorite_count",
    "fieldtype": "Int",
    "label": "Favorite Count"
+  },
+  {
+   "fieldname": "host",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Host"
   }
  ],
  "has_web_view": 1,
@@ -216,7 +223,7 @@
  "is_published_field": "published",
  "links": [],
  "make_attachments_public": 1,
- "modified": "2022-09-29 12:11:20.572175",
+ "modified": "2022-10-02 21:33:39.556376",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Room",
