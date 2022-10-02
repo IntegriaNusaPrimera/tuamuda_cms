@@ -16,14 +16,10 @@
 
 <h5 class="mt-5 mb-4">Topic: {{ subjudul }}</h5>
 
-<div class="my-6">
-    <span class="my-4">Available: </span>
+<div class="my-6 text-md-right">
+    <span class="my-4">Available: </span><br class="d-md-none">
     <span class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.start) }}</span> &dash;
     <span class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.end) }}</span>
-    <!-- <table class="ml-3">
-        <tr><td>Start </td><td> : </td><td>{{ frappe.format_date(doc.start) }}</td></tr>
-        <tr><td>End </td><td> : </td><td>{{ frappe.format_date(doc.end) }}</td></tr>
-    </table> -->
 </div>
 
 <div>
