@@ -15,43 +15,13 @@
 	css_class="py-5",
 ) }}
 
-<style>
-    #cat-chooser {
-        height: 30px;
-        border-top: 1px solid #E2E6E9;
-        border-bottom: 1px solid #E2E6E9;
-        margin-bottom: 3rem;
-    }
-    #cat-chooser ul {
-        text-align: center;
-        height: 30px;
-        padding-left: 0;
-        padding-right: 0;
-    }
-    #cat-chooser li {
-        display: inline-block;
-        list-style: none;
-        margin-right: 10px;
-        width: 100px;
-        line-height: 28px;
-    }
-    #cat-chooser li a {
-        text-decoration: none;
-        color: #8a8a8a;
-        display: block;
-    }
-    #cat-chooser li a:hover {
-        text-decoration: none;
-        color: #000000;
-        background-color: #ffc863;
-    }
-</style>
-
 {% set catlist = frappe.get_list("Category Consult") %}
 <div id="cat-chooser" class="small">
+    <span id="chevron-left"></span>
+    <span id="chevron-right"></span>
     <ul>
         {% for cat in catlist | sort(attribute='name') %}
-        <li><a href="{{ cat.name }}">#{{ cat.name }}</a></li>
+        <li><a href="#">{{ cat.name }}</a></li>
         {% endfor %}
     </ul>
 </div>
