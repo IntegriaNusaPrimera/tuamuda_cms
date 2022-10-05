@@ -14,7 +14,7 @@
     {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
 </div>
 
-<h5 class="mt-5 mb-4">Topic: {{ subjudul }}</h5>
+<h5 class="mt-5 mb-4">Topic: {{ doc.subjudul }}</h5>
 
 <div class="my-6 text-md-right">
     <span class="my-4">Available: </span><br class="d-md-none">
@@ -23,7 +23,7 @@
 </div>
 
 <div>
-    <img src="{{ image }}" alt="">
+    <img src="{{ doc.image }}" alt="">
 </div>
 <div class="mt-6">
     <div>{{ doc.deskripsi }}</div>

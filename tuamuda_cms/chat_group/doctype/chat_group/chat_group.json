@@ -12,7 +12,7 @@
   "subjudul",
   "url",
   "column_break_2",
-  "category",
+  "multi_category",
   "published",
   "image",
   "section_break_8",
@@ -74,12 +74,6 @@
    "label": "URL",
    "options": "URL",
    "reqd": 1
-  },
-  {
-   "fieldname": "category",
-   "fieldtype": "Table MultiSelect",
-   "label": "Category",
-   "options": "Multi Category Chat"
   },
   {
    "fieldname": "section_break_11",
@@ -181,6 +175,12 @@
    "label": "1 star",
    "non_negative": 1,
    "read_only": 1
+  },
+  {
+   "fieldname": "multi_category",
+   "fieldtype": "Table MultiSelect",
+   "label": "Category",
+   "options": "Multi Category Chat"
   }
  ],
  "has_web_view": 1,
@@ -190,7 +190,7 @@
  "links": [],
  "make_attachments_public": 1,
  "max_attachments": 1,
- "modified": "2022-09-17 20:17:22.677883",
+ "modified": "2022-10-05 22:10:23.652293",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Group",

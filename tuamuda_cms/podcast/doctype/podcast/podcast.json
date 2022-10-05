@@ -9,8 +9,8 @@
  "field_order": [
   "judul",
   "subjudul",
-  "category",
   "column_break_7",
+  "multi_category",
   "image",
   "published",
   "section_break_5",
@@ -74,13 +74,6 @@
    "fieldname": "image",
    "fieldtype": "Attach Image",
    "label": "Image"
-  },
-  {
-   "fieldname": "category",
-   "fieldtype": "Table MultiSelect",
-   "label": "Category",
-   "options": "Multi Category Podcast",
-   "reqd": 1
   },
   {
    "fieldname": "section_break_11",
@@ -266,13 +259,21 @@
    "fieldname": "featured_image",
    "fieldtype": "Attach Image",
    "label": "Featured Image"
+  },
+  {
+   "fieldname": "multi_category",
+   "fieldtype": "Table MultiSelect",
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Multi Category Podcast",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
  "is_published_field": "published",
  "links": [],
- "modified": "2022-09-23 00:38:46.333648",
+ "modified": "2022-10-05 22:10:42.509426",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcast",

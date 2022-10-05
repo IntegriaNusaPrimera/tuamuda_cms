@@ -15,12 +15,12 @@
     </div>
 {% endmacro %}
 
-{% macro meta_host(host) %}
-    {% if host %}
-    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left">Hosted by: <span class="font-weight-bold">{{ host }}</span></div>
-    {% else %}
-    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left"><span class="font-weight-bold">Unhosted</span></div>
-    {% endif %}
+{% macro meta_host(label, host) %}
+    {%- if host -%}
+    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left">{{ label }} <span class="font-weight-bold">{{ host }}</span></div>
+    {%- else -%}
+    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left"><span class="font-weight-bold"></span></div>
+    {%- endif -%}
 {% endmacro %}
 
 {% macro meta_publisher(publisher) %}

@@ -14,7 +14,7 @@
   "host",
   "url",
   "column_break_7",
-  "category",
+  "multi_category",
   "published",
   "image",
   "section_break_7",
@@ -64,13 +64,6 @@
   {
    "fieldname": "column_break_7",
    "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "category",
-   "fieldtype": "Table MultiSelect",
-   "label": "Category",
-   "options": "Multi Category Room",
-   "reqd": 1
   },
   {
    "allow_on_submit": 1,
@@ -215,6 +208,14 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Host"
+  },
+  {
+   "fieldname": "multi_category",
+   "fieldtype": "Table MultiSelect",
+   "in_standard_filter": 1,
+   "label": "Category",
+   "options": "Multi Category Room",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
@@ -223,7 +224,7 @@
  "is_published_field": "published",
  "links": [],
  "make_attachments_public": 1,
- "modified": "2022-10-02 21:33:39.556376",
+ "modified": "2022-10-05 22:09:42.853445",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Room",

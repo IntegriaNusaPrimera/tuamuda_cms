@@ -10,10 +10,10 @@
  "field_order": [
   "nama",
   "peran",
-  "column_break_4",
-  "category",
-  "published",
   "image",
+  "column_break_4",
+  "multi_category",
+  "published",
   "section_break_7",
   "route",
   "column_break_9",
@@ -189,7 +189,7 @@
    "read_only": 1
   },
   {
-   "fieldname": "category",
+   "fieldname": "multi_category",
    "fieldtype": "Table MultiSelect",
    "label": "Category",
    "options": "Multi Category Consult",
@@ -202,7 +202,7 @@
  "is_published_field": "published",
  "links": [],
  "make_attachments_public": 1,
- "modified": "2022-09-18 07:24:44.309222",
+ "modified": "2022-10-05 22:10:02.404251",
  "modified_by": "Administrator",
  "module": "Consult",
  "name": "Consult",

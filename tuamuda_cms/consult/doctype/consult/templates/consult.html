@@ -1,7 +1,53 @@
-{% extends "templates/web.html" %}
+{% extends "templates/web_alt.html" %}
+{% from "templates/macros/for_detail_page.html" import page_head, meta_host, meta_icons %}
 
 {% block page_content %}
-<h1>{{ title }}</h1>
+
+{{ page_head ( 'CONSULTS', doc.nama, doc.category ) }}
+
+<div class="info row py-2 py-sm-0">
+    {{ meta_host( "", doc.peran ) }}
+
+    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
+    <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
+
+    {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
+</div>
+
+<!-- <h5 class="mt-5 mb-4">Topic: {{ doc.peran }}</h5> -->
+<div class="flex">
+    <div class="col-3">
+        <img src="{{ doc.image if doc.image else '/tuamuda_cms/image/avatar.png' }}" alt="" class="avatar">
+    </div>
+    <div class="col-9">
+        <div class="">
+            <div>{{ doc.deskripsi }}</div>
+        </div>
+        <div class="my-6">
+            <h6 class="">JADWAL</h6>
+            <table class="ml-5">
+                <tr><td class="font-weight-bold">Senin</td><td>:</td><td>08:00</td><td> - </td><td>14:00</td><td>(Dengan perjanjian)</td></tr>
+                <tr><td class="font-weight-bold">Selasa</td><td>:</td><td></td><td></td><td></td></tr>
+                <tr><td class="font-weight-bold">Rabu</td><td>:</td><td></td><td></td><td></td></tr>
+                <tr><td class="font-weight-bold">Kamis</td><td>:</td><td></td><td></td><td></td></tr>
+                <tr><td class="font-weight-bold">Jumat</td><td>:</td><td></td><td></td><td></td></tr>
+                <tr><td class="font-weight-bold">Sabtu</td><td>:</td><td></td><td></td><td></td></tr>
+                <tr><td class="font-weight-bold">Minggu</td><td>:</td><td></td><td></td><td></td></tr>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    table td {
+        padding: 2px 8px;
+    }
+    .avatar {
+        aspect-ratio: 1 / 1;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+</style>
 {% endblock %}
 
-<!-- this is a sample default web page template -->
