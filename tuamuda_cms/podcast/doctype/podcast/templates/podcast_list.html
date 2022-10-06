@@ -1,12 +1,13 @@
 {% extends "templates/web_alt.html" %}
-{% block title %}{{ podcast_title or _("Podcast") }}{% endblock %}
+
+{% block title %}{{ _("Podcast") }}{% endblock %}
 {% block hero %}{% endblock %}
 
 {% block page_content %}
 
 {{ web_block("Hero",
 	values={
-		'title': room_title or _("Podcast"),
+		'title': _("Podcast"),
 		'subtitle': introduction or '',
 	},
 	add_container=0,
@@ -15,32 +16,12 @@
 	css_class="py-5",
 ) }}
 
-{% set catlist = frappe.get_list("Category Podcast") %}
-<div id="cat-chooser" class="small">
-    <span id="chevron-left"></span>
-    <span id="chevron-right"></span>
-    <ul>
-        {% for cat in catlist | sort(attribute='name') %}
-        <li><a href="#">{{ cat.name }}</a></li>
-        {% endfor %}
-    </ul>
-</div>
+{% from "templates/macros/for_list_page.html" import cat_chooser, content_list %}
+
+{{ cat_chooser("Category Podcast") }}
 
 <div class="list-content">
-	<div class="website-list" data-doctype="{{ doctype }}" data-txt="{{ txt or '[notxt]' | e }}">
-		{% if not result -%}
-		<div class="text-muted" style="min-height: 300px;">
-			{{ no_result_message or _("Nothing to show") }}
-		</div>
-		{% else %}
-		<div id="card-list" class="card-list result row">
-			{% for item in result %}
-			{{ item }}
-			{% endfor %}
-		</div>
-		{% endif %}
-		<button class="btn btn-light btn-more btn {% if not show_more -%} hidden {%- endif %}">{{ _("Load More") }}</button>
-	</div>
+{{ content_list(result) }}
 </div>
 
 {% endblock %}
