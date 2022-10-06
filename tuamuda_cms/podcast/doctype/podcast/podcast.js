@@ -84,4 +84,11 @@ frappe.ui.form.on('Podcast', {
     //     // console.log( `Number of Podcast with checkbox 'Featured' = ${results.length}` )
     //     );
     // }
+
+    publisher_logo: function (frm) {
+        lnk = frm.doc.publisher_logo
+        img = document.getElementsByClassName( 'missing-image' );
+        img[0].innerHTML = "gambar";
+    }
+
 });
