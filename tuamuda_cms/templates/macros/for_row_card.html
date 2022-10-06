@@ -1,0 +1,50 @@
+{% macro card_image(image, judul) %}
+    {% if image %}
+        <img src="{{ image }}" alt="{{ judul }} - Cover Image">
+    {% else %}
+        <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ judul }} - Cover Image">
+    {% endif %}
+{% endmacro %}
+
+{% macro card_head(featured, category, title, subtitle) %}
+    <div class="card-title">
+        <div class="text-muted small">
+            {%- if featured -%}
+                <span class="text-body">{{ _('Featured') }} &middot; </span>
+            {%- endif -%}
+            <span>#
+                {% for cat in category %}
+                    {{ cat.category }}{{ "," if not loop.last }}
+                {% endfor %}
+            </span>
+        </div>
+        <h5 class="mt-1"><span class="text-dark">{{ title }}</span></h5>
+        <p class="post-description text-muted">{{ subtitle }}</p>
+    </div>
+{% endmacro %}
+
+{% macro card_footer_avatar(avatar) %}
+    {%- if avatar -%}
+    <img class="avatar website-image-extra-small" src="{{ avatar }}">
+    {%- else -%}
+    <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
+    {%- endif -%}
+{% endmacro %}
+
+{% macro card_footer_owner(owner, published_on, read_time) %}
+    <div class="text-muted small pl-2">
+        <div class="">{{ owner }}</div>
+        <div class="small">
+            {{ frappe.format_date(published_on) }}
+            {% if read_time %} &middot; {{ read_time }} min read {% endif %}
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro footer_icons(featured, like_count, favorite_count, member_count) %}
+    <div class="likes row mt-5 {{ 'mr-md-4 mr-lg-6' if featured }}">
+        <div class="col text-center text-muted px-0"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small">{{ like_count }} likes</div></div>
+        <div class="col text-center text-muted px-0"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small">{{ favorite_count }} saves</div></div>
+        <div class="col text-center text-muted px-0"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small">{{ member_count }} follow</div></div>
+    </div>
+{% endmacro %}

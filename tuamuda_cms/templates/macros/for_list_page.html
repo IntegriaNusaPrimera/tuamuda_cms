@@ -1,0 +1,30 @@
+{% macro cat_chooser(doctype) %}
+    {% set catlist = frappe.get_list(doctype) %}
+    <div id="cat-chooser" class="small">
+        <span id="chevron-left"></span>
+        <span id="chevron-right"></span>
+        <ul>
+            {% for cat in catlist | sort(attribute='name') %}
+            <li><a href="#">{{ cat.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endmacro %}
+
+
+{% macro content_list(result) %}
+<div class="website-list" data-doctype="{{ doctype }}" data-txt="{{ txt or '[notxt]' | e }}">
+		{% if not result -%}
+		<div class="text-muted" style="min-height: 300px;">
+			{{ no_result_message or _("Tidak ada konten") }}
+		</div>
+		{% else %}
+		<div id="card-list" class="card-list result row">
+			{% for item in result %}
+			{{ item }}
+			{% endfor %}
+		</div>
+		{% endif %}
+		<button class="btn btn-light btn-more btn {% if not show_more -%} hidden {%- endif %}">{{ _("Load More") }}</button>
+	</div>
+{% endmacro %}
