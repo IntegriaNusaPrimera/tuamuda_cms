@@ -19,7 +19,7 @@
   "column_break_12",
   "publisher",
   "publisher_logo",
-  "image_15",
+  "publisher_logo_img",
   "meta_section",
   "route",
   "column_break_10",
@@ -242,11 +242,6 @@
    "label": "Publisher Logo"
   },
   {
-   "fetch_from": "frm.doc.publisher_logo",
-   "fieldname": "image_15",
-   "fieldtype": "Image"
-  },
-  {
    "fieldname": "section_break_18",
    "fieldtype": "Section Break"
   },
@@ -267,13 +262,19 @@
    "label": "Category",
    "options": "Multi Category Podcast",
    "reqd": 1
+  },
+  {
+   "fetch_from": "frm.doc.publisher_logo",
+   "fieldname": "publisher_logo_img",
+   "fieldtype": "Image",
+   "options": "<img src=\"{{publisher_logo}}\">"
   }
  ],
  "has_web_view": 1,
  "image_field": "image",
  "is_published_field": "published",
  "links": [],
- "modified": "2022-10-05 22:10:42.509426",
+ "modified": "2022-10-05 23:26:07.260916",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcast",
