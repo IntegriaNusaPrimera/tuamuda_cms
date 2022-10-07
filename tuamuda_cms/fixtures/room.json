@@ -6,30 +6,18 @@
   "4_star": 0,
   "5_star": 0,
   "amended_from": null,
-  "category": [
-   {
-    "category": "Aktivitas",
-    "parent": "obrolan-bebas",
-    "parentfield": "category",
-    "parenttype": "Room"
-   },
-   {
-    "category": "Bebas",
-    "parent": "obrolan-bebas",
-    "parentfield": "category",
-    "parenttype": "Room"
-   }
-  ],
   "deskripsi": "Ini forum tempat ngobrol bebas tentang topik apa saja",
   "docstatus": 0,
   "doctype": "Room",
   "end": null,
   "favorite_count": 0,
+  "host": null,
   "image": null,
   "judul": "Obrolan Bebas",
   "like_count": 3,
   "member_count": 5,
   "modified": "2022-09-17 20:08:43.772949",
+  "multi_category": [],
   "name": "obrolan-bebas",
   "parent": null,
   "parentfield": null,
@@ -48,36 +36,31 @@
   "4_star": 0,
   "5_star": 0,
   "amended_from": null,
-  "category": [
-   {
-    "category": "Aktivitas",
-    "parent": "bahas-olahraga",
-    "parentfield": "category",
-    "parenttype": "Room"
-   },
-   {
-    "category": "Bebas",
-    "parent": "bahas-olahraga",
-    "parentfield": "category",
-    "parenttype": "Room"
-   },
-   {
-    "category": "Olahraga",
-    "parent": "bahas-olahraga",
-    "parentfield": "category",
-    "parenttype": "Room"
-   }
-  ],
   "deskripsi": "Ini forum tempat ngobrol bebas tentang olahraga",
   "docstatus": 0,
   "doctype": "Room",
   "end": null,
   "favorite_count": 0,
+  "host": null,
   "image": "https://images.unsplash.com/photo-1549576490-b0b4831ef60a",
   "judul": "Bahas Olahraga",
   "like_count": 3,
   "member_count": 5,
-  "modified": "2022-09-18 07:09:05.724347",
+  "modified": "2022-10-06 23:40:32.185807",
+  "multi_category": [
+   {
+    "category": "Umum",
+    "parent": "bahas-olahraga",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   },
+   {
+    "category": "Kesehatan",
+    "parent": "bahas-olahraga",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   }
+  ],
   "name": "bahas-olahraga",
   "parent": null,
   "parentfield": null,
