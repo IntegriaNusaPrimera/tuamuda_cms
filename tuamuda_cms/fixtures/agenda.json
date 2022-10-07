@@ -8,20 +8,6 @@
   "agenda_type": "Member",
   "all_day": 1,
   "amended_from": null,
-  "category": [
-   {
-    "category": "Trip",
-    "parent": "city-tour",
-    "parentfield": "category",
-    "parenttype": "Agenda"
-   },
-   {
-    "category": "Seminar",
-    "parent": "city-tour",
-    "parentfield": "category",
-    "parenttype": "Agenda"
-   }
-  ],
   "deskripsi": "Jalan-jalan santai dalam kota. Menikmati kuliner. Melihat tempat-tempat menarik di kota metropolitan.",
   "docstatus": 0,
   "doctype": "Agenda",
@@ -34,8 +20,16 @@
   "like_count": 0,
   "location": "Kota Tua, Jakarta",
   "member_count": 0,
-  "modified": "2022-09-29 21:05:52.475672",
+  "modified": "2022-10-06 23:42:38.991127",
   "monday": 0,
+  "multi_category": [
+   {
+    "category": "Seminar",
+    "parent": "city-tour",
+    "parentfield": "multi_category",
+    "parenttype": "Agenda"
+   }
+  ],
   "name": "city-tour",
   "organizer": "Senanghati Tour & Travel",
   "parent": null,
@@ -65,20 +59,6 @@
   "agenda_type": "Member",
   "all_day": 0,
   "amended_from": null,
-  "category": [
-   {
-    "category": "Gathering",
-    "parent": "agenda-1",
-    "parentfield": "category",
-    "parenttype": "Agenda"
-   },
-   {
-    "category": "Trip",
-    "parent": "agenda-1",
-    "parentfield": "category",
-    "parenttype": "Agenda"
-   }
-  ],
   "deskripsi": "Ini agenda kegiatan bulan ini. Kegiatan dapat diikuti oleh member saja. Yang non-member tidak bisa ikut karena tidak boleh mendaftar.",
   "docstatus": 0,
   "doctype": "Agenda",
@@ -91,8 +71,16 @@
   "like_count": 0,
   "location": null,
   "member_count": 0,
-  "modified": "2022-09-29 19:39:21.941799",
+  "modified": "2022-10-06 23:42:57.730459",
   "monday": 0,
+  "multi_category": [
+   {
+    "category": "Trip",
+    "parent": "agenda-1",
+    "parentfield": "multi_category",
+    "parenttype": "Agenda"
+   }
+  ],
   "name": "agenda-1",
   "organizer": null,
   "parent": null,
