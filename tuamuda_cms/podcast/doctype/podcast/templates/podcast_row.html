@@ -1,73 +1,57 @@
 <div class="content-card col-sm-12 {{ 'col-md-12 featured' if doc.featured else 'col-md-4' }}">
 	<div class="card h-100">
-		<div class="card-img-top {{ 'feat-img row mx-0' if doc.featured }}">
-            {%- if doc.featured -%}
+		<div class="card-img-top {{ 'feat-img row mx-0' if doc.featured }} position-relative">
+            <div class="{{ 'col-12 col-md-4' if doc.featured }} px-0">
                 {% if doc.image %}
-                <div class="col-12 col-md-4 px-0">
-                    <img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
-                </div>
-                <div class="col-md-8 px-0 d-none d-md-block">
-                    {%- if doc.featured_image -%}
-                    <img src="{{ doc.featured_image }}" alt="{{doc.judul}} - Feature Image">
-                    {%- else -%}
-                    <img src="{{ doc.image }}" alt="{{doc.judul}} - Feature Image">
-                    {%- endif -%}
-                </div>
+                <img src="{{ doc.image }}" alt="{{ doc.judul }} - Cover Image">
                 {% else %}
-                <div class="col-12 col-md-4 px-0">
-                    <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
-                </div>
-                <div class="col-md-8 px-0 d-none d-md-block">
-                    <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Feature Image">
-                </div>
+                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ doc.judul }} - Cover Image">
                 {% endif %}
-            {%- else -%}
-                {% if doc.image %}
-                    <img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
+            </div>
+            <div class="{{ 'col-md-8 d-md-block' if doc.featured else 'd-none' }} px-0">
+                {%- if doc.featured_image -%}
+                <img src="{{ doc.featured_image }}" alt="{{doc.judul}} - Feature Image">
+                {%- elif doc.image -%}
+                <img src="{{ doc.image }}" alt="{{doc.judul}} - Feature Image">
                 {% else %}
-                    <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
-                {% endif %}
-            {%- endif -%}
+                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ doc.judul }} - Cover Image">
+                {%- endif -%}
+            </div>
             <div class="star row">
                 <div><i class="fa {{ 'fa-star text-warning' if doc.rating else 'fa-star-o text-muted' }} pr-2" id="ratingCount" onClick="rating()"></i></div>
                 <div class="small align-self-center font-weight-bold">{{ doc.rating if doc.rating else 0 }}</div>
             </div>
-		</div>
-		<div class="card-body {{ 'flex-row' if doc.featured }}">
+        </div>
+		<div class="card-body {{ 'row mx-0' if doc.featured }}">
             <div class="kolom-1 col-12 {{ 'col-md-4' if doc.featured }} px-0">
-                <div>
-                    <div class="text-muted small">
-                        {%- if doc.featured -%}
-                            <span class="text-danger font-weight-bold">{{ _('Featured') }} &middot; </span>
-                        {%- endif -%}
-                        <span>#
-                            {%- for cat in doc.category %}
-                                {{ cat.category }}{{ "," if not loop.last }}
-                            {%- endfor %}
-                        </span>
-                    </div>
-                    <h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
-                </div>
-                <div class="content-card-footer row px-4">
-                    {%- if doc.publisher_logo -%}
-                    <img class="avatar website-image-extra-small" src="{{ doc.publisher_logo }}">
-                    {%- else -%}
-                    <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
+                <div class="text-muted small">
+                    {%- if doc.featured -%}
+                        <span class="text-danger font-weight-bold">{{ _('Featured') }} &middot; </span>
                     {%- endif -%}
-                    <div class="text-muted small pl-2">
-                        <div class="">{{ doc.publisher }}</div>
-                        <div class="small">
-                            {{ frappe.format_date(doc.published_on) }}
-                        </div>
+                    <span class="text-success">
+                        {%- for cat in doc.multi_category -%}
+                            {{ "#" if loop.first }}{{ cat.category }}<span class="text-muted">{{ " | " if not loop.last }}</span>
+                        {%- endfor -%}
+                    </span>
+                </div>
+                <h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
+                <div class="text-muted small">
+                    {{doc.subjudul }}
+                </div>
+                <div class="content-card-footer row px-4 mb-3 small">
+                    <img src="{{doc.publisher_logo}}" alt="" class="avatar website-image-extra-small">
+                    <div class="pl-2">
+                        <div class="font-weight-bold">{{ doc.publisher }}</div>
+                        <div class="small">{{ frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") }}</div>
                     </div>
                 </div>
-                <div class="likes row mt-5 {{ 'mr-md-4 mr-lg-6' if doc.featured }}">
+                <div class="likes row {{ 'mr-md-6' if doc.featured }} small">
                     <div class="col text-center text-muted px-0"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small">{{ doc.like_count }} likes</div></div>
                     <div class="col text-center text-muted px-0"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small">{{ doc.favorite_count }} saves</div></div>
                     <div class="col text-center text-muted px-0"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small">{{ doc.member_count }} follow</div></div>
                 </div>
             </div>
-            <div class="kolom-2 {{ 'col-md-8 d-none d-md-block pr-0' if doc.featured else 'd-none' }} align-self-center">
+            <div class="kolom-2 d-none {{ 'col-md-8 d-md-block pr-0 align-self-center border-left' if doc.featured }}">
                 <div class="text-muted small">{{ doc.featured_text }}</div>
             </div>
 		</div>

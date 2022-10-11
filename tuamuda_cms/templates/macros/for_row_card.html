@@ -1,25 +1,52 @@
-{% macro card_image(image, judul) %}
-    {% if image %}
+{% macro card_image_top( image, judul, rating, featured=None, featured_image=None, featured_text=None) %}
+    <div class="{{ 'col-12 col-md-4' if featured }} px-0">
+        {% if image %}
         <img src="{{ image }}" alt="{{ judul }} - Cover Image">
-    {% else %}
+        {% else %}
         <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ judul }} - Cover Image">
-    {% endif %}
+        {% endif %}
+    </div>
+    <div class="{{ 'col-md-8 d-md-block' if featured else 'd-none' }} px-0">
+        {%- if featured_image -%}
+        <img src="{{ featured_image }}" alt="{{judul}} - Feature Image">
+        {%- elif image -%}
+        <img src="{{ image }}" alt="{{judul}} - Feature Image">
+        {% else %}
+        <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ judul }} - Cover Image">
+        {%- endif -%}
+    </div>
+    <div class="star row">
+        <div><i class="fa {{ 'fa-star text-warning' if rating else 'fa-star-o text-muted' }} pr-2" id="ratingCount" onClick="rating()"></i></div>
+        <div class="small align-self-center font-weight-bold">{{ rating if rating else 0 }}</div>
+    </div>
 {% endmacro %}
 
-{% macro card_head(featured, category, title, subtitle) %}
+{% macro card_image_left( image, judul, rating, featured=None) %}
+    <div class="px-0 h-100">
+        {% if image %}
+        <img src="{{ image }}" alt="{{ judul }} - Cover Image">
+        {% else %}
+        <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ judul }} - Cover Image">
+        {% endif %}
+    </div>
+    <div class="star row">
+        <div><i class="fa {{ 'fa-star text-warning' if rating else 'fa-star-o text-muted' }} pr-2" id="ratingCount" onClick="rating()"></i></div>
+        <div class="small align-self-center font-weight-bold">{{ rating if rating else 0 }}</div>
+    </div>
+{% endmacro %}
+
+{% macro card_pre_title(featured, category) %}
     <div class="card-title">
         <div class="text-muted small">
             {%- if featured -%}
-                <span class="text-body">{{ _('Featured') }} &middot; </span>
+                <span class="text-danger font-weight-bold">{{ _('Featured') }} &middot; </span>
             {%- endif -%}
-            <span>#
-                {% for cat in category %}
-                    {{ cat.category }}{{ "," if not loop.last }}
-                {% endfor %}
+            <span class="text-success">#
+                {%- for cat in category -%}
+                    {{ cat.category }}<span class="text-muted">{{ " | " if not loop.last }}</span>
+                {%- endfor -%}
             </span>
         </div>
-        <h5 class="mt-1"><span class="text-dark">{{ title }}</span></h5>
-        <p class="post-description text-muted">{{ subtitle }}</p>
     </div>
 {% endmacro %}
 
@@ -48,3 +75,8 @@
         <div class="col text-center text-muted px-0"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small">{{ member_count }} follow</div></div>
     </div>
 {% endmacro %}
+
+
+<!-- template card dari agenda -->
+
+<!-- end template -->
