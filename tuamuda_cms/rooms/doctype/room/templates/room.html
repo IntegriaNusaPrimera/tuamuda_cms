@@ -1,32 +1,39 @@
 {% extends "templates/web_alt.html" %}
-{% from "templates/macros/for_detail_page.html" import page_head, meta_host, meta_icons %}
+{% from "templates/macros/for_detail_page.html" import page_head, meta_bar %}
 
 {% block page_content %}
 
-{{ page_head ( 'VIDEO MEETUPS', doc.judul, doc.category ) }}
+{{ page_head ( 'VIDEO MEETUP', doc.judul, doc.multi_category ) }}
 
-<div class="info row py-2 py-sm-0">
-    {{ meta_host( doc.host ) }}
+{{ meta_bar("Host:", doc.host, doc.creation, doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
 
-    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
-    <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
+<div class="content d-flex flex-column flex-md-row">
+    <div class="kolom-1 col-12 col-md-4">
+        {% if doc.image %}
+        <img src="{{ doc.image }}" alt="{{ doc.judul }} - Cover Image" class="rounded-sm shadow">
+        {% else %}
+        <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ doc.judul }} - Cover Image" class="rounded-sm shadow">
+        {% endif %}
+        <div class="d-flex flex-row justify-between">
+            <div class="my-6">
+                <div class="font-weight-bold">Available:</div>
+                <table>
+                    <tr><td class="pl-2">Start &nbsp;&nbsp;</td><td class="bg-yellow font-weight-bold text-right small">{{ frappe.format_date(doc.start, "dd MMM yyyy") }}</td></tr>
+                    <tr><td class="pl-2">End</td><td class="bg-yellow font-weight-bold text-right small">{{ frappe.format_date(doc.end, "dd MMM yyyy") }}</td></tr>
+                </table>
+            </div>
+            <div class="mt-6 text-center align-self-center">
+                <a href="https://meet.jit.si/{{doc.judul}}" class="btn" target="_blank">Join Meetup</a>
+            </div>
+        </div>
+    </div>
+    <div class="kolom-2 col-12 col-md-8 pt-6 pt-md-0">
+        <h5 class="mb-4 text-muted">{{ doc.subjudul }}</h5>
 
-    {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
-</div>
-
-<h5 class="mt-5 mb-4">Topic: {{ doc.subjudul }}</h5>
-
-<div class="my-6 text-md-right">
-    <span class="my-4">Available: </span><br class="d-md-none">
-    <span class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.start) }}</span> &dash;
-    <span class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.end) }}</span>
-</div>
-
-<div>
-    <img src="{{ doc.image }}" alt="">
-</div>
-<div class="mt-6">
-    <div>{{ doc.deskripsi }}</div>
+        <div class="mt-6">
+            <div>{{ doc.deskripsi }}</div>
+        </div>
+    </div>
 </div>
 
 {% endblock %}

@@ -1,5 +1,5 @@
 {% extends "templates/web_alt.html" %}
-{% from "templates/macros/for_detail_page.html" import page_head, meta_publisher, meta_icons %}
+{% from "templates/macros/for_detail_page.html" import page_head, meta_bar %}
 
 {% block page_content %}
 
@@ -29,16 +29,9 @@
     }
 </style>
 
-{{ page_head ( 'PODCAST', doc.judul, doc.category ) }}
+{{ page_head ( 'PODCAST', doc.judul, doc.multi_category ) }}
 
-<div class="info row py-2 py-sm-0">
-    {{ meta_publisher( doc.publisher ) }}
-
-    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
-    <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
-
-    {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
-</div>
+{{ meta_bar("Publisher:", doc.publisher, doc.creation, doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
 
 {%- if doc.video_source -%}
 <div class="video-container">
@@ -57,6 +50,7 @@
 <div class="mt-6">
     <div>{{ doc.deskripsi }}</div>
 </div>
+
 {% endblock %}
 
 <script>

@@ -34,9 +34,10 @@
     color: #c8c8c8;
 }
 .card-body {
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; */
+    padding-bottom: 0.3rem;
 }
 .content-card .content-card-footer {
     display: flex;
@@ -77,9 +78,11 @@
 .cat-bullet {
     background-color: #EAF5EE;
     color: #2F9D58;
-    padding: 3px 10px;
+    padding: 2px 4px;
     border-radius: 6px;
-    margin-right: 8px;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    display: inline-block;
 }
 #cat-chooser {
     height: 30px;
@@ -124,4 +127,11 @@
     border: 1px solid #ffe121;
     padding: 2px 4px;
     border-radius: 4px;
+}
+.likes {
+    background-color: #eee;
+    border-radius: 0 0 10px 10px;
+    margin-top: 0.5rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.35rem;
 }

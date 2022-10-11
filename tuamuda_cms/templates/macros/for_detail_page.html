@@ -6,47 +6,82 @@
         </a>
     </div>
     <h1 class="my-4">{{ judul }}</h1>
-    <div class="small text-muted">
+    <div class="small text-muted py-1">
     {%- for cat in category -%}
-        <span class="cat-bullet">
+        <div class="cat-bullet">
             #{{ cat.category }}
-        </span>
+        </div>
     {%- endfor -%}
     </div>
 {% endmacro %}
 
 {% macro meta_host(label, host) %}
-    {%- if host -%}
-    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left">{{ label }} <span class="font-weight-bold">{{ host }}</span></div>
-    {%- else -%}
-    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left"><span class="font-weight-bold"></span></div>
-    {%- endif -%}
+    <div class="col-12 col-sm-6 text-center text-sm-left">
+        {% if label %}
+        <span class="meta-publisher">{{ label }}</span>
+        {% endif %}
+        {% if host %}
+        <span class="font-weight-bold">{{ host }}</span>
+        {% else %}
+        <span class="font-weight-bold">-</span>
+        {% endif %}
+    </div>
 {% endmacro %}
 
-{% macro meta_publisher(publisher) %}
-    <div class="meta-publisher col-12 col-sm-6 text-center text-sm-left font-weight-bold">{{ publisher }}</div>
+{% macro meta_date(creation) %}
+    {% set date = frappe.utils.formatdate(creation, "dd mmmm yyyy") %}
+    <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
 {% endmacro %}
 
 {% macro meta_icons(rating, like_count, favorite_count, member_count) %}
-    <div class="meta-icons flex col-12 col-md-3 pt-4 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
+    <div class="meta-icons flex col-12 col-md-3 pt-2 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
         <div class="">
             {% if rating == 5 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></span>
+            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></a>
             {% elif rating == 4 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></span>
+            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></a>
             {% elif rating == 3 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
             {% elif rating == 2 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
             {% elif rating == 1 -%}
-            <span><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
             {% else %}
-            <span><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></span>
+            <a href=""><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
             {% endif %}
         </div>
-        <div class=""><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i> {{ like_count }}</div>
-        <div class=""><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i> {{ favorite_count }}</div>
-        <div class=""><i class="fa fa-user-o" id="memberCount" onClick="member()"></i> {{ member_count }}</div>
+        <a href="" class="text--success text-decoration-none" onClick="like()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-thumbs-o-up" id="likeCount"></i> {{ like_count }}</a>
+        <a href="" class="text-danger text-decoration-none" onClick="fav()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-heart-o" id="favCount"></i> {{ favorite_count }}</a>
+        <a href="" class="text-info text-decoration-none" onClick="member()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user-o" id="memberCount"></i> {{ member_count }}</a>
     </div>
+    <!-- Modal for icon bar click -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add count prototype</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {% if like_count %}Like ditambah menjadi {{ like_count + 1 }}{% endif %}<br>
+                    {% if favorite_count %}Fav ditambah menjadi {{ favorite_count + 1 }}{% endif %}<br>
+                    {% if member_count %}Member ditambah menjadi {{ member_count + 1 }}{% endif %}
+                </div>
+                <!-- <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+{% endmacro %}
+
+{% macro meta_bar( label, host, creation, rating, like_count, favorite_count, member_count) %}
+<div class="info row py-1">
+    {{ meta_host(label, host) }}
+    {{ meta_date(creation) }}
+    {{ meta_icons(rating, like_count, favorite_count, member_count) }}
 </div>
 {% endmacro %}

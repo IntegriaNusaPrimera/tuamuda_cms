@@ -1,44 +1,45 @@
-<div class="content-card col-sm-12 {{ 'col-md-8' if doc.featured else 'col-md-4' }}">
-	<div class="card h-100">
-		<div class="card-img-top">
-			{% if doc.image %}
-				<img src="{{ doc.image }}" alt="{{doc.judul}} - Cover Image">
-			{% else %}
-                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{doc.judul}} - Cover Image">
-			{% endif %}
-		</div>
-		<div class="card-body">
-			<div>
-				<div class="text-muted small">
-					{%- if doc.featured -%}
-						<span class="text-body">{{ _('Featured') }} &middot; </span>
-					{%- endif -%}
-                    <span>CATEGORY:
-                        {%- for cat in doc.category %}
-                            {{ cat.category }}{{ "," if not loop.last }}
-                        {%- endfor %}
-                    </span>
-				</div>
-				{%- if doc.featured -%}
-					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
-				{%- else -%}
-					<h5 class="mt-1"><span class="text-dark">{{ doc.judul }}</span></h5>
-				{%- endif -%}
-				<p class="post-description text-muted">{{ doc.subjudul }}</p>
-			</div>
-			<div class="content-card-footer row px-4">
-                {%- if doc.avatar -%}
-                <img class="avatar website-image-extra-small" src="{{ doc.avatar }}">
-                {%- else -%}
-                <img class="avatar website-image-extra-small" src="assets/tuamuda_cms/image/avatar.png">
-                {%- endif -%}
-				<div class="text-muted small pl-2">
-					<div class="">{{ doc.owner }}</div>
-					<div class="small">
-						{{ frappe.format_date(doc.published_on) }}
-						{% if doc.read_time %} &middot; {{ doc.read_time }} min read {% endif %}
-					</div>
-				</div>
+{% from "templates/macros/for_row_card.html" import card_image_left, card_pre_title %}
+
+<style>
+    .card {
+        height: 8rem;
+    }
+    .content-card {
+        margin-bottom: 1rem;
+    }
+    .card-img-left {
+        overflow: hidden;
+        border-top-left-radius: calc(0.75rem - 1px);
+        border-bottom-left-radius: calc(0.75rem - 1px);
+    }
+    .card-body {
+        padding-top: 0.5rem;
+        /* height: 8rem; */
+    }
+    .content-card-footer {
+        margin-top:0;
+    }
+    .likes {
+        display: block;
+        margin-top: auto;
+    }
+</style>
+
+<div class="content-card col-12">
+	<div class="card w-100 flex-row">
+        <div class="card-img-left col-3 px-0">
+            {{ card_image_left( doc.image, doc.judul, doc.rating, doc.featured ) }}
+        </div>
+		<div class="card-body col-9 d-flex-flex-column h-100">
+            {{ card_pre_title(doc.featured, doc.multi_category) }}
+            <h5 class="mt-1 text-dark">{{ doc.judul }}</h5>
+            <div class="text-muted small text-truncate">{{ doc.subjudul }}</div>
+			<div class="content-card-footer mt-auto float-right">
+                <div class="likes small d-flex flex-row bg-transparent">
+                    <div class="row text-muted mx-4"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small pl-2">{{ doc.like_count }}</div></div>
+                    <div class="row text-muted mx-4"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small pl-2">{{ doc.favorite_count }}</div></div>
+                    <div class="row text-muted mx-4"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small pl-2">{{ doc.member_count }}</div></div>
+                </div>
 			</div>
 		</div>
 		<a class="stretched-link" href="/{{ doc.route }}"></a>

@@ -85,10 +85,10 @@ frappe.ui.form.on('Podcast', {
     //     );
     // }
 
-    publisher_logo: function (frm) {
-        lnk = frm.doc.publisher_logo
-        img = document.getElementsByClassName( 'missing-image' );
-        img[0].innerHTML = "gambar";
-    }
+    // publisher_logo: function (frm) {
+    //     lnk = frm.doc.publisher_logo
+    //     img = document.getElementsByClassName( 'missing-image' );
+    //     img[0].innerHTML = "gambar";
+    // }
 
 });
