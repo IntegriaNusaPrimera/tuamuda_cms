@@ -1,26 +1,9 @@
+{% from "templates/macros/for_row_card.html" import card_image_top, card_tags, footer_icons_wrapper %}
+
 <div class="content-card col-sm-12 {{ 'col-md-12 featured' if doc.featured else 'col-md-4' }}">
 	<div class="card h-100">
 		<div class="card-img-top {{ 'feat-img row mx-0' if doc.featured }} position-relative">
-            <div class="{{ 'col-12 col-md-4' if doc.featured }} px-0">
-                {% if doc.image %}
-                <img src="{{ doc.image }}" alt="{{ doc.judul }} - Cover Image">
-                {% else %}
-                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ doc.judul }} - Cover Image">
-                {% endif %}
-            </div>
-            <div class="{{ 'col-md-8 d-md-block' if doc.featured else 'd-none' }} px-0">
-                {%- if doc.featured_image -%}
-                <img src="{{ doc.featured_image }}" alt="{{doc.judul}} - Feature Image">
-                {%- elif doc.image -%}
-                <img src="{{ doc.image }}" alt="{{doc.judul}} - Feature Image">
-                {% else %}
-                <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ doc.judul }} - Cover Image">
-                {%- endif -%}
-            </div>
-            <div class="star row">
-                <div><i class="fa {{ 'fa-star text-warning' if doc.rating else 'fa-star-o text-muted' }} pr-2" id="ratingCount" onClick="rating()"></i></div>
-                <div class="small align-self-center font-weight-bold">{{ doc.rating if doc.rating else 0 }}</div>
-            </div>
+            {{ card_image_top( image, judul, rating, featured=None, featured_image=None, featured_text=None) }}
         </div>
 		<div class="card-body {{ 'row mx-0' if doc.featured }}">
             <div class="kolom-1 col-12 {{ 'col-md-4' if doc.featured }} px-0">
