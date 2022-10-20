@@ -1,36 +1,30 @@
 {% extends "templates/web_alt.html" %}
-{% from "templates/macros/for_detail_page.html" import page_head, meta_host, meta_icons %}
+{% from "templates/macros/for_detail_page.html" import page_head, meta_bar %}
 
 {% block page_content %}
 
 {{ page_head ( 'CHAT GROUPS', doc.judul, doc.multi_category ) }}
 
-<div class="info row py-2 py-sm-0">
-    {{ meta_host( doc.host ) }}
+{{ meta_bar("Host:", doc.host, doc.creation, doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
 
-    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
-    <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
+<div class="d-flex flex-column-reverse flex-md-row">
+    <div class="col-12 col-md-8">
+        <h5 class="mb-5">{{ doc.subjudul }}</h5>
 
-    {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
-</div>
+        <div class="mt-6">
+            <div>{{ doc.deskripsi }}</div>
+        </div>
 
-<h5 class="mt-5 mb-4">Topic: {{ doc.subjudul }}</h5>
-
-<!-- <div class="my-6 text-md-right">
-    <span class="my-4">Available: </span><br class="d-md-none">
-    <span class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.start) }}</span> &dash;
-    <span class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.end) }}</span>
-</div> -->
-
-<div>
-    <img src="{{ doc.image }}" alt="">
-</div>
-<div class="mt-6">
-    <div>{{ doc.deskripsi }}</div>
-</div>
-
-<div class="text-center">
-    <a href="" class="btn align-self-center">Go to Chat</a>
+        <table class="my-6">
+            <tr class="border-md-bottom"><td class="font-weight-bold my-4 mb-md-1">Available</td><td></td><td></td></tr>
+            <tr><td class="pl-md-2">Start</td><td></td><td class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.start) }}</span><br class="d-md-block"></td></tr>
+            <tr><td class="pl-md-2">End</td><td></td><td class="bg-yellow font-weight-bold">{{ frappe.format_date(doc.end) }}</span></td></tr>
+        </table>
+    </div>
+    <div class="d-flex flex-column col-12 col-md-4 mb-6 mb-md-0">
+        <img src="{{ doc.image }}" alt="" class="px-0 mb-6 rounded shadow-lg">
+        <button class="btn-primary align-self-center rounded">Go to Chat</button>
+    </div>
 </div>
 
 {% endblock %}

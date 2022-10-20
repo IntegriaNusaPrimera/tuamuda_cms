@@ -1,4 +1,4 @@
-{% from "templates/macros/for_row_card.html" import card_image_left, card_pre_title %}
+{% from "templates/macros/for_row_card.html" import card_image_left, card_tags, footer_icons_wrapper, footer_icons %}
 
 <style>
     .card {
@@ -21,7 +21,9 @@
     }
     .likes {
         display: block;
-        margin-top: auto;
+        margin-top: auto!important;
+        border-top: none;
+        border-radius: 0;
     }
 </style>
 
@@ -30,16 +32,15 @@
         <div class="card-img-left col-3 px-0">
             {{ card_image_left( doc.image, doc.judul, doc.rating, doc.featured ) }}
         </div>
-		<div class="card-body col-9 d-flex-flex-column h-100">
-            {{ card_pre_title(doc.featured, doc.multi_category) }}
-            <h5 class="mt-1 text-dark">{{ doc.judul }}</h5>
-            <div class="text-muted small text-truncate">{{ doc.subjudul }}</div>
-			<div class="content-card-footer mt-auto float-right">
-                <div class="likes small d-flex flex-row bg-transparent">
-                    <div class="row text-muted mx-4"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small pl-2">{{ doc.like_count }}</div></div>
-                    <div class="row text-muted mx-4"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small pl-2">{{ doc.favorite_count }}</div></div>
-                    <div class="row text-muted mx-4"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small pl-2">{{ doc.member_count }}</div></div>
-                </div>
+		<div class="card-body col-9 d-flex flex-column h-100">
+            <div class="d-flex flex-row justify-content-between">
+                {{ card_tags(doc.multi_category, doc.status, doc.featured) }}
+                <button class="btn-primary btn-sm align-self-end rounded">Join Chat</button>
+            </div>
+            <h5 class="text-dark">{{ doc.judul }}</h5>
+            <div class="text-muted small text-truncate">{{ doc.subjudul or ""}}</div>
+			<div class="content-card-footer mt-auto align-self-end">
+                {{ footer_icons_wrapper("row", doc.like_count, doc.favorite_count, doc.member_count, doc.featured) }}
 			</div>
 		</div>
 		<a class="stretched-link" href="/{{ doc.route }}"></a>
