@@ -1,18 +1,11 @@
 {% extends "templates/web_alt.html" %}
-{% from "templates/macros/for_detail_page.html" import page_head, meta_host, meta_icons %}
+{% from "templates/macros/for_detail_page.html" import page_head, meta_bar %}
 
 {% block page_content %}
 
 {{ page_head ( 'AGENDA', doc.judul, doc.category ) }}
 
-<div class="info row py-2 py-sm-0">
-    {{ meta_host( doc.host ) }}
-
-    {% set date = frappe.utils.formatdate(doc.creation, "dd mmmm yyyy") %}
-    <div class="meta-publish col-12 col-sm-6 col-md-3 pt-4 pt-sm-0 text-center text-sm-right small align-self-center">{{ date }}</div>
-
-    {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
-</div>
+{{ meta_bar("Organizer:", doc.host, doc.creation, doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
 
 <div>
     <img src="{{ doc.image }}" alt="">
