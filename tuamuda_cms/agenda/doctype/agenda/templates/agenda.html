@@ -14,20 +14,19 @@
     {{ meta_icons( doc.rating, doc.like_count, doc.favorite_count, doc.member_count ) }}
 </div>
 
-<h5 class="mt-5 mb-4">Topic: {{ doc.subjudul }}</h5>
-
 <div>
     <img src="{{ doc.image }}" alt="">
 </div>
+<h5 class="mt-5 mb-4">{{ doc.subjudul }}</h5>
 <div class="mt-6">
     <div>{{ doc.deskripsi }}</div>
 </div>
 
-<div class="my-6 text-md-right">
+<div class="my-6">
     <table>
-        <tr><td>Location</td><td>:</td><td>{{ doc.location }}</td></tr>
-        <tr><td>Start</td><td>:</td><td>{{ frappe.format_date(doc.starts_on) }}</td></tr>
-        <tr><td>End</td><td>:</td><td>{{ frappe.format_date(doc.ends_on) }}</td></tr>
+        <tr><td>Location</td><td>&nbsp;:&nbsp;&nbsp;</td><td>{{ doc.location }}</td></tr>
+        <tr><td>Start</td><td>&nbsp;:&nbsp;&nbsp;</td><td class="text-md-right">{{ frappe.format_date(doc.starts_on) }}</td></tr>
+        <tr><td>End</td><td>&nbsp;:&nbsp;&nbsp;</td><td class="text-md-right">{{ frappe.format_date(doc.ends_on) }}</td></tr>
     </table>
 </div>
 
