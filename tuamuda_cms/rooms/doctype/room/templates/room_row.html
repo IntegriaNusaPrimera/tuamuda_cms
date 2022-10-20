@@ -1,28 +1,25 @@
-{% from "templates/macros/for_row_card.html" import card_image_top, card_pre_title %}
+{% from "templates/macros/for_row_card.html" import card_image_top, card_tags, footer_icons_wrapper %}
 
 <div class="content-card col-sm-12 {{ 'col-md-12 featured' if doc.featured else 'col-md-4' }}">
 	<div class="card h-100">
-        <div class="card-img-top {{ 'feat-img row mx-0' if featured }} position-relative">
+        <div class="card-img-top {{ 'feat-img row mx-0' if doc.featured }} position-relative">
             {{ card_image_top( doc.image, doc.judul, doc.rating, doc.featured, doc.featured_image, doc.featured_text) }}
         </div>
 		<div class="card-body {{ 'row mx-0' if doc.featured }}">
             <div class="kolom-1 d-flex flex-column col-12 {{ 'col-md-4' if doc.featured }} px-0 h-100">
-                {{ card_pre_title(doc.featured, doc.multi_category) }}
-                <h5 class="mt-1 text-dark">{{ doc.judul }}</h5>
+                {{ card_tags(doc.multi_category, doc.status, doc.featured) }}
+                <h5 class="text-dark mt-2 mb-1">{{ doc.judul }}</h5>
                 <div class="text-muted small text-truncate">{{ doc.subjudul }}</div>
                 <div class="content-card-footer mt-1 mb-3">
                     <div class="text-muted small">
-                        <table class="small">
-                            <tr><td>Start</td><td>: {{ frappe.format_date(doc.start, "dd MMM yyyy") }}</td></tr>
-                            <tr><td>End</td><td>: {{ frappe.format_date(doc.end, "dd MMM yyyy") }}</td></tr>
+                        <table class=>
+                            <tr><td>Host</td><td>:</td><td class="font-weight-bold text-info">{{ doc.host or "Unhosted" }}</td></tr>
+                            <tr class="small"><td>Start</td><td>:</td><td>{{ frappe.format_date(doc.start, "dd MMM yyyy") }}</td></tr>
+                            <tr class="small"><td>End</td><td>:</td><td>{{ frappe.format_date(doc.end, "dd MMM yyyy") }}</td></tr>
                         </table>
                     </div>
                 </div>
-                <div class="likes row {{ 'mr-md-6' if doc.featured }} small mt-auto">
-                    <div class="col text-center text-muted px-0"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small">{{ doc.like_count }} likes</div></div>
-                    <div class="col text-center text-muted px-0"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small">{{ doc.favorite_count }} saves</div></div>
-                    <div class="col text-center text-muted px-0"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small">{{ doc.member_count }} follow</div></div>
-                </div>
+                {{ footer_icons_wrapper("column", doc.like_count, doc.favorite_count, doc.member_count, doc.featured) }}
             </div>
             <div class="kolom-2 d-none {{ 'col-md-8 d-md-block pr-0 align-self-center border-left' if doc.featured }}">
                 <div class="text-muted small">{{ doc.featured_text }}</div>
