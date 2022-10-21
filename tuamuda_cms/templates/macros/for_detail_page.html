@@ -1,7 +1,7 @@
 {% macro page_head(heading, judul, category) %}
     <div>
         <a href="#" onclick="history.back()" class="text-decoration-none">
-            <i class="fa fa-chevron-left text-muted"></i>
+            <i class="fa fa-chevron-left text-muted d-md-none"></i>
             <span class="text-uppercase mt-6 text-dark">{{ heading }}</span>
         </a>
     </div>
@@ -23,7 +23,7 @@
         {% if host %}
         <span class="font-weight-bold">{{ host }}</span>
         {% else %}
-        <span class="font-weight-bold">-</span>
+        <span class="font-weight-bold"></span>
         {% endif %}
     </div>
 {% endmacro %}

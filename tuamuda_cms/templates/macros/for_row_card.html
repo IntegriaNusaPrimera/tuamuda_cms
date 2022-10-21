@@ -17,7 +17,7 @@
     </div>
     <div class="star row">
         <div><i class="fa {{ 'fa-star text-warning' if rating else 'fa-star-o text-muted' }} pr-2" id="ratingCount" onClick="rating()"></i></div>
-        <div class="small align-self-center font-weight-bold">{{ rating if rating else 0 }}</div>
+        <div class="small align-self-center font-weight-bold">{{ rating | default(0, true) }}</div>
     </div>
 {% endmacro %}
 
@@ -31,13 +31,16 @@
     </div>
     <div class="star row">
         <div><i class="fa {{ 'fa-star text-warning' if rating else 'fa-star-o text-muted' }} pr-2" id="ratingCount" onClick="rating()"></i></div>
-        <div class="small align-self-center font-weight-bold">{{ rating if rating else 0 }}</div>
+        <div class="small align-self-center font-weight-bold">{{ rating or 0 }}</div>
     </div>
 {% endmacro %}
 
-{% macro card_pre_title(featured, category) %}
-    <div class="card-title">
+{% macro card_tags(category, status=None, featured=None) %}
+    <div class="card-tags">
         <div class="text-muted small">
+            {%- if status=="Closed" -%}
+                <span class="text-danger font-weight-bold">{{ status }} &middot; </span>
+            {%- endif -%}
             {%- if featured -%}
                 <span class="text-danger font-weight-bold">{{ _('Featured') }} &middot; </span>
             {%- endif -%}
@@ -68,15 +71,14 @@
     </div>
 {% endmacro %}
 
-{% macro footer_icons(featured, like_count, favorite_count, member_count) %}
-    <div class="likes row mt-5 {{ 'mr-md-4 mr-lg-6' if featured }}">
-        <div class="col text-center text-muted px-0"><i class="fa fa-thumbs-o-up" id="likeCount" onClick="like()"></i><div class="small">{{ like_count }} likes</div></div>
-        <div class="col text-center text-muted px-0"><i class="fa fa-heart-o" id="favCount" onClick="fav()"></i><div class="small">{{ favorite_count }} saves</div></div>
-        <div class="col text-center text-muted px-0"><i class="fa fa-user-o" id="memberCount" onClick="member()"></i><div class="small">{{ member_count }} follow</div></div>
-    </div>
+{% macro footer_icons(flex, like_count, favorite_count, member_count, featured) %}
+    <div class="d-flex flex-{{flex}} text-center text-muted px-md-4"><i class="fa fa-thumbs-o-up text-info {% if flex=='row' %} pr-1 {% elif flex=='column' %} pb-1 {% endif %}" id="likeCount" onClick="like()"></i><div class="small">{{ like_count }} likes</div></div>
+    <div class="d-flex flex-{{flex}} text-center text-muted px-md-4"><i class="fa fa-heart-o text-danger {% if flex=='row' %} pr-1 {% elif flex=='column' %} pb-1 {% endif %}" id="favCount" onClick="fav()"></i><div class="small">{{ favorite_count }} saves</div></div>
+    <div class="d-flex flex-{{flex}} text-center text-muted px-md-4"><i class="fa fa-user-o text-success {% if flex=='row' %} pr-1 {% elif flex=='column' %} pb-1 {% endif %}" id="memberCount" onClick="member()"></i><div class="small">{{ member_count }} follow</div></div>
 {% endmacro %}
 
-
-<!-- template card dari agenda -->
-
-<!-- end template -->
+{% macro footer_icons_wrapper(flex, like_count, favorite_count, member_count, featured=None) %}
+    <div class="likes d-flex flex-row {{ 'mr-md-4 mr-lg-6' if featured }} small mt-auto justify-content-between">
+        {{ footer_icons(flex, like_count, favorite_count, member_count, featured) }}
+    </div>
+{% endmacro %}

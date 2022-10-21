@@ -129,9 +129,9 @@
     border-radius: 4px;
 }
 .likes {
-    background-color: #eee;
-    border-radius: 0 0 10px 10px;
-    margin-top: 0.5rem;
-    padding-top: 0.35rem;
-    padding-bottom: 0.35rem;
+    /* background-color: #eee; */
+    border-top: 1px solid #eee;
+    /* border-radius: 0 0 10px 10px; */
+    padding-top: 0.65rem;
+    padding-bottom: 0.15rem;
 }
