@@ -528,7 +528,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:55:40.820410",
+  "modified": "2022-10-07 17:02:07.511486",
   "module": "Core",
   "name": "Settings",
   "onboarding": null,
@@ -768,7 +768,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:57:57.126082",
+  "modified": "2022-10-07 16:56:15.941828",
   "module": "Custom",
   "name": "Customization",
   "onboarding": null,
@@ -1217,7 +1217,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:57:07.135185",
+  "modified": "2022-10-07 17:00:12.240712",
   "module": "Integrations",
   "name": "Integrations",
   "onboarding": null,
@@ -1504,7 +1504,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:52:40.561970",
+  "modified": "2022-10-07 16:55:22.088596",
   "module": "Core",
   "name": "Build",
   "onboarding": null,
@@ -1639,7 +1639,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:47:04.719916",
+  "modified": "2022-10-07 16:48:23.941123",
   "module": "Rooms",
   "name": "Rooms",
   "onboarding": null,
@@ -1774,7 +1774,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:44:10.631452",
+  "modified": "2022-10-07 16:46:03.008911",
   "module": "Chat Group",
   "name": "Chat Groups",
   "onboarding": null,
@@ -1909,7 +1909,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:46:21.688297",
+  "modified": "2022-10-07 16:47:40.744857",
   "module": "Podcast",
   "name": "Podcasts",
   "onboarding": null,
@@ -2044,7 +2044,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:45:41.321643",
+  "modified": "2022-10-07 16:46:52.796017",
   "module": "Consult",
   "name": "Consults",
   "onboarding": null,
@@ -2179,7 +2179,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:41:58.607252",
+  "modified": "2022-10-07 16:41:06.767230",
   "module": "Agenda",
   "name": "Agendas",
   "onboarding": null,
@@ -2314,7 +2314,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:47:50.916204",
+  "modified": "2022-10-07 16:50:06.142599",
   "module": "Members",
   "name": "Members",
   "onboarding": null,
@@ -2449,7 +2449,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:43:14.732029",
+  "modified": "2022-10-07 16:49:15.741760",
   "module": "Website",
   "name": "Articles",
   "onboarding": null,
@@ -2526,7 +2526,7 @@
    {
     "dependencies": null,
     "hidden": 0,
-    "icon": null,
+    "icon": "link-url",
     "is_query_report": 0,
     "label": "Event Streaming",
     "link_to": null,
@@ -2567,6 +2567,21 @@
     "parentfield": "links",
     "parenttype": "Workspace",
     "type": "Link"
+   },
+   {
+    "dependencies": null,
+    "hidden": 0,
+    "icon": "setting",
+    "is_query_report": 0,
+    "label": "Setting",
+    "link_to": null,
+    "link_type": "DocType",
+    "onboard": 0,
+    "only_for": null,
+    "parent": "Event Streaming",
+    "parentfield": "links",
+    "parenttype": "Workspace",
+    "type": "Card Break"
    },
    {
     "dependencies": null,
@@ -2614,7 +2629,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 10:02:03.502832",
+  "modified": "2022-10-07 16:58:12.424203",
   "module": "Automation",
   "name": "Event Streaming",
   "onboarding": null,
@@ -2654,68 +2669,6 @@
     "type": "DocType"
    }
   ],
-  "shortcuts_label": null
- },
- {
-  "cards_label": null,
-  "category": "Modules",
-  "charts": [],
-  "charts_label": null,
-  "developer_mode_only": 0,
-  "disable_user_customization": 0,
-  "docstatus": 0,
-  "doctype": "Workspace",
-  "extends": "Website",
-  "extends_another_page": 1,
-  "for_user": null,
-  "hide_custom": 0,
-  "icon": null,
-  "is_default": 0,
-  "is_standard": 1,
-  "label": "Artikel",
-  "links": [
-   {
-    "dependencies": null,
-    "hidden": 0,
-    "icon": null,
-    "is_query_report": 0,
-    "label": "Test",
-    "link_to": null,
-    "link_type": "DocType",
-    "onboard": 0,
-    "only_for": null,
-    "parent": "Artikel",
-    "parentfield": "links",
-    "parenttype": "Workspace",
-    "type": "Card Break"
-   },
-   {
-    "dependencies": null,
-    "hidden": 0,
-    "icon": null,
-    "is_query_report": 0,
-    "label": "Test",
-    "link_to": "Blog Post",
-    "link_type": "DocType",
-    "onboard": 0,
-    "only_for": null,
-    "parent": "Artikel",
-    "parentfield": "links",
-    "parenttype": "Workspace",
-    "type": "Link"
-   }
-  ],
-  "modified": "2022-09-30 09:18:09.424303",
-  "module": "Automation",
-  "name": "Artikel",
-  "onboarding": null,
-  "parent": null,
-  "parentfield": null,
-  "parenttype": null,
-  "pin_to_bottom": 0,
-  "pin_to_top": 0,
-  "restrict_to_domain": null,
-  "shortcuts": [],
   "shortcuts_label": null
  },
  {
@@ -3052,7 +3005,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 09:51:20.969202",
+  "modified": "2022-10-07 16:54:12.886544",
   "module": "Website",
   "name": "Website",
   "onboarding": "",
@@ -3350,7 +3303,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 10:04:51.966369",
+  "modified": "2022-10-07 16:52:21.217798",
   "module": "Automation",
   "name": "Tools",
   "onboarding": null,
@@ -3648,7 +3601,7 @@
     "type": "Link"
    }
   ],
-  "modified": "2022-09-30 10:06:21.733599",
+  "modified": "2022-10-07 16:51:16.840551",
   "module": "Core",
   "name": "Users",
   "onboarding": null,

@@ -12,12 +12,37 @@
   "end": null,
   "favorite_count": 0,
   "host": null,
-  "image": null,
+  "image": "https://plus.unsplash.com/premium_photo-1658506891404-bfb50c7415f0",
   "judul": "Obrolan Bebas",
   "like_count": 3,
   "member_count": 5,
-  "modified": "2022-09-17 20:08:43.772949",
-  "multi_category": [],
+  "modified": "2022-10-11 12:18:53.543296",
+  "multi_category": [
+   {
+    "category": "Kesehatan",
+    "parent": "obrolan-bebas",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   },
+   {
+    "category": "Olahraga",
+    "parent": "obrolan-bebas",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   },
+   {
+    "category": "Makanan",
+    "parent": "obrolan-bebas",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   },
+   {
+    "category": "Bebas",
+    "parent": "obrolan-bebas",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   }
+  ],
   "name": "obrolan-bebas",
   "parent": null,
   "parentfield": null,
@@ -26,7 +51,7 @@
   "rating": 3,
   "route": "room/obrolan-bebas",
   "start": "2022-09-17",
-  "subjudul": "Ngobrol apa aja disini",
+  "subjudul": "Ngobrol apa aja disini jsalkdjas aksdjlkas dlkasjd askdjals djklasjdaslkjd adkljas djaskljdlas",
   "url": "https://tuamuda.id/obrolan-bebas"
  },
  {
@@ -40,22 +65,22 @@
   "docstatus": 0,
   "doctype": "Room",
   "end": null,
-  "favorite_count": 0,
-  "host": null,
+  "favorite_count": 39,
+  "host": "Pembawa Acara",
   "image": "https://images.unsplash.com/photo-1549576490-b0b4831ef60a",
   "judul": "Bahas Olahraga",
-  "like_count": 3,
-  "member_count": 5,
-  "modified": "2022-10-06 23:40:32.185807",
+  "like_count": 943,
+  "member_count": 57,
+  "modified": "2022-10-11 12:16:02.730132",
   "multi_category": [
    {
-    "category": "Umum",
+    "category": "Bebas",
     "parent": "bahas-olahraga",
     "parentfield": "multi_category",
     "parenttype": "Room"
    },
    {
-    "category": "Kesehatan",
+    "category": "Aktivitas",
     "parent": "bahas-olahraga",
     "parentfield": "multi_category",
     "parenttype": "Room"
