@@ -36,19 +36,10 @@
 {% macro meta_icons(rating, like_count, favorite_count, member_count) %}
     <div class="meta-icons flex col-12 col-md-3 pt-2 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
         <div class="">
-            {% if rating == 5 -%}
-            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i></a>
-            {% elif rating == 4 -%}
-            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i></a>
-            {% elif rating == 3 -%}
-            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
-            {% elif rating == 2 -%}
-            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
-            {% elif rating == 1 -%}
-            <a href=""><i class="fa fa-star text-warning"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
-            {% else %}
-            <a href=""><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i><i class="fa fa-star-o text-muted"></i></a>
-            {% endif %}
+            {% set unrated = 5 - rating %}
+            <a href="">
+                {{'<i class="fa fa-star text-warning"></i>' * rating}}{{'<i class="fa fa-star text-muted"></i>' * unrated}}
+            </a>
         </div>
         <a href="" class="text--success text-decoration-none" onClick="like()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-thumbs-o-up" id="likeCount"></i> {{ like_count }}</a>
         <a href="" class="text-danger text-decoration-none" onClick="fav()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-heart-o" id="favCount"></i> {{ favorite_count }}</a>
