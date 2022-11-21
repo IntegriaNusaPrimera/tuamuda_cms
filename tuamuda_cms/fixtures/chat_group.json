@@ -14,16 +14,16 @@
   "judul": "Tanya jawab fashion",
   "like_count": 0,
   "member_count": 0,
-  "modified": "2022-10-06 15:51:40.627400",
+  "modified": "2022-10-21 15:10:49.401590",
   "multi_category": [
    {
-    "category": "Hiburan",
+    "category": "Liburan",
     "parent": "cg123",
     "parentfield": "multi_category",
     "parenttype": "Chat Group"
    },
    {
-    "category": "Jalan-jalan",
+    "category": "Diskusi",
     "parent": "cg123",
     "parentfield": "multi_category",
     "parenttype": "Chat Group"
@@ -49,20 +49,27 @@
   "deskripsi": null,
   "docstatus": 0,
   "doctype": "Chat Group",
-  "favorite_count": 0,
+  "favorite_count": 435,
   "image": null,
   "judul": "Chatgroup 1",
-  "like_count": 0,
-  "member_count": 0,
-  "modified": "2022-10-11 14:34:54.424534",
-  "multi_category": [],
+  "like_count": 324,
+  "member_count": 345,
+  "modified": "2022-10-21 15:13:19.998271",
+  "multi_category": [
+   {
+    "category": "Bebas",
+    "parent": "chatgroup-1",
+    "parentfield": "multi_category",
+    "parenttype": "Chat Group"
+   }
+  ],
   "name": "chatgroup-1",
   "parent": null,
   "parentfield": null,
   "parenttype": null,
   "published": 0,
-  "rating": null,
-  "route": "chatgroups/chatgroup-1",
+  "rating": 5,
+  "route": null,
   "subjudul": null,
   "url": "https://www.google.com"
  },
@@ -76,21 +83,21 @@
   "deskripsi": "Test chat group di system user non admin",
   "docstatus": 0,
   "doctype": "Chat Group",
-  "favorite_count": 5,
+  "favorite_count": 0,
   "image": null,
   "judul": "Test Chat Group",
-  "like_count": 3,
-  "member_count": 8,
-  "modified": "2022-10-13 23:05:10.901614",
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-10-21 15:11:03.924825",
   "multi_category": [
    {
-    "category": "Hiburan",
+    "category": "Bebas",
     "parent": "test-chat-group",
     "parentfield": "multi_category",
     "parenttype": "Chat Group"
    },
    {
-    "category": "Lifestyle",
+    "category": "Liburan",
     "parent": "test-chat-group",
     "parentfield": "multi_category",
     "parenttype": "Chat Group"
@@ -101,7 +108,7 @@
   "parentfield": null,
   "parenttype": null,
   "published": 1,
-  "rating": 3,
+  "rating": null,
   "route": "chatgroups/test-chat-group",
   "subjudul": null,
   "url": "http://tuamuda.id/chatgroup3"

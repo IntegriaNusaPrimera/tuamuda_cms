@@ -12,37 +12,12 @@
   "end": null,
   "favorite_count": 0,
   "host": null,
-  "image": "https://plus.unsplash.com/premium_photo-1658506891404-bfb50c7415f0",
+  "image": null,
   "judul": "Obrolan Bebas",
   "like_count": 3,
   "member_count": 5,
-  "modified": "2022-10-11 12:18:53.543296",
-  "multi_category": [
-   {
-    "category": "Kesehatan",
-    "parent": "obrolan-bebas",
-    "parentfield": "multi_category",
-    "parenttype": "Room"
-   },
-   {
-    "category": "Olahraga",
-    "parent": "obrolan-bebas",
-    "parentfield": "multi_category",
-    "parenttype": "Room"
-   },
-   {
-    "category": "Makanan",
-    "parent": "obrolan-bebas",
-    "parentfield": "multi_category",
-    "parenttype": "Room"
-   },
-   {
-    "category": "Bebas",
-    "parent": "obrolan-bebas",
-    "parentfield": "multi_category",
-    "parenttype": "Room"
-   }
-  ],
+  "modified": "2022-09-17 20:08:43.772949",
+  "multi_category": [],
   "name": "obrolan-bebas",
   "parent": null,
   "parentfield": null,
@@ -51,7 +26,7 @@
   "rating": 3,
   "route": "room/obrolan-bebas",
   "start": "2022-09-17",
-  "subjudul": "Ngobrol apa aja disini jsalkdjas aksdjlkas dlkasjd askdjals djklasjdaslkjd adkljas djaskljdlas",
+  "subjudul": "Ngobrol apa aja disini",
   "url": "https://tuamuda.id/obrolan-bebas"
  },
  {
@@ -65,22 +40,22 @@
   "docstatus": 0,
   "doctype": "Room",
   "end": null,
-  "favorite_count": 39,
-  "host": "Pembawa Acara",
+  "favorite_count": 0,
+  "host": "tuamuda.id",
   "image": "https://images.unsplash.com/photo-1549576490-b0b4831ef60a",
   "judul": "Bahas Olahraga",
-  "like_count": 943,
-  "member_count": 57,
-  "modified": "2022-10-11 12:16:02.730132",
+  "like_count": 3,
+  "member_count": 5,
+  "modified": "2022-10-12 11:47:25.950025",
   "multi_category": [
    {
-    "category": "Bebas",
+    "category": "Umum",
     "parent": "bahas-olahraga",
     "parentfield": "multi_category",
     "parenttype": "Room"
    },
    {
-    "category": "Aktivitas",
+    "category": "Kesehatan",
     "parent": "bahas-olahraga",
     "parentfield": "multi_category",
     "parenttype": "Room"
@@ -96,5 +71,48 @@
   "start": "2022-09-17",
   "subjudul": "Webinar tentang olahraga",
   "url": "https://tuamuda.id/olahraga"
+ },
+ {
+  "1_star": 0,
+  "2_star": 0,
+  "3_star": 0,
+  "4_star": 0,
+  "5_star": 0,
+  "amended_from": null,
+  "deskripsi": null,
+  "docstatus": 0,
+  "doctype": "Room",
+  "end": "2022-10-16",
+  "favorite_count": 0,
+  "host": "tuamuda.id",
+  "image": "/files/channels4_profile.jpg",
+  "judul": "Virtual Gathering ke 4",
+  "like_count": 0,
+  "member_count": 0,
+  "modified": "2022-11-18 08:47:36.163108",
+  "multi_category": [
+   {
+    "category": "Kesehatan",
+    "parent": "virtual-gathering-ke-4",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   },
+   {
+    "category": "Umum",
+    "parent": "virtual-gathering-ke-4",
+    "parentfield": "multi_category",
+    "parenttype": "Room"
+   }
+  ],
+  "name": "virtual-gathering-ke-4",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "published": 1,
+  "rating": null,
+  "route": "room/virtual-gathering-ke-4",
+  "start": "2022-10-15",
+  "subjudul": "Virtual Gathering",
+  "url": "https://tuamuda.id/virtualgath"
  }
 ]
