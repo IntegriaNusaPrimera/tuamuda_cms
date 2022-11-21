@@ -36,6 +36,9 @@
 {% macro meta_icons(rating, like_count, favorite_count, member_count) %}
     <div class="meta-icons flex col-12 col-md-3 pt-2 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
         <div class="">
+            {% if not rating %}
+                {% set rating = 0 %}
+            {% endif %}
             {% set unrated = 5 - rating %}
             <a id="countStar" onClick="rating()" value="{{rating}}" style="cursor:pointer">
                 {{'<i class="fa fa-star text-warning"></i>' * rating}}{{'<i class="fa fa-star text-muted"></i>' * unrated}}
