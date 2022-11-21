@@ -23,11 +23,11 @@
   "section_break_10",
   "deskripsi",
   "section_break_12",
-  "starts_on",
+  "start",
   "location",
   "organizer",
   "column_break_14",
-  "ends_on",
+  "end",
   "status",
   "all_day",
   "repeat_this_event",
@@ -65,19 +65,6 @@
    "fieldname": "repeat_this_event",
    "fieldtype": "Check",
    "label": "Repeat this Event"
-  },
-  {
-   "allow_on_submit": 1,
-   "fieldname": "starts_on",
-   "fieldtype": "Datetime",
-   "label": "Starts on",
-   "reqd": 1
-  },
-  {
-   "allow_on_submit": 1,
-   "fieldname": "ends_on",
-   "fieldtype": "Datetime",
-   "label": "Ends on"
   },
   {
    "default": "Open",
@@ -357,6 +344,19 @@
    "label": "Category",
    "options": "Multi Category Agenda",
    "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "end",
+   "fieldtype": "Datetime",
+   "label": "Ends on"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "start",
+   "fieldtype": "Datetime",
+   "label": "Starts on",
+   "reqd": 1
   }
  ],
  "has_web_view": 1,
@@ -366,23 +366,13 @@
  "links": [],
  "make_attachments_public": 1,
  "max_attachments": 1,
- "modified": "2022-10-05 23:04:53.351515",
+ "modified": "2022-11-21 12:57:52.771708",
  "modified_by": "Administrator",
  "module": "Agenda",
  "name": "Agenda",
  "name_case": "UPPER CASE",
  "owner": "Administrator",
  "permissions": [
-  {
-   "create": 1,
-   "email": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "All",
-   "share": 1,
-   "write": 1
-  },
   {
    "create": 1,
    "delete": 1,
@@ -393,6 +383,30 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Content Admin",
    "share": 1,
    "write": 1
   }

@@ -16,6 +16,10 @@
   "image",
   "published",
   "section_break_8",
+  "start",
+  "column_break_10",
+  "end",
+  "section_break_12",
   "route",
   "amended_from",
   "section_break_10",
@@ -105,7 +109,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
    "fieldname": "section_break_8",
    "fieldtype": "Section Break"
   },
@@ -181,6 +184,25 @@
    "fieldtype": "Table MultiSelect",
    "label": "Category",
    "options": "Multi Category Chat"
+  },
+  {
+   "fieldname": "start",
+   "fieldtype": "Date",
+   "label": "Start"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "end",
+   "fieldtype": "Date",
+   "label": "End"
+  },
+  {
+   "depends_on": "eval:frappe.user.has_role(\"Administrator\");",
+   "fieldname": "section_break_12",
+   "fieldtype": "Section Break"
   }
  ],
  "has_web_view": 1,
@@ -190,7 +212,7 @@
  "links": [],
  "make_attachments_public": 1,
  "max_attachments": 1,
- "modified": "2022-10-05 23:03:50.433269",
+ "modified": "2022-11-21 13:00:05.474998",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Group",
@@ -206,6 +228,30 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Website Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Content Admin",
    "share": 1,
    "write": 1
   }
