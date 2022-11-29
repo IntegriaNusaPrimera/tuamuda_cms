@@ -36,17 +36,29 @@
 {% macro meta_icons(rating, like_count, favorite_count, member_count) %}
     <div class="meta-icons flex col-12 col-md-3 pt-2 pt-sm-0 small align-self-center justify-content-around justify-content-sm-between">
         <div class="">
+            {% if not rating %}
+                {% set rating = 0 %}
+            {% endif %}
             {% set unrated = 5 - rating %}
-            <a href="">
+            <a id="countStar" onClick="rating()" value="{{rating}}" style="cursor:pointer">
                 {{'<i class="fa fa-star text-warning"></i>' * rating}}{{'<i class="fa fa-star text-muted"></i>' * unrated}}
             </a>
         </div>
-        <a href="" class="text--success text-decoration-none" onClick="like()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-thumbs-o-up" id="likeCount"></i> {{ like_count }}</a>
-        <a href="" class="text-danger text-decoration-none" onClick="fav()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-heart-o" id="favCount"></i> {{ favorite_count }}</a>
-        <a href="" class="text-info text-decoration-none" onClick="member()" data-toggle="modal" data-target="#exampleModal"><i class="fa fa-user-o" id="memberCount"></i> {{ member_count }}</a>
+        <a id="countLike" value="{{like_count}}" class="text-success text-decoration-none" onClick="like()" data-toggle="modal" data-target="#exampleModal" style="cursor:pointer">
+            <i class="fa fa-thumbs-o-up mr-1" id="likeCount"></i>
+            {{- like_count -}}
+        </a>
+        <a id="countFav" value="{{favorite_count}}" class="text-danger text-decoration-none" onClick="fav()" data-toggle="modal" data-target="#exampleModal" style="cursor:pointer">
+            <i class="fa fa-heart-o mr-1" id="favCount"></i>
+            {{- favorite_count -}}
+        </a>
+        <a id="countMember" value="{{member_count}}" class="text-info text-decoration-none" onClick="member()" data-toggle="modal" data-target="#exampleModal" style="cursor:pointer">
+            <i class="fa fa-user-o mr-1" id="memberCount"></i>
+            {{- member_count -}}
+        </a>
     </div>
     <!-- Modal for icon bar click -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -60,13 +72,38 @@
                     {% if favorite_count %}Fav ditambah menjadi {{ favorite_count + 1 }}{% endif %}<br>
                     {% if member_count %}Member ditambah menjadi {{ member_count + 1 }}{% endif %}
                 </div>
-                <!-- <div class="modal-footer">
+                <div class="modal-footer">
                     <button type="button" class="btn btn-secondary float-right" data-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
-                </div> -->
+                </div>
             </div>
         </div>
-    </div>
+    </div> -->
+    <script>
+        function rating() {
+            let count = document.getElementById( 'countStar' ).getAttribute( 'value' );
+            let recount = parseInt( count ) + 1;
+            document.getElementById( 'countStar' ).setAttribute( 'value', recount )
+        }
+        function like() {
+            let count = document.getElementById('countLike').textContent;
+            let recount = parseInt(count) + 1;
+            document.getElementById( 'countLike' ).innerHTML = '<i class="fa fa-thumbs-o-up mr-1" id="likeCount"></i>'+ recount;
+            document.getElementById( 'countLike' ).setAttribute( 'value', recount )
+        }
+        function fav() {
+            let count = document.getElementById( 'countFav' ).textContent;
+            let recount = parseInt( count ) + 1;
+            document.getElementById( 'countFav' ).innerHTML = '<i class="fa fa-heart-o mr-1" id="favCount"></i>' + recount;
+            document.getElementById( 'countFav' ).setAttribute( 'value', recount )
+        }
+        function member() {
+            let count = document.getElementById( 'countMember' ).textContent;
+            let recount = parseInt( count ) + 1;
+            document.getElementById( 'countMember' ).innerHTML = '<i class="fa fa-user-o mr-1" id="memberCount"></i>' + recount;
+            document.getElementById( 'countMember' ).setAttribute( 'value', recount )
+        }
+    </script>
 {% endmacro %}
 
 {% macro meta_bar( label, host, creation, rating, like_count, favorite_count, member_count) %}

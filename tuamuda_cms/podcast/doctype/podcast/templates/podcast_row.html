@@ -3,7 +3,7 @@
 <div class="content-card col-sm-12 {{ 'col-md-12 featured' if doc.featured else 'col-md-4' }}">
 	<div class="card h-100">
 		<div class="card-img-top {{ 'feat-img row mx-0' if doc.featured }} position-relative">
-            {{ card_image_top( doc.image, doc.judul, doc.rating, doc.featured, doc.featured_image, doc.featured_text) }}
+            {{ card_image_top( image, judul, rating, featured, featured_image, featured_text=None) }}
         </div>
 		<div class="card-body {{ 'row mx-0' if doc.featured }}">
             <div class="kolom-1 col-12 {{ 'col-md-4' if doc.featured }} px-0">
