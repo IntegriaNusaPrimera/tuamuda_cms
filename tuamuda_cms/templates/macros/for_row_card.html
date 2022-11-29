@@ -1,18 +1,12 @@
 {% macro card_image_top( image, judul, rating, featured=None, featured_image=None, featured_text=None) %}
-    <div class="{{- 'col-12 col-md-4' if featured -}} px-0">
-        {% if image %}
-        <img src="{{ image }}" alt="{{ judul }} - Cover Image">
-        {% else %}
-        <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ judul }} - Cover Image">
-        {% endif %}
+    <div class="{{ 'col-12 col-md-4' if featured }} px-0">
+        <img src="{{ image or '/assets/tuamuda_cms/image/default-cover.png' }}" alt="{{ judul }} - Cover Image">
     </div>
-    <div class="{{- 'col-md-8 d-md-block' if featured else 'd-none' -}} px-0">
+    <div class="{{ 'col-md-8 d-md-block' if featured else 'd-none' }} px-0">
         {%- if featured_image -%}
         <img src="{{ featured_image }}" alt="{{judul}} - Feature Image">
-        {%- elif image -%}
-        <img src="{{ featured_image }}" alt="{{ judul }} - Feature Image">
         {% else %}
-        <img src="/assets/tuamuda_cms/image/default-cover.png" alt="{{ judul }} - Cover Image">
+        <img src="{{ image or '/assets/tuamuda_cms/image/default-cover.png' }}" alt="{{ judul }} - Cover Image">
         {%- endif -%}
     </div>
     <div class="star row">

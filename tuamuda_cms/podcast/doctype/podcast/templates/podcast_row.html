@@ -1,5 +1,6 @@
 {% from "templates/macros/for_row_card.html" import card_image_top, card_tags, footer_icons_wrapper %}
 
+{%- if published -%}
 <div class="content-card col-sm-12 {{ 'col-md-12 featured' if doc.featured else 'col-md-4' }}">
 	<div class="card h-100">
 		<div class="card-img-top {{ 'feat-img row mx-0' if doc.featured }} position-relative">
@@ -41,3 +42,4 @@
 		<a class="stretched-link" href="/{{ doc.route }}"></a>
 	</div>
 </div>
+{%- endif -%}
