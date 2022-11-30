@@ -283,7 +283,7 @@
  "index_web_pages_for_search": 1,
  "is_published_field": "published",
  "links": [],
- "modified": "2022-11-29 21:30:35.883025",
+ "modified": "2022-11-30 09:21:41.603236",
  "modified_by": "Administrator",
  "module": "Podcast",
  "name": "Podcast",
@@ -299,18 +299,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Website Manager",
    "share": 1,
    "write": 1
   },

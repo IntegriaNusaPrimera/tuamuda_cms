@@ -212,7 +212,7 @@
  "links": [],
  "make_attachments_public": 1,
  "max_attachments": 1,
- "modified": "2022-11-21 13:00:05.474998",
+ "modified": "2022-11-30 09:23:01.097782",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Group",
@@ -228,18 +228,6 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Website Manager",
    "share": 1,
    "write": 1
   },
