@@ -52,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-11-21 11:16:29.086404",
+ "modified": "2022-12-08 13:39:34.778079",
  "modified_by": "Administrator",
  "module": "Chat Group",
  "name": "Chat Groups",
@@ -61,10 +61,12 @@
  "pin_to_top": 0,
  "shortcuts": [
   {
-   "doc_view": "New",
-   "icon": "add",
-   "label": "Chat Group",
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
    "link_to": "Chat Group",
+   "stats_filter": "{}",
    "type": "DocType"
   },
   {
@@ -75,12 +77,10 @@
    "type": "DocType"
   },
   {
-   "doc_view": "Dashboard",
-   "format": "Total: {}",
-   "icon": "dashboard",
-   "label": "Dashboard",
+   "doc_view": "New",
+   "icon": "add",
+   "label": "Chat Group",
    "link_to": "Chat Group",
-   "stats_filter": "{}",
    "type": "DocType"
   }
  ],

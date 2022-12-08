@@ -52,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-10-07 16:48:23.941123",
+ "modified": "2022-12-08 13:36:34.318323",
  "modified_by": "Administrator",
  "module": "Rooms",
  "name": "Rooms",
@@ -61,10 +61,13 @@
  "pin_to_top": 0,
  "shortcuts": [
   {
-   "doc_view": "New",
-   "icon": "add",
-   "label": "Room",
+   "color": "",
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
    "link_to": "Room",
+   "stats_filter": "{}",
    "type": "DocType"
   },
   {
@@ -75,13 +78,10 @@
    "type": "DocType"
   },
   {
-   "color": "",
-   "doc_view": "Dashboard",
-   "format": "Total: {}",
-   "icon": "dashboard",
-   "label": "Dashboard",
+   "doc_view": "New",
+   "icon": "add",
+   "label": "Room",
    "link_to": "Room",
-   "stats_filter": "{}",
    "type": "DocType"
   }
  ],

@@ -52,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-10-07 16:50:06.142599",
+ "modified": "2022-12-08 13:42:13.788558",
  "modified_by": "Administrator",
  "module": "Members",
  "name": "Members",
@@ -61,10 +61,12 @@
  "pin_to_top": 1,
  "shortcuts": [
   {
-   "doc_view": "New",
-   "icon": "add",
-   "label": "Member",
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
    "link_to": "Member",
+   "stats_filter": "{}",
    "type": "DocType"
   },
   {
@@ -75,12 +77,10 @@
    "type": "DocType"
   },
   {
-   "doc_view": "Dashboard",
-   "format": "Total: {}",
-   "icon": "dashboard",
-   "label": "Dashboard",
+   "doc_view": "New",
+   "icon": "add",
+   "label": "Member",
    "link_to": "Member",
-   "stats_filter": "{}",
    "type": "DocType"
   }
  ],

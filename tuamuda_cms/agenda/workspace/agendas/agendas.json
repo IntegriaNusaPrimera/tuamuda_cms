@@ -52,7 +52,7 @@
    "type": "Link"
   }
  ],
- "modified": "2022-10-07 16:41:06.767230",
+ "modified": "2022-12-08 13:37:36.290748",
  "modified_by": "Administrator",
  "module": "Agenda",
  "name": "Agendas",
@@ -61,10 +61,13 @@
  "pin_to_top": 0,
  "shortcuts": [
   {
-   "doc_view": "New",
-   "icon": "add",
-   "label": "Agenda",
+   "color": "",
+   "doc_view": "Dashboard",
+   "format": "Total: {}",
+   "icon": "dashboard",
+   "label": "Dashboard",
    "link_to": "Agenda",
+   "stats_filter": "{}",
    "type": "DocType"
   },
   {
@@ -75,13 +78,10 @@
    "type": "DocType"
   },
   {
-   "color": "",
-   "doc_view": "Dashboard",
-   "format": "Total: {}",
-   "icon": "dashboard",
-   "label": "Dashboard",
+   "doc_view": "New",
+   "icon": "add",
+   "label": "Agenda",
    "link_to": "Agenda",
-   "stats_filter": "{}",
    "type": "DocType"
   }
  ],
